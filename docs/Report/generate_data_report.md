@@ -6,8 +6,7 @@
 
 ### function 用途
 
-根據歷史交易紀錄計算績效指標（如勝率、獲利因子、總損益、交易次數等），並回傳報表統計結果。  
-內部會向後端 API `/backtest/gen_data_report` 發送 POST 請求取得結果。
+根據歷史交易紀錄計算績效指標（如勝率、獲利因子、總損益、交易次數等），並回傳報表統計結果。
 
 ---
 
@@ -29,12 +28,16 @@
 
 ```python
 {
-    "total_trades": 25,
-    "win_rate": 0.68,
-    "profit_factor": 1.94,
-    "total_profit": 10235.5,
-    "max_drawdown": -2540.0,
-    "avg_risk_reward": 1.45
+   "績效指標": {
+                "盈虧比": round(total_profit / total_loss, 2) if total_loss != 0 else float("inf"),
+                "勝率": round(win_rate * 100, 2),
+                "最大回撤": round(max_drawdown_pct, 2),
+                "交易次數": len(df),
+                "總報酬率": round(total_return_pct, 2)
+            },
+            "累積報酬折線圖": {"累積報酬 (%)": annual_return_pct.to_dict()},
+            "勝率與虧損率": {"勝率": round(win_rate * 100, 2), "虧損率": round(loss_rate * 100, 2)},
+            "最大回撤趨勢": {"最大回撤 (%)": annual_drawdown_pct.to_dict()}
 }
 ```
 

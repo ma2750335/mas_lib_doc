@@ -6,7 +6,7 @@
 
 ### function 用途
 
-接收交易系統回傳的訂單狀態更新資料（如成功、錯誤、等待等），用於後續狀態處理或顯示。
+接收系統回傳的訂單狀態資訊，用於後續處理或顯示。
 
 ---
 
@@ -14,15 +14,15 @@
 
 | 參數名稱   | 型別   | 備註說明                                      |
 |------------|--------|-----------------------------------------------|
-| order_id   | str    | 訂單代碼，用於識別該筆訂單                   |
-| status_data| dict   | 包含狀態資訊的字典，如下方欄位說明 |
+| order_id   | str    | 訂單編號。 |
+| status_data| dict   | 傳入的字典內容如下方欄位說明。 |
 
 | status_data 欄位 | 型別  | 備註說明 |
 |------------------|--------|----------|
-| status           | int    | 訂單狀態代碼（通常與 MT5 `retcode` 相同） |
-| retcode          | int    | MT5 回傳的狀態代碼 |
-| message          | str    | MT5 回傳的訊息（例如 `"Request executed"`） |
-| request          | dict   | 當初下單所使用的 request 結構 |
+| status           | int    | 訂單狀態（通常與 MT5 `retcode` 相同）。 |
+| retcode          | int    | MT5 回傳的訂單狀態。 |
+| message          | str    | MT5 回傳的訂單訊息（例如 `"Request executed"`）。 |
+| request          | dict   | 本筆訂單下單時的 request。 |
 
 ---
 

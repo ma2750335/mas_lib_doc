@@ -6,8 +6,7 @@
 
 ### function 用途
 
-根據歷史交易紀錄，計算核心績效指標（KPI），包含勝率、獲利因子、交易次數、報酬風險比等評估指標。  
-本函式會向後端 API `/backtest/gen_kpi_report` 發送 POST 請求，取得計算結果。
+根據歷史交易紀錄計算績效指標（如勝率、獲利因子、總損益、交易次數等），並產生報表統計結果檔案。
 
 ---
 
@@ -23,19 +22,18 @@
 
 | 名稱   | 型別 | 備註說明                                                |
 |--------|------|---------------------------------------------------------|
-| return | dict | 回傳 KPI 報表內容的字典，欄位包含 win_rate、profit_factor、max_drawdown 等績效統計項目，實際格式依 gen_kpi_report() 實作而定 |
+| return | dict | 回傳是否產出成功，失敗時包含錯誤資訊|
 
 回傳格式：
 
 ```python
 {
-    "total_trades": 32,
-    "win_rate": 0.72,
-    "profit_factor": 2.15,
-    "average_win": 320.5,
-    "average_loss": -180.3,
-    "expectancy": 85.7,
-    "max_drawdown": -3100.0
+    "status": True
+}
+
+{
+    "status": False,
+    "error": "Missing trade data for KPI generation"
 }
 ```
 
@@ -44,10 +42,9 @@
 ### 💡 範例程式碼
 
 ```python
-kpi = engine.generate_kpi_report()
-if kpi:
-    print("勝率：", kpi["win_rate"])
-    print("獲利因子：", kpi["profit_factor"])
+result = engine.generate_kpi_report()
+if result["status"]:
+    print("✅ KPI 報表產出成功")
 else:
-    print("KPI 報表產生失敗")
+    print("❌ KPI 報表失敗：", result.get("error", "未知錯誤"))
 ```
