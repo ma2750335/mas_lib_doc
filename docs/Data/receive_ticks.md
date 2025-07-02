@@ -21,12 +21,12 @@
 data 結構說明:
 
 | 欄位名稱 | 型別     | 說明         |
-|----------|----------|--------------|
-| time     | datetime | 時間戳記     |
-| bid      | float    | 買價         |
-| ask      | float    | 賣價         |
-| last     | float    | 最後成交價   |
-| volume   | float    | 成交量       |
+|----------|----------|-------------|
+| `time`   | datetime | 時間戳記。   |
+| `bid`    | float    | 買價。       |
+| `ask`    | float    | 賣價。       |
+| `last`   | float    | 最後成交價。 |
+| `volume` | float    | 成交量。     |
 
 ---
 
@@ -34,13 +34,14 @@ data 結構說明:
 
 | 名稱   | 型別 | 備註說明       |
 |--------|------|----------------|
-| return | None | 無回傳值（單純接收推播訊息處理） |
+| 無     | None | 無回傳值（單純接收推播訊息處理） |
 
 ---
 
 ### 💡 範例程式碼
 
 ```python
+mas_client = MASClient()
 tick_data = {
     "symbol": "EURUSD",
     "time": datetime.now(),
@@ -50,4 +51,4 @@ tick_data = {
     "volume": 1.23
 }
 
-engine.receive_ticks("EURUSD", tick_data)
+mas_client.receive_ticks("EURUSD", tick_data)

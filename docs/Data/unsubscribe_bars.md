@@ -18,9 +18,9 @@
 | params   | dict | 傳入的字典內容如下方欄位說明 |
 
 | dict 欄位名稱 | 型別 | 備註說明 |
-|----------------|------|----------|
-| symbol         | str  | 商品代碼（如 EURUSD） |
-| timeframe      | str  | Bar 時間週期（如 M1, H1, D1） |
+|---------------|------|----------|
+| `symbol `     | str  | 商品代碼（如 EURUSD）。 |
+| `timeframe`   | str  | Bar 時間週期（如 M1, H1, D1）。 |
 
 ---
 
@@ -35,9 +35,10 @@
 ### 💡 範例程式碼
 
 ```python
+mas_client = MASClient()
 params = {
     "symbol": "USDJPY",
     "timeframe": "TIMEFRAME_M1"
 }
 
-data_engine.unsubscribe_bars(params)
+mas_client.unsubscribe_bars(params)

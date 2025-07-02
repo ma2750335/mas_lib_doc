@@ -20,15 +20,15 @@
 
 
  data 結構說明:
-| 欄位名稱 | 型別     | 說明       |
-|----------|----------|------------|
-| time     | datetime | Bar 起始時間 |
-| open     | float    | 開盤價     |
-| high     | float    | 最高價     |
-| low      | float    | 最低價     |
-| close    | float    | 收盤價     |
-| volume   | float    | 成交量     |
-| timeframe| str      | Bar 的時間週期（如 M1, H1, D1） |
+| 欄位名稱   | 型別     | 說明       |
+|------------|----------|------------|
+| `time`     | datetime | Bar 起始時間。 |
+| `open`     | float    | 開盤價。     |
+| `high`     | float    | 最高價。     |
+| `low`      | float    | 最低價。     |
+| `close`    | float    | 收盤價。     |
+| `volume`   | float    | 成交量。     |
+| `timeframe`| str      | Bar 的時間週期（如 M1, H1, D1）。 |
 
 ---
 
@@ -36,12 +36,13 @@
 
 | 名稱   | 型別 | 備註說明                    |
 |--------|------|-----------------------------|
-| return | None | 無回傳值（單純接收推播訊息處理）|
+| 無     | None | 無回傳值（單純接收推播訊息處理）|
 
 ---
 
 ### 💡 範例程式碼
 ```python
+mas_client = MASClient()
 bar_data = {
     "symbol": "EURUSD",
     "time": datetime.now(),
@@ -53,4 +54,4 @@ bar_data = {
     "volume": 345
 }
 
-engine.receive_bars("EURUSD", bar_data)
+mas_client.receive_bars("EURUSD", bar_data)

@@ -22,14 +22,15 @@
 
 | 名稱   | 型別 | 備註說明                           | 
 |--------|------|-----------------------------------|
-| return | bool | 若成功則回傳 `True`，否則為 `False` |
+|（匿名） | bool | 若成功則回傳 `True`，否則為 `False` |
 
 ---
 
 ### 💡 範例程式碼
 
 ```python
-if not engine.initialize_mt5():
+mas_client = MASClient()
+if not mas_client.initialize_mt5():
     print("MT5 初始化失敗")
 else:
     print("MT5 已連線")

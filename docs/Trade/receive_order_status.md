@@ -19,10 +19,10 @@
 
 | status_data 欄位 | 型別  | 備註說明 |
 |------------------|--------|----------|
-| status           | int    | 訂單狀態（通常與 MT5 `retcode` 相同）。 |
-| retcode          | int    | MT5 回傳的訂單狀態。 |
-| message          | str    | MT5 回傳的訂單訊息（例如 `"Request executed"`）。 |
-| request          | dict   | 本筆訂單下單時的 request。 |
+| `status`         | int    | 訂單狀態（通常與 MT5 `retcode` 相同）。 |
+| `retcode`        | int    | MT5 回傳的訂單狀態。 |
+| `message`        | str    | MT5 回傳的訂單訊息（例如 `"Request executed"`）。 |
+| `request`        | dict   | 本筆訂單下單時的 request。 |
 
 ---
 
@@ -30,7 +30,7 @@
 
 | 名稱   | 型別 | 備註說明              |
 |--------|------|-----------------------|
-| return | None | 無回傳值（單純接收推播訊息處理） |
+| 無     | None | 無回傳值（單純接收推播訊息處理） |
 
 ---
 

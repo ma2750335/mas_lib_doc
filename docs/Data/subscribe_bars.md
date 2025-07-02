@@ -22,10 +22,10 @@
 
 | dict 欄位名稱    | 型別   | 備註說明 |
 |------------------|--------|----------|
-| symbol           | str    | 商品代碼（如 EURUSD） |
-| timeframe        | str    | Bar 時間週期（如 M1, H1, D1） |
-| interval_ms      | int    | 每次推播間隔（毫秒），預設為 1000 |
-| backtest_toggle  | bool   | 是否為回測模式（`True` 表示回測模式） |
+| `symbol`         | str    | 商品代碼（如 EURUSD）。 |
+| `timeframe`      | str    | Bar 時間週期（如 M1, H1, D1）。 |
+| `interval_ms`    | int    | 每次推播間隔（毫秒），預設為 1000。 |
+| `backtest_toggle`| bool   | 是否為回測模式（`True` 表示回測模式）。 |
 
 timeframe說明:
 | ID | 說明 |
@@ -65,6 +65,7 @@ timeframe說明:
 ### 💡 範例程式碼
 
 ```python
+mas_client = MASClient()
 params = {
     "symbol": "EURUSD",
     "timeframe": "M1",
@@ -72,6 +73,6 @@ params = {
     "backtest_toggle": False
 }
 
-data_engine.subscribe_bars(params)
+mas_client.subscribe_bars(params)
 ```
 ---

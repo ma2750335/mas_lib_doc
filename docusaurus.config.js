@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'MAS Docs',
   tagline: 'MAS are cool',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/mas_logo.ico',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -60,7 +60,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/mas_logo.jpg',
       navbar: {
         title: 'MAS Docs',
         logo: {
@@ -131,6 +131,13 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.MASSSSSSS`,
       },
+      algolia: {
+        appId: '6I172HX8MH',
+        apiKey: '85a4cc95b0ecc5dbabec583130685ae0',
+        indexName: 'mindaismart',
+        contextualSearch: true,
+      },
+
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,

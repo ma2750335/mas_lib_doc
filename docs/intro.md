@@ -5,7 +5,7 @@ slug: /
 sidebar_position: 1
 ---
 
-# 🧠 MAS Python SDK 簡介
+# <img src="/img/mas_logo.png" alt="brain icon" width="48" style={{ verticalAlign: 'middle' }} /> MAS Python SDK 簡介
 
 MAS Python SDK 是一套針對金融策略交易者打造的輕量級 Python 函式庫，
 支援外匯自訂策略的自動化交易與回測，無需深入理解券商 API 或資料封包格式，即可快速部署與模擬交易。
@@ -104,6 +104,9 @@ if __name__ == "__main__":
 ---
 
 ## 🤖 不會寫程式？MAS AI 策略助理讓你一鍵完成自動交易！
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WZJoxikns4Q?si=WUG36ZHWNOzRble4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br /><br />
 
 只要輸入你的交易邏輯描述，MAS AI 助理就能：
 
