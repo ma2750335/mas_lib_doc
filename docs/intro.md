@@ -61,9 +61,9 @@ from mas.mas import MAS
 def main():
     # 測試用登入資料
     params = {
-        "account": 6246796,
-        "password": "ltfxtwx2",
-        "server": "OANDA-Demo-1",
+        "account": "YOUR_ACCOUNT",
+        "password": "YOUR_PASSWORD",
+        "server": "YOUR_BROKER_SERVER",
     }
 
     # 建立 MAS 實例
