@@ -22,8 +22,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'ma2750335', // Usually your GitHub org/user name.
+  projectName: 'mas_lib_doc', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -74,13 +74,18 @@ const config = {
             position: 'left',
             label: 'Guide',
             
-          },         
+          },  
+          {
+            href: 'https://mindaismart.com/',
+            label: 'Official Website',
+            position: 'left',
+          },       
           {
             type: 'localeDropdown',
             position: 'right',
           },
           {
-            href: 'https://github.com/你的帳號/你的專案',
+            href: 'https://github.com/ma2750335/mas_lib_doc',
             label: 'GitHub',
             position: 'right',
           },
@@ -93,7 +98,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Guide',
                 to: '/',
               },
             ],
@@ -102,16 +107,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: 'Official Website',
+                href: 'https://mindaismart.com/',
               },
             ],
           },
@@ -119,17 +116,13 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/ma2750335/mas_lib_doc',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.MASSSSSSS`,
+        copyright: `Copyright © ${new Date().getFullYear()} MindAiSmart Technology, Inc.`,
       },
       algolia: {
         appId: '6I172HX8MH',
