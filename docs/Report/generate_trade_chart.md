@@ -40,8 +40,27 @@
 ### 💡 範例程式碼
 
 ```python
-result = engine.generate_trade_chart()
+mas_client = MASClient()
+result = mas_client.generate_trade_chart()
 if result and result.get("status"):
     print("成功產生交易圖表")
 else:
     print("圖表產生失敗")
+```
+
+### 💡 範例圖表 
+<a
+  href="/html/trade_report.html"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ fontSize: '20px', fontWeight: 'bold' }}
+>
+  查看報表
+</a>
+
+<iframe
+  src="/html/trade_report.html"
+  width="100%"
+  height="1000"
+  style={{ border: '1px solid #ccc' }}
+/>

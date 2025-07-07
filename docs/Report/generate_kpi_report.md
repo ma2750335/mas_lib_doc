@@ -42,9 +42,27 @@
 ### 💡 範例程式碼
 
 ```python
-result = engine.generate_kpi_report()
+mas_client = MASClient()
+result = mas_client.generate_kpi_report()
 if result["status"]:
     print("✅ KPI 報表產出成功")
 else:
     print("❌ KPI 報表失敗：", result.get("error", "未知錯誤"))
 ```
+
+### 💡 範例圖表
+<a
+  href="/html/kpi_report.html"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ fontSize: '20px', fontWeight: 'bold' }}
+>
+  查看報表
+</a>
+
+<iframe
+  src="/html/kpi_report.html"
+  width="109%"
+  height="1500"
+  style={{ border: '1px solid #ccc' }}
+/>

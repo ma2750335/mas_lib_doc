@@ -73,7 +73,8 @@ return {
 ### 💡 範例程式碼
 
 ```python
-kpi_result = engine.generate_data_report()
+mas_client = MASClient()
+kpi_result = mas_client.generate_data_report()
 
 if kpi_result:
     print("總損益：", kpi_result["total_profit"])
