@@ -62,7 +62,7 @@ else:
 
 <iframe
   src="/html/kpi_report.html"
-  width="109%"
-  height="1500"
+  width="130%"
+  height="3900"
   style={{ border: '1px solid #ccc' }}
 />

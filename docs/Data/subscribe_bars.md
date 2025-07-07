@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 ### function 名稱
 
 `subscribe_bars`

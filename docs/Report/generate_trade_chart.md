@@ -60,7 +60,7 @@ else:
 
 <iframe
   src="/html/trade_report.html"
-  width="100%"
+  width="130%"
   height="1000"
   style={{ border: '1px solid #ccc' }}
 />

@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 ### function 名稱
 
 `initialize_mt5`
@@ -8,6 +11,7 @@
 
 初始化 MetaTrader 5（MT5）環境並建立與終端機的連線。
 📌 備註：一般情況下不需要獨立呼叫，通常由 `login()` 函式內部自動執行。
+
 ---
 
 ### function 參數
