@@ -26,7 +26,7 @@ sidebar_position: 1
 
 | dict 欄位名稱      | 型別       | 必填 | 說明                                                  |
 |-------------------|------------|------|-------------------------------------------------------|
-| `backtest_toggle` | bool    | ✅   | 是否為回測模式（`True` 表示回測模式）。                     |
+| `backtest_toggle` | bool       | ✅   | 是否為回測模式（`True` 表示回測模式）。                     |
 | `symbol`          | str        | ✅   | 交易商品代碼，例如 `"EURUSD.sml"`。                     |
 | `order_type`      | str        | ✅   | 訂單類型：`buy`, `sell`, `buy_limit`, `sell_stop` 等。 |
 | `volume`          | float      | ✅   | 下單數量，如 `0.1`。                                   |
@@ -78,39 +78,83 @@ sidebar_position: 1
 ---
 
 ### 💡 範例程式碼（實盤）
-
 ```python
-mas_client = MASClient()
-params = {
-    "symbol": "EURUSD.sml",
-    "order_type": "buy_limit",
-    "volume": 0.1,
-    "price": 1.12345,
-    "sl": 1.12000,
-    "tp": 1.13000,
-    "deviation": 10,
-    "magic": 888888,
-    "comment": "Test Order",
-    "type_time": mt5.ORDER_TIME_GTC,
-    "expiration": datetime(2025, 12, 31, 23, 59),
-    "type_filling": mt5.ORDER_FILLING_IOC
-}
-order_id = mas_client.send_order(params)
-print("實盤訂單編號：", order_id)
+from mas.mas import MAS
+
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+
+    def receive_order_execution(self, order_id, execution_data):
+        print("receive_order_execution:", order_id, execution_data)
+
+    def receive_order_status(self, order_id, status_data):
+        print("receive_order_status:", order_id, status_data)
+
+
+def main():
+    try:
+        mas_client = MAS_Client()
+        login_params = {
+            "account": "YOUR_ACCOUNT",
+            "password": "YOUR_PASSWORD",
+            "server": "YOUR_SERVER"
+        }
+        mas_client.login(login_params)
+
+        order_params = {
+            "symbol": "EURUSD",
+            "order_type": "buy_limit",
+            "volume": 0.1,
+            "price": 1.12345,
+            "sl": 1.12000,
+            "tp": 1.13000,
+            "deviation": 10,
+            "magic": 888888,
+            "comment": "Test Order",
+            "type_time": mt5.ORDER_TIME_GTC,
+            "expiration": datetime(2025, 12, 31, 23, 59),
+            "type_filling": mt5.ORDER_FILLING_IOC,
+            "backtest_toggle": False
+        }
+        mas_client.send_order(order_params)
+    except Exception as e:
+        print(f"登入失敗:{str(e)}")
 ```
 
 ### 💡 範例程式碼（模擬）
+
 ```python
-mas_client = MASClient()
-params = {
-    "symbol": "EURUSD",
-    "order_type": "buy",
-    "volume": 1.0,
-    "backtest_toggle": True
-}
+from mas.mas import MAS
 
-order_id = mas_client.send_order(params)
-print("模擬訂單編號：", order_id)
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+
+    def receive_order_execution(self, order_id, execution_data):
+        print("receive_order_execution:", order_id, execution_data)
+
+    def receive_order_status(self, order_id, status_data):
+        print("receive_order_status:", order_id, status_data)
+
+def main():
+    try:
+        mas_client = MAS_Client()
+        login_params = {
+            "account": "YOUR_ACCOUNT",
+            "password": "YOUR_PASSWORD",
+            "server": "YOUR_SERVER"
+        }
+        mas_client.login(login_params)
+
+        order_params = {
+            "symbol": "EURUSD",
+            "order_type": "sell",
+            "volume": 0.1,
+            "backtest_toggle": True
+        }
+        mas_client.send_order(order_params)
+    except Exception as e:
+        print(f"登入失敗:{str(e)}")
 ```
-
 ---

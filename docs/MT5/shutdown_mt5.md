@@ -32,9 +32,19 @@ sidebar_position: 4
 ### 💡 範例程式碼
 
 ```python
-mas_client = MASClient()
-mas_client.shutdown_mt5()
-print("已關閉 MT5 連線")
-```
+from mas.mas import MAS
 
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+
+def main():
+    try:
+        mas_client = MAS_Client()
+        mas_client.shutdown_mt5()
+        print("已關閉 MT5 連線")
+            
+    except Exception as e:
+        print(f"初始化失敗:{str(e)}")
+```
 ---

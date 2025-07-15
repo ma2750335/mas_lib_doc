@@ -40,10 +40,35 @@ sidebar_position: 5
 ### 💡 範例程式碼
 
 ```python
-# 實際下單完成後，推播狀態回傳至 receiver
-self.receiver.on_order_status(order_id, {
-    "status": result.retcode,
-    "retcode": result.retcode,
-    "message": result.comment,
-    "request": request
-})
+from mas.mas import MAS
+
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+
+    def receive_order_execution(self, order_id, execution_data):
+        print("receive_order_execution:", order_id, execution_data)
+
+    def receive_order_status(self, order_id, status_data):
+        print("receive_order_status:", order_id, status_data)
+
+def main():
+    try:
+        mas_client = MAS_Client()
+        login_params = {
+            "account": "YOUR_ACCOUNT",
+            "password": "YOUR_PASSWORD",
+            "server": "YOUR_SERVER"
+        }
+        mas_client.login(login_params)
+
+        order_params = {
+            "symbol": "EURUSD",
+            "order_type": "sell",
+            "volume": 0.1,
+            "backtest_toggle": True
+        }
+        mas_client.send_order(order_params)
+    except Exception as e:
+        print(f"登入失敗:{str(e)}")
+```

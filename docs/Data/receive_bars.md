@@ -45,16 +45,44 @@ sidebar_position: 2
 
 ### 💡 範例程式碼
 ```python
-mas_client = MASClient()
-bar_data = {
-    "symbol": "EURUSD",
-    "time": datetime.now(),
-    "timeframe": "M1",
-    "open": 1.1050,
-    "high": 1.1060,
-    "low": 1.1040,
-    "close": 1.1055,
-    "volume": 345
-}
+from mas.mas import MAS
 
-mas_client.receive_bars("EURUSD", bar_data)
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+
+    def receive_bars(self, symbol, data, is_end=False):
+        print(symbol, data, is_end)
+
+def main():
+    try:
+        mas_client = MAS_Client()
+        login_params = {
+            "account": "YOUR_ACCOUNT",
+            "password": "YOUR_PASSWORD",
+            "server": "YOUR_SERVER"
+        }
+        mas_client.login(login_params)
+
+        #回測模式參數
+        params = {
+            "symbol": "EURUSD",
+            "timeframe": "M1",
+            "from": '2024-01-01',
+            "to": '2024-12-31',
+            "backtest_toggle": True
+        }
+        mas_client.subscribe_bars(params)
+
+        #實盤模式參數
+        params = {
+            "symbol": "EURUSD",
+            "timeframe": "M1",
+            "backtest_toggle": False
+        }
+        mas_client.subscribe_bars(params)
+
+    except Exception as e:
+        print(str(e))
+```
+---

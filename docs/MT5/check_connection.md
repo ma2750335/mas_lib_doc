@@ -32,11 +32,21 @@ sidebar_position: 2
 ### 💡 範例程式碼
 
 ```python
-mas_client = MASClient()
-if mas_client.check_connection():
-    print("目前已連線至 MT5")
-else:
-    print("尚未連線 MT5，請先執行 login")
-```
+from mas.mas import MAS
 
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+
+def main():
+    try:
+        mas_client = MAS_Client()
+        if mas_client.check_connection():
+            print("目前已連線至 MT5")
+        else:
+            print("尚未連線 MT5，請先執行 login")
+            
+    except Exception as e:
+        print(f"初始化失敗:{str(e)}")
+```
 ---

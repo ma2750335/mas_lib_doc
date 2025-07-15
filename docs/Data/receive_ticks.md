@@ -44,14 +44,42 @@ data 結構說明:
 ### 💡 範例程式碼
 
 ```python
-mas_client = MASClient()
-tick_data = {
-    "symbol": "EURUSD",
-    "time": datetime.now(),
-    "bid": 1.1056,
-    "ask": 1.1058,
-    "last": 1.1057,
-    "volume": 1.23
-}
+from mas.mas import MAS
 
-mas_client.receive_ticks("EURUSD", tick_data)
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+
+    def receive_ticks(self, symbol, data, is_end=False):
+        print(symbol, data, is_end)
+
+def main():
+    try:
+        mas_client = MAS_Client()
+        login_params = {
+            "account": "YOUR_ACCOUNT",
+            "password": "YOUR_PASSWORD",
+            "server": "YOUR_SERVER"
+        }
+        mas_client.login(login_params)
+
+        #回測模式參數
+        params = {
+            "symbol": "EURUSD",
+            "from": '2025-07-07 12:00:00',
+            "to": '2025-07-07 13:00:00',
+            "backtest_toggle": True
+        }
+        mas_client.subscribe_ticks(params)
+
+        #實盤模式參數
+        params = {
+            "symbol": "EURUSD",
+            "backtest_toggle": False
+        }
+        mas_client.subscribe_ticks(params)
+
+    except Exception as e:
+        print(str(e))
+```
+---

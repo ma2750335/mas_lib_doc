@@ -108,21 +108,34 @@
 ### 💡 範例程式碼
 
 ```python
-mas_client = MASClient()
+from mas.mas import MAS
 
-# 查詢所有持倉
-positions = mas_client.get_positions()
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
 
-# 查詢特定商品持倉
-positions = mas_client.get_positions({"symbol": "USDJPY.sml"})
+def main():
+    try:
+        mas_client = MAS_Client()
+        login_params = {
+            "account": "YOUR_ACCOUNT",
+            "password": "YOUR_PASSWORD",
+            "server": "YOUR_SERVER"
+        }
+        mas_client.login(login_params)
 
-# 查詢特定群組
-positions = mas_client.get_positions({"group": "USD*"})
+        positions = mas_client.get_positions()
+        print(positions)
 
-# 查詢特定 ticket
-positions = mas_client.get_positions({"ticket": 12345678})
+        positions = mas_client.get_positions({"symbol": "EURUSD"})
+        print(positions)
 
-for p in positions:
-    print(f"{p['symbol']} | {p['volume']}手 | 盈虧: {p['profit']}")
+        positions = mas_client.get_positions({"group": "EURUSD"})
+        print(positions)
 
+        positions = mas_client.get_positions({'ticket': 28184471})
+        print(positions)
+    except Exception as e:
+        print(str(e))
 ```
+---

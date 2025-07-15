@@ -9,7 +9,7 @@ sidebar_position: 7
 
 ### function 用途
 
-停止所有 Tick 與 Bar 的資料訂閱。
+停止所有 Tick 與 Bar 的資料訂閱 -> 適用於實盤模式。
 
 ---
 
@@ -31,8 +31,36 @@ sidebar_position: 7
 
 ### 💡 範例程式碼
 
-```python
-mas_client = MASClient()
 
-# 在關閉程式或切換帳號前，應呼叫此方法清除訂閱
-mas_client.stop_all_subscriptions()
+```python
+import time
+from mas.mas import MAS
+
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+
+    def receive_ticks(self, symbol, data, is_end=False):
+        print(symbol, data, is_end)
+        
+def main():
+    try:
+        mas_client = MAS_Client()
+        login_params = {
+            "account": "YOUR_ACCOUNT",
+            "password": "YOUR_PASSWORD",
+            "server": "YOUR_SERVER"
+        }
+        mas_client.login(login_params)
+
+        params = {
+            "symbol": "EURUSD",
+            "backtest_toggle": False,
+        }
+        mas_client.subscribe_ticks(params)
+        time.sleep(10)
+        mas_client.stop_all_subscriptions()
+    except Exception as e:
+        print(str(e))
+```
+---

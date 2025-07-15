@@ -95,9 +95,24 @@
 ### 💡 範例程式碼
 
 ```python
-info = engine.get_account_info()
-if "error" in info:
-    print("查詢失敗：", info["error"])
-else:
-    print("帳戶餘額：", info["balance"])
+from mas.mas import MAS
+
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+
+def main():
+    try:
+        mas_client = MAS_Client()
+        login_params = {
+            "account": "YOUR_ACCOUNT",
+            "password": "YOUR_PASSWORD",
+            "server": "YOUR_SERVER"
+        }
+        if mas_client.login(login_params):
+            print("登入成功！")
+        print(mas_client.get_account_info())
+    except Exception as e:
+        print(f"登入失敗:{str(e)}")
 ```
+---

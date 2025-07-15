@@ -67,19 +67,71 @@ return {
         }
         
 ```
-
 ---
 
 ### 💡 範例程式碼
 
 ```python
-mas_client = MASClient()
-kpi_result = mas_client.generate_data_report()
+from mas.mas import MAS
 
-if kpi_result:
-    print("總損益：", kpi_result["total_profit"])
-    print("勝率：", kpi_result["win_rate"])
-else:
-    print("產生報表失敗")
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+        self.toggle = False
+        self.ma = 0
+        self.index = 0
+        self.hold = False
+        self.order_id = None
 
+    def receive_bars(self, symbol, data, is_end=False):
+        single = self.index % self.ma
+
+        if single == 0:
+            if not self.hold:
+                self.order_id = self.send_order({
+                    "symbol": "EURUSD",
+                    "order_type": "sell",
+                    "volume": 0.1,
+                    "backtest_toggle": self.toggle
+                })
+                self.hold = True
+            else:
+                self.send_order({
+                    "symbol": "EURUSD",
+                    "order_type": "buy",
+                    "order_id": self.order_id,
+                    "volume": 0.1,
+                    "backtest_toggle": self.toggle
+                })
+                self.hold = False
+
+        self.index = self.index+1
+        if is_end:
+            data = self.generate_data_report()
+            print(data)
+
+
+def main():
+    try:
+        mas_client = MAS_Client()
+        mas_client.toggle = True
+        mas_client.ma = 50
+        login_params = {
+            "account": "YOUR_ACCOUNT",
+            "password": "YOUR_PASSWORD",
+            "server": "YOUR_SERVER"
+        }
+        mas_client.login(login_params)
+
+        params = {
+            "symbol": "EURUSD",
+            "from": '2020-01-01',
+            "to": '2024-12-31',
+            "timeframe": "D1",
+            "backtest_toggle": mas_client.toggle
+        }
+        mas_client.subscribe_bars(params)
+    except Exception as e:
+        print(str(e))
 ```
+---

@@ -33,11 +33,21 @@ sidebar_position: 1
 ### 💡 範例程式碼
 
 ```python
-mas_client = MASClient()
-if not mas_client.initialize_mt5():
-    print("MT5 初始化失敗")
-else:
-    print("MT5 已連線")
-```
+from mas.mas import MAS
 
+class MAS_Client(MAS):
+    def __init__(self):
+        super().__init__()
+
+def main():
+    try:
+        mas_client = MAS_Client()
+        if not mas_client.initialize_mt5():
+            print("MT5 初始化失敗")
+        else:
+            print("MT5 已連線")
+            
+    except Exception as e:
+        print(f"初始化失敗:{str(e)}")
+```
 ---
