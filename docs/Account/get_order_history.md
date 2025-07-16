@@ -19,11 +19,11 @@
 
 | dict 欄位名稱 | 型別          | 必填 | 說明                                                       |
 |-------------|---------------|------|------------------------------------------------------------|
-| `symbol`    | str           | ❌   | 指定查詢的商品（使用 `group` 欄位過濾）                    |
-| `from`      | datetime/str  | ❌   | 起始時間，預設為 `2000-01-01`                              |
-| `to`        | datetime/str  | ❌   | 結束時間，預設為 `datetime.now()`                          |
-| `ticket`    | int           | ❌   | 指定訂單的成交紀錄（可搭配 from/to）                       |
-| `position`  | int           | ❌   | 指定部位的成交紀錄                                          |
+| `symbol`    | str           | ❌   | 指定查詢的商品（使用 `group` 欄位過濾）                      |
+| `from`      | datetime/str  | ❌   | 起始時間，預設為 `2000-01-01`                               |
+| `to`        | datetime/str  | ❌   | 結束時間，預設為 `datetime.now()`                           |
+| `ticket`    | int           | ❌   | 指定訂單的成交紀錄（僅支援單一參數使用）                      |
+| `position`  | int           | ❌   | 指定部位的成交紀錄（僅支援單一參數使用）                      |
 
 ---
 
@@ -106,6 +106,16 @@ def main():
             "to":  "2025-07-07"
         }
         print(mas_client.get_order_history(symbol_params))
+
+        ticket_params = {
+          "ticket" : 30681969
+        }
+        print(mas_client.get_order_history(ticket_params))
+
+        position_params = {
+          "position" : 28290355
+        }
+        print(mas_client.get_order_history(position_params))
     except Exception as e:
         print(str(e))
 ```
