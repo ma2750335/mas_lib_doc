@@ -1,0 +1,8 @@
+{
+  "label": "MT5",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "MT5 連線管理"
+  }
+}

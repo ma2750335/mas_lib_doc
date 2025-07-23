@@ -1,48 +1,48 @@
 ---
 sidebar_position: 2
 ---
-### function 名稱
+### Function Name
 
 `modify_order`
 
 ---
 
-### function 用途
+### Function Purpose
 
-修改一筆未成交的掛單（限價單）。  
-根據傳入的 `order_id`，建立交易修改請求至 MT5 平台。
-支援同步調整價格（price）、停損（sl）、停利（tp）、stoplimit、到期時間與備註。
-若修改成功，會觸發推播更新訂單狀態。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
-
-| dict 欄位名稱 | 型別       | 必填 | 說明                                    |
-|--------------|------------|------|----------------------------------------|
-| `order_id`   | int        | ✅   | 欲修改之原始掛單的訂單編號（ticket）。    |
-| `price`      | float      | ✅   | 修改後的新價格。                        |
-| `sl`         | float      | ❌   | 停損價格。                             |
-| `tp`         | float      | ❌   | 停利價格。                             |
-| `stoplimit`  | float      | ❌   | 停損限價。                             |
-| `expiration` | datetime   | ❌   | 掛單的到期時間。                        |
-| `comment`    | str        | ❌   | 訂單備註（預設為 `"Modified by MAS"`）。 |
+Modifies a pending limit order that has not been filled.  
+This function sends a modification request to the MT5 platform using the given `order_id`.  
+Supports simultaneous updates of price, stop loss (SL), take profit (TP), stop limit, expiration time, and comment.  
+If the modification is successful, the order status will be pushed via notification callback.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱     | 型別 | 備註說明         |
-|----------|------|------------------|
-| （匿名）  | bool | 修改成功則回傳 `True`，否則為 `False`。 |
+| Name   | Type | Description |
+|--------|------|-------------|
+| params | dict | A dictionary containing the fields below: |
+
+| Field Name  | Type     | Required | Description                                                  |
+|-------------|----------|----------|--------------------------------------------------------------|
+| `order_id`  | int      | ✅       | The original pending order ticket number to modify.         |
+| `price`     | float    | ✅       | New price to set.                                            |
+| `sl`        | float    | ❌       | Stop loss price.                                             |
+| `tp`        | float    | ❌       | Take profit price.                                           |
+| `stoplimit` | float    | ❌       | Stop limit price.                                            |
+| `expiration`| datetime | ❌       | Order expiration time.                                       |
+| `comment`   | str      | ❌       | Order comment (default is `"Modified by MAS"`).              |
 
 ---
 
-### 💡 範例程式碼
+### Function Return 
+
+| Name          | Type | Description                                  |
+|---------------|------|----------------------------------------------|
+| (anonymous)   | bool | Returns `True` if the modification succeeds, otherwise `False`. |
+
+---
+
+### 💡 Example Code
 
 ```python
 import time
@@ -87,6 +87,6 @@ def main():
         }
         mas_client.modify_order(modify_order_params)
     except Exception as e:
-        print(f"登入失敗:{str(e)}")
+        print(f"Login failed:{str(e)}")
 ```
 ---

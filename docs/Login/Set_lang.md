@@ -2,35 +2,35 @@
 sidebar_position: 2
 ---
 
-### function 名稱
+### Function Name
 
 `login`
 
 ---
 
-### function 用途
+### Function Purpose
 
-設定系統預設語言。  
-
----
-
-### function 參數
-
-| 參數名稱    | 型別    | 必填 | 備註說明 |
-|------------|---------|------|----------|
-| lang       | str     | ❌   | 語言代碼，可選：`'en'`（英文，預設）、`'zh-tw'`（繁體中文）、`'zh-cn'`（簡體中文）。 |
+Sets the default language for the system.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別    | 備註說明               |
-|--------|---------|------------------------|
-| None   | NoneType | 僅設定內部語言狀態，無回傳值 |
+| Name  | Type | Required | Description |
+|-------|------|----------|-------------|
+| lang  | str  | ❌      | Language code. Options: `'en'` (English, default), `'zh-tw'` (Traditional Chinese), `'zh-cn'` (Simplified Chinese). |
 
 ---
 
-### 範例程式碼
+### Function Return
+
+| Name | Type     | Description                        |
+|------|----------|------------------------------------|
+| None | NoneType | Sets internal language only; no return value. |
+
+---
+
+### Example Code
 
 ```python
 from mas.mas import MAS
@@ -48,8 +48,8 @@ def main():
             "password": "YOUR_PASSWORD"
         }
         if mas_client.login(login_params):
-            print("登入成功！")
+            print("Login successful!")
     except Exception as e:
-        print(f"登入失敗:{str(e)}")
+        print(f"Login failed:{str(e)}")
 ```
 ---

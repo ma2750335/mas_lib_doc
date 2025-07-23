@@ -1,43 +1,44 @@
 ---
 sidebar_position: 5
 ---
-### function 名稱
+### Function Name
 
 `receive_order_status`
 
 ---
 
-### function 用途
+### Function Purpose
 
-接收系統回傳的訂單狀態資訊，用於後續處理或顯示。
-
----
-
-### function 參數
-
-| 參數名稱   | 型別   | 備註說明                                      |
-|------------|--------|-----------------------------------------------|
-| order_id   | str    | 訂單編號。 |
-| status_data| dict   | 傳入的字典內容如下方欄位說明。 |
-
-| status_data 欄位 | 型別  | 備註說明 |
-|------------------|--------|----------|
-| `status`         | int    | 訂單狀態（通常與 MT5 `retcode` 相同）。 |
-| `retcode`        | int    | MT5 回傳的訂單狀態。 |
-| `message`        | str    | MT5 回傳的訂單訊息（例如 `"Request executed"`）。 |
-| `request`        | dict   | 本筆訂單下單時的 request。 |
+Handles the system's order status updates.  
+This function is triggered when MT5 returns the status of an order, and can be used for further processing or display.
 
 ---
 
-### function 回傳內容
+### Function 參數
 
-| 名稱   | 型別 | 備註說明              |
-|--------|------|-----------------------|
-| 無     | None | 無回傳值（單純接收推播訊息處理） |
+| Name         | Type   | Description                           |
+|--------------|--------|---------------------------------------|
+| order_id     | str    | The ticket number of the order.       |
+| status_data  | dict   | A dictionary containing the following fields: |
+
+| Field Name   | Type   | Description                                       |
+|--------------|--------|---------------------------------------------------|
+| `status`     | int    | Order status (usually same as MT5 `retcode`).     |
+| `retcode`    | int    | Return code from MT5 indicating result.           |
+| `message`    | str    | Response message from MT5 (e.g., `"Request executed"`). |
+| `request`    | dict   | The original request payload for the order.       |
 
 ---
 
-### 💡 範例程式碼
+### Function Return 
+
+| Name | Type     | Description                                |
+|------|----------|--------------------------------------------|
+| None | NoneType | No return value; this is a push message handler. |
+
+---
+
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS
@@ -70,5 +71,5 @@ def main():
         }
         mas_client.send_order(order_params)
     except Exception as e:
-        print(f"登入失敗:{str(e)}")
+        print(f"Login failed:{str(e)}")
 ```

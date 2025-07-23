@@ -1,36 +1,36 @@
 ---
 sidebar_position: 6
 ---
-### function 名稱
+### Function Name
 
 `unsubscribe_ticks`
 
 ---
 
-### function 用途
+### Function Purpose
 
-取消指定商品的即時 Tick 資料訂閱 -> 適用於實盤模式。  
-此函式會中止內部背景訂閱執行緒，關閉對該商品的即時報價監控。  
-
----
-
-### function 參數
-
-| 參數名稱 | 型別  | 備註說明 |
-|----------|-------|----------|
-| params   | dict  | symbol（str）：要取消訂閱的商品代碼。 |
+Unsubscribes from real-time tick data for a specified symbol — intended for live trading mode only.  
+This function terminates the internal background thread and stops receiving live tick data for the specified symbol.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明                            |
-|--------|------|-------------------------------------|
-| 無     | None | 無回傳值，執行後即停止訂閱 |
+| Name   | Type | Description |
+|--------|------|-------------|
+| params | dict | symbol（str）：The symbol to unsubscribe (e.g., `"EURUSD"`). |
 
 ---
 
-### 💡 範例程式碼
+### Function Return
+
+| Name | Type | Description                                  |
+|------|------|----------------------------------------------|
+| None | None | No return value. Calling this function stops the subscription. |
+
+---
+
+### 💡 Example Code
 
 ```python
 import time

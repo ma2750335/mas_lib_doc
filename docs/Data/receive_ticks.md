@@ -1,47 +1,47 @@
 ---
 sidebar_position: 5
 ---
-### function 名稱
+### Function Name
 
 `receive_ticks`
 
 ---
 
-### function 用途
+### Function Purpose
 
-接收 Tick 資料推播，由 `on_tick()` 呼叫觸發。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別  | 備註說明 |
-|----------|--------|----------|
-| symbol   | str    | 商品代碼（如 `"EURUSD"`） |
-| data     | dict   | 一筆 Tick 結構資料 |
-| is_end   | bool   | 是否為推播結束標記（回測模式中使用） |
-
-data 結構說明:
-
-| 欄位名稱 | 型別     | 說明         |
-|----------|----------|-------------|
-| `time`   | datetime | 時間戳記。   |
-| `bid`    | float    | 買價。       |
-| `ask`    | float    | 賣價。       |
-| `last`   | float    | 最後成交價。 |
-| `volume` | float    | 成交量。     |
+Receives Tick data via push updates, triggered by the `on_tick()` handler.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明       |
-|--------|------|----------------|
-| 無     | None | 無回傳值（單純接收推播訊息處理） |
+| Name    | Type    | Description                                 |
+|---------|---------|---------------------------------------------|
+| symbol  | str     | The instrument symbol (e.g., `"EURUSD"`).   |
+| data    | dict    | A dictionary representing a single tick.    |
+| is_end  | bool    | Indicates the end of the push stream (used in backtesting mode). |
+
+Tick `data` structure:
+
+| Key      | Type     | Description                  |
+|----------|----------|------------------------------|
+| `time`   | datetime | Timestamp of the tick.       |
+| `bid`    | float    | Bid price.                   |
+| `ask`    | float    | Ask price.                   |
+| `last`   | float    | Last transaction price.      |
+| `volume` | float    | Transaction volume.          |
 
 ---
 
-### 💡 範例程式碼
+### Function Return
+
+| Name   | Type | Description                              |
+|--------|------|------------------------------------------|
+| None   | None | No return value. This function only handles incoming tick data. |
+
+---
+
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS
@@ -63,7 +63,7 @@ def main():
         }
         mas_client.login(login_params)
 
-        #回測模式參數
+        # Backtesting mode parameters
         params = {
             "symbol": "EURUSD",
             "from": '2025-07-07 12:00:00',
@@ -72,7 +72,7 @@ def main():
         }
         mas_client.subscribe_ticks(params)
 
-        #實盤模式參數
+        # Live mode parameters
         params = {
             "symbol": "EURUSD",
             "backtest_toggle": False

@@ -1,59 +1,60 @@
-### function 名稱
+### Function Name
 
 `get_order_history`
 
 ---
 
-### function 用途
+### Function Purpose
 
-查詢帳戶在指定時間區間內的歷史成交紀錄（已成交的交易）。 
-可依時間範圍、商品、訂單 ID 或部位 ID 進行過濾。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| params   | dict | 字典內容如下方欄位說明 |
-
-| dict 欄位名稱 | 型別          | 必填 | 說明                                                       |
-|-------------|---------------|------|------------------------------------------------------------|
-| `symbol`    | str           | ❌   | 指定查詢的商品（使用 `group` 欄位過濾）                      |
-| `from`      | datetime/str  | ❌   | 起始時間，預設為 `2000-01-01`                               |
-| `to`        | datetime/str  | ❌   | 結束時間，預設為 `datetime.now()`                           |
-| `ticket`    | int           | ❌   | 指定訂單的成交紀錄（僅支援單一參數使用）                      |
-| `position`  | int           | ❌   | 指定部位的成交紀錄（僅支援單一參數使用）                      |
+Retrieve historical deal records (executed trades) within a specific time range.  
+You may filter by time, symbol, order ID, or position ID.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別           | 備註說明                               |
-|--------|---------------|----------------------------------------|
-| result |  `list[dict]` | 回傳所有符合條件的歷史成交紀錄，每筆為一筆成交紀錄，若無資料則回傳空陣列 `[]`，字典內容如下方欄位說明 |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| params         | dict | A dictionary containing the following fields:  |
 
-| 欄位名稱       | 型別      | 說明                                 |
-|----------------|-----------|--------------------------------------|
-| `ticket`        | int       | 成交紀錄的唯一 ID                    |
-| `order`         | int       | 所屬訂單編號                          |
-| `position_id`   | int       | 對應的部位 ID                        |
-| `symbol`        | str       | 商品代碼                             |
-| `type`          | int       | 成交方向（買/賣）                    |
-| `entry`         | int       | 成交類型（建倉、平倉、調整等）      |
-| `reason`        | int       | 成交原因（手動、自動、到期等）      |
-| `volume`        | float     | 成交手數                             |
-| `price`         | float     | 成交價格                             |
-| `commission`    | float     | 手續費                               |
-| `swap`          | float     | 庫存費                               |
-| `fee`           | float     | 其他費用                             |
-| `profit`        | float     | 該筆成交的盈虧                       |
-| `comment`       | str       | 備註                                 |
-| `external_id`   | str       | 外部系統參照 ID                      |
-| `time`          | datetime  | 成交時間（轉換為 `datetime`）        |
-| `time_msc`      | int       | 成交時間（毫秒 timestamp）           |
+| Field Name  | Type          | Required | Description |
+|-------------|---------------|----------|-------------|
+| `symbol`    | str           | ❌      | Symbol to filter (uses internal `group` filter) |
+| `from`      | datetime/str  | ❌      | Start time, default is `2000-01-01` |
+| `to`        | datetime/str  | ❌      | End time, default is `datetime.now()` |
+| `ticket`    | int           | ❌      | Specify a deal by ticket ID (only one filter type supported at a time) |
+| `position`  | int           | ❌      | Specify deals by position ID (only one filter type supported at a time) |
 
-回傳格式如下：
+---
+
+### function Return
+| Name   | Type         | Description |
+|--------|--------------|-------------|
+| result | `list[dict]` | List of deal records matching the criteria.  
+Returns an empty list `[]` if no data is found.  
+Each item is a deal object with the following fields: |
+
+| Field Name       | Type     | Description |
+|------------------|----------|-------------|
+| `ticket`         | int      | Deal ticket ID |
+| `order`          | int      | Order ID associated with the deal |
+| `position_id`    | int      | Related position ID |
+| `symbol`         | str      | Trading symbol |
+| `type`           | int      | Direction of deal (buy/sell) |
+| `entry`          | int      | Entry type (open, close, correction, etc.) |
+| `reason`         | int      | Reason for deal (manual, automatic, expiration, etc.) |
+| `volume`         | float    | Volume of the deal |
+| `price`          | float    | Executed price |
+| `commission`     | float    | Commission fee |
+| `swap`           | float    | Swap fee |
+| `fee`            | float    | Additional fee |
+| `profit`         | float    | Profit/loss from the deal |
+| `comment`        | str      | Comment |
+| `external_id`    | str      | External reference ID |
+| `time`           | datetime | Deal time (converted to Python `datetime`) |
+| `time_msc`       | int      | Deal timestamp in milliseconds |
+
+Return Format：
 
 ```python
 [
@@ -71,7 +72,7 @@
     "swap": 0.0,
     "fee": 0.0,
     "profit": 20.15,
-    "comment": "開倉",
+    "comment": "Open",
     "external_id": "",
     "time": "2025-06-20T15:30:00",
     "time_msc": 1718868600000
@@ -81,7 +82,7 @@
 
 ---
 
-### 💡 範例程式碼
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS

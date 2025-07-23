@@ -1,60 +1,61 @@
-### function 名稱
+### Function Name
 
 `get_positions`
 
 ---
 
-### function 用途
+### Function Purpose
 
-查詢目前 MT5 帳號中的持倉部位（Position）。
-支援依商品、群組或特定持倉編號（ticket）進行篩選。
-每筆部位資訊會整理為 `dict` 回傳，包含價格、盈虧、時間等詳細欄位。
+Retrieve all current open positions for the authenticated MetaTrader 5 (MT5) account.
 
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
-
-| dict 欄位名稱  | 型別 | 必填 | 說明                                                |
-|---------------|------|------|-----------------------------------------------------|
-| `symbol`      | str  | ❌   | 過濾指定商品代碼的持倉（優先順序最高）。                |
-| `group`       | str  | ❌   | 過濾指定商品群組的持倉（例如 "USD\*"）。               |
-| `ticket`      | int  | ❌   | 過濾指定持倉 ticket（若指定 symbol 則此欄無效）。       |
+You can filter positions by a specific symbol, group, or position ticket.  
+Each position is returned as a dictionary with detailed information such as price, volume, PnL, and timestamps.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別         | 備註說明                                  |
-|--------|-------------|-------------------------------------------|
-| result | list[dict]  | 回傳所有符合條件的未平倉部位資料，每筆為一筆持倉的資訊，若無資料則回傳空陣列 `[]`，字典內容如下方欄位說明|
+| Parameter | Type | Description |
+|----------|------|-------------|
+| `params` | dict | A dictionary containing the following fields: |
 
-| 欄位名稱           | 型別        | 說明                              |
-|--------------------|-------------|-----------------------------------|
-| `ticket`           | int         | 持倉編號（唯一值）                 |
-| `symbol`           | str         | 商品代碼                           |
-| `type`             | int         | 買/賣方向（0=buy, 1=sell）         |
-| `magic`            | int         | 下單時的 magic number              |
-| `identifier`       | int         | 持倉識別碼（可能來自策略程式）     |
-| `reason`           | int         | 建倉原因（手動、自動等）           |
-| `volume`           | float       | 持倉手數                            |
-| `price_open`       | float       | 建倉價格                            |
-| `sl`               | float       | 停損價                              |
-| `tp`               | float       | 止盈價                              |
-| `price_current`    | float       | 最新市場價格                        |
-| `swap`             | float       | 庫存費                              |
-| `profit`           | float       | 浮動損益                            |
-| `comment`          | str         | 備註                                |
-| `external_id`      | str         | 外部系統參照 ID                     |
-| `time`             | datetime    | 建倉時間（轉換為 `datetime`）       |
-| `time_msc`         | int         | 建倉時間（毫秒時間戳）              |
-| `time_update`      | datetime    | 最後更新時間（轉換為 `datetime`）   |
-| `time_update_msc`  | int         | 最後更新時間（毫秒時間戳）          |
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
+| `symbol`   | str  | ❌      | Filter by symbol (highest priority). |
+| `group`    | str  | ❌      | Filter by group name (e.g., `"USD*"`). |
+| `ticket`   | int  | ❌      | Filter by position ticket (ignored if `symbol` is used). |
 
-回傳格式如下：
+---
+
+### Function Return
+
+| Name   | Type        | Description |
+|--------|-------------|-------------|
+| result | list[dict]  | A list of open positions matching the filter. Empty list `[]` if none found. Each item has the following structure: |
+
+| Field Name        | Type     | Description |
+|-------------------|----------|-------------|
+| `ticket`          | int      | Unique position ticket. |
+| `symbol`          | str      | Trading symbol. |
+| `type`            | int      | Position direction: `0 = Buy`, `1 = Sell`. |
+| `magic`           | int      | EA's magic number. |
+| `identifier`      | int      | Strategy-specific ID. |
+| `reason`          | int      | Order reason (manual, EA, etc). |
+| `volume`          | float    | Volume (in lots). |
+| `price_open`      | float    | Opening price. |
+| `sl`              | float    | Stop Loss. |
+| `tp`              | float    | Take Profit. |
+| `price_current`   | float    | Current market price. |
+| `swap`            | float    | Accumulated swap. |
+| `profit`          | float    | Floating profit/loss. |
+| `comment`         | str      | User comment. |
+| `external_id`     | str      | External reference ID. |
+| `time`            | datetime | Open time (`datetime` format). |
+| `time_msc`        | int      | Open time in milliseconds since epoch. |
+| `time_update`     | datetime | Last update time. |
+| `time_update_msc` | int      | Last update time in milliseconds. |
+
+Return Format：
 ```python
 [
   {
@@ -105,7 +106,7 @@
 
 ---
 
-### 💡 範例程式碼
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS

@@ -1,35 +1,36 @@
 ---
 sidebar_position: 7
 ---
-### function 名稱
+### Function Name
 
 `stop_all_subscriptions`
 
 ---
 
-### function 用途
+### Function Purpose
 
-停止所有 Tick 與 Bar 的資料訂閱 -> 適用於實盤模式。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明     |
-|----------|------|--------------|
-| 無       | 無   | 此函式不需任何參數。 |
+Stops all active data subscriptions for both Tick and Bar feeds.  
+This is applicable in live trading mode.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明       |
-|--------|------|---------------|
-| 無     | None | 此函式無回傳值 |
+| Name | Type | Description                |
+|------|------|----------------------------|
+| None | None | This function takes no parameters. |
 
 ---
 
-### 💡 範例程式碼
+### Function Return
+
+| Name | Type | Description          |
+|------|------|----------------------|
+| None | None | No return value.     |
+
+---
+
+### 💡 Example Code
 
 
 ```python

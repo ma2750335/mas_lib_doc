@@ -1,49 +1,49 @@
 ---
 sidebar_position: 2
 ---
-### function 名稱
+### Function Name
 
 `receive_bars`
 
 ---
 
-### function 用途
+### Function Purpose
 
-接收 Bar（K 線）資料推播，由 `on_bar()` 呼叫觸發。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別  | 備註說明 |
-|----------|--------|----------|
-| symbol   | str    | 商品代碼（如 `"EURUSD"`） |
-| data     | dict   | 一筆 Bar 結構資料 |
-| is_end   | bool   | 是否為推播結束標記（回測模式中使用）|
-
-
- data 結構說明:
-| 欄位名稱   | 型別     | 說明       |
-|------------|----------|------------|
-| `time`     | datetime | Bar 起始時間。 |
-| `open`     | float    | 開盤價。     |
-| `high`     | float    | 最高價。     |
-| `low`      | float    | 最低價。     |
-| `close`    | float    | 收盤價。     |
-| `volume`   | float    | 成交量。     |
-| `timeframe`| str      | Bar 的時間週期（如 M1, H1, D1）。 |
+Receives real-time or backtesting Bar (candlestick) data via push updates, triggered by the `on_bar()` handler.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明                    |
-|--------|------|-----------------------------|
-| 無     | None | 無回傳值（單純接收推播訊息處理）|
+| Name    | Type    | Description                                 |
+|---------|---------|---------------------------------------------|
+| symbol  | str     | The instrument symbol (e.g., `"EURUSD"`).   |
+| data    | dict    | A dictionary representing a single Bar.     |
+| is_end  | bool    | Indicates the end of the push stream (used in backtesting mode). |
+
+
+Bar `data` structure:
+| Key        | Type     | Description                                     |
+|------------|----------|-------------------------------------------------|
+| `time`     | datetime | The opening timestamp of the Bar.              |
+| `open`     | float    | Opening price.                                 |
+| `high`     | float    | Highest price during the Bar.                  |
+| `low`      | float    | Lowest price during the Bar.                   |
+| `close`    | float    | Closing price.                                 |
+| `volume`   | float    | Trade volume.                                  |
+| `timeframe`| str      | Bar timeframe (e.g., `M1`, `H1`, `D1`).        |
 
 ---
 
-### 💡 範例程式碼
+### Function Return
+
+| Name   | Type | Description                              |
+|--------|------|------------------------------------------|
+| None   | None | No return value. This function is for receiving and handling push updates only. |
+
+---
+
+### 💡 Example Code
 ```python
 from mas.mas import MAS
 
@@ -64,7 +64,7 @@ def main():
         }
         mas_client.login(login_params)
 
-        #回測模式參數
+        # Backtest mode parameters
         params = {
             "symbol": "EURUSD",
             "timeframe": "M1",
@@ -74,7 +74,7 @@ def main():
         }
         mas_client.subscribe_bars(params)
 
-        #實盤模式參數
+        # Live mode parameters
         params = {
             "symbol": "EURUSD",
             "timeframe": "M1",

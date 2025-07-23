@@ -1,0 +1,54 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Login": {
+    "message": "Login",
+    "description": "The label for category Login in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Login.link.generated-index.description": {
+    "message": "登入",
+    "description": "The generated-index page description for category Login in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Account": {
+    "message": "Account",
+    "description": "The label for category Account in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Account.link.generated-index.description": {
+    "message": "帳戶與持倉管理",
+    "description": "The generated-index page description for category Account in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Data": {
+    "message": "Data",
+    "description": "The label for category Data in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Data.link.generated-index.description": {
+    "message": "歷史資料&市場資料",
+    "description": "The generated-index page description for category Data in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Trade": {
+    "message": "Trade",
+    "description": "The label for category Trade in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Trade.link.generated-index.description": {
+    "message": "交易相關",
+    "description": "The generated-index page description for category Trade in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Report": {
+    "message": "Report",
+    "description": "The label for category Report in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Report.link.generated-index.description": {
+    "message": "報表統計",
+    "description": "The generated-index page description for category Report in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.MT5": {
+    "message": "MT5",
+    "description": "The label for category MT5 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.MT5.link.generated-index.description": {
+    "message": "MT5 連線管理",
+    "description": "The generated-index page description for category MT5 in sidebar tutorialSidebar"
+  }
+}

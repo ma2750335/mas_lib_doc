@@ -1,44 +1,45 @@
 ---
 sidebar_position: 4
 ---
-### function 名稱
+### Function Name
 
 `receive_order_execution`
 
 ---
 
-### function 用途
+### Function Purpose
 
-接收系統回傳的訂單成交資訊，用於後續處理或顯示。
-
----
-
-### function 參數
-
-| 參數名稱     | 型別  | 備註說明 |
-|--------------|--------|----------|
-| order_id     | str    | 訂單編號。 |
-| execution_data | dict | 傳入的字典內容如下方欄位說明。 |
-
-| execution_data 欄位 | 型別   | 備註說明 |
-|----------------------|--------|----------|
-| `price`              | float  | 成交價格。 |
-| `volume`             | float  | 成交數量。 |
-| `symbol`             | str    | 商品代碼。 |
-| `time`               | datetime | 成交時間（通常為當下推播時間）。 |
-| `type`               | str    | 訂單類型。 |
+Handles the system's execution report for an order.  
+This function is used to process or display trade execution data after an order is filled.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明              |
-|--------|------|-----------------------|
-| 無     | None | 無回傳值（單純接收推播訊息處理） |
+| Name          | Type   | Description                    |
+|---------------|--------|--------------------------------|
+| order_id      | str    | The ticket number of the order. |
+| execution_data| dict   | A dictionary containing the following fields: |
+
+| Field Name | Type     | Description             |
+|------------|----------|-------------------------|
+| `price`    | float    | Executed price.         |
+| `volume`   | float    | Executed volume.        |
+| `symbol`   | str      | Trading symbol.         |
+| `time`     | datetime | Execution time (usually the push time). |
+| `type`     | str      | Order type.             |
 
 ---
 
-### 💡 範例程式碼
+### Function Return 
+
+| Name | Type  | Description                          |
+|------|-------|--------------------------------------|
+| None | NoneType | No return value; this is a passive push handler. |
+
+---
+
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS
@@ -71,5 +72,5 @@ def main():
         }
         mas_client.send_order(order_params)
     except Exception as e:
-        print(f"登入失敗:{str(e)}")
+        print(f"Login failed:{str(e)}")
 ```

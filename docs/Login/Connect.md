@@ -3,42 +3,42 @@ id: login
 title: login
 ---
 
-### function 名稱
+### Function Name
 
 `login`
 
 ---
 
-### function 用途
+### Function Purpose
 
-初始化MetaTrader 5（MT5）並登入帳戶。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
-
-| dict欄位名稱    | 型別    | 必填 | 備註說明 |
-|----------------|---------|------|----------|
-| `account`      | int     | ✅   | 使用者MT5交易帳號。 |
-| `password`     | str     | ✅   | 使用者MT5交易密碼。 |
-| `server`       | str     | ✅   | 交易伺服器名稱。 |
-| `timeout`      | int     | ❌   | 連線逾時時間（單位：毫秒），預設為 `60000`（60 秒）。 |
+Initializes MetaTrader 5 (MT5) and logs into the specified trading account.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱     | 型別  | 備註說明                                   |
-|----------|-------|--------------------------------------------|
-| （匿名） | bool  | 成功則回傳 `True`，失敗則回傳錯誤訊息。 |
+| Name   | Type | Description |
+|--------|------|-------------|
+| params | dict | A dictionary containing the following fields: |
+
+| Field      | Type   | Required | Description                                               |
+|------------|--------|----------|-----------------------------------------------------------|
+| `account`  | int    | ✅        | Your MT5 trading account number.                         |
+| `password` | str    | ✅        | Your MT5 account password.                               |
+| `server`   | str    | ✅        | Name of the trading server.                              |
+| `timeout`  | int    | ❌        | Connection timeout in milliseconds (default: `60000`).   |
 
 ---
 
-### 範例程式碼
+### Function Return
+
+| Name       | Type | Description                                        |
+|------------|------|----------------------------------------------------|
+| (anonymous)| bool | Returns `True` if login succeeds; otherwise raises an exception. |
+
+---
+
+### Example Code
 
 ```python
 from mas.mas import MAS
@@ -57,8 +57,8 @@ def main():
             "timeout": 10000
         }
         if mas_client.login(login_params):
-            print("登入成功！")
+            print("Login successful!")
     except Exception as e:
-        print(f"登入失敗:{str(e)}")
+        print(f"Login failed:{str(e)}")
 ```
 ---

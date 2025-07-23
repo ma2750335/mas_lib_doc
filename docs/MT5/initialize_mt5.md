@@ -1,36 +1,36 @@
 ---
 sidebar_position: 1
 ---
-### function 名稱
+### Function Name
 
 `initialize_mt5`
 
 ---
 
-### function 用途
+### Function Purpose
 
-初始化 MetaTrader 5（MT5）環境並建立與終端機的連線。
-📌 備註：一般情況下不需要獨立呼叫，通常由 `login()` 函式內部自動執行。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明     |
-|----------|------|--------------|
-| 無       | 無   | 此函式不需任何參數 |
+Initializes the MetaTrader 5 (MT5) environment and establishes a connection with the terminal.  
+📌 Note: Normally, you don't need to call this function manually—it is automatically executed inside the `login()` function.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明                           | 
-|--------|------|-----------------------------------|
-|（匿名） | bool | 若成功則回傳 `True`，否則為 `False` |
+| Name | Type | Description        |
+|------|------|--------------------|
+| None | None | This function takes no parameters. |
 
 ---
 
-### 💡 範例程式碼
+### Function Return 
+
+| Name        | Type | Description                              | 
+|-------------|------|------------------------------------------|
+| (anonymous) | bool | Returns `True` if initialization is successful, otherwise `False`. |
+
+---
+
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS
@@ -43,11 +43,11 @@ def main():
     try:
         mas_client = MAS_Client()
         if not mas_client.initialize_mt5():
-            print("MT5 初始化失敗")
+            print("MT5 initialization failed")
         else:
-            print("MT5 已連線")
+            print("MT5 connected successfully")
             
     except Exception as e:
-        print(f"初始化失敗:{str(e)}")
+        print(f"Initialization error:{str(e)}")
 ```
 ---

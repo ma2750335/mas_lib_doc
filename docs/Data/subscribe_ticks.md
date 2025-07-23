@@ -1,49 +1,49 @@
 ---
 sidebar_position: 4
 ---
-### function 名稱
+### Function Name
 
 `subscribe_ticks`
 
 ---
 
-### function 用途
+### Function Purpose
 
-訂閱即時 Tick 資料，或於回測模式中送出歷史 Tick 推播。 
-根據 `backtest_toggle` 參數的值，自動切換資料來源：
+Subscribes to real-time tick data or pushes historical tick data in simulation mode.  
+The data source will switch automatically based on the value of `backtest_toggle`:
 
-- 若為 `True`：呼叫歷史資料模組送出 Tick 推播  
-- 若為 `False`：建立背景執行緒，每間隔 `interval_ms` 毫秒從 MT5 取得最新 Tick 並推播
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
-
-| 名稱             | 型別          | 必填        | 說明                                                         |
-|------------------|---------------|------------|--------------------------------------------------------------|
-| `symbol`         | str           | ✅        | 商品代碼（如 `"EURUSD"`）。                                     |
-| `interval_ms`    | int           | ❌        | 每次推播的間隔毫秒數（預設 `500ms`）。                           |
-| `from`           | datetime/str  | ✅（回測） | 歷史資料起始時間（僅在 `backtest_toggle = True` 時使用）。       |
-| `to`             | datetime/str  | ✅（回測） | 歷史資料結束時間（僅在 `backtest_toggle = True` 時使用）。       |
-| `flags`          | int           | ❌        | Tick 資料來源類型，預設為 `mt5.COPY_TICKS_ALL`，僅實盤時使用。   |
-| `mode`           | str           | ❌        | 回測 tick 模式：`"all"` 或 `"trade"`，預設為 `"all"`。         |
-| `backtest_toggle`| bool          | ❌        | 是否為回測模式，預設為 `False`。                               |
+- If `True`: historical tick data will be pushed using the simulation module  
+- If `False`: a background thread will be started to fetch and push the latest tick from MT5 every `interval_ms` milliseconds
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明             |
-|--------|------|----------------------|
-| 無     | None | 此函式無實際回傳值，用於觸發 Tick 資料推播 |
+| Name     | Type  | Description |
+|----------|-------|-------------|
+| `params` | dict  | A dictionary containing the following fields: |
+
+| Field             | Type           | Required         | Description                                                                 |
+|------------------|----------------|-------------------|-----------------------------------------------------------------------------|
+| `symbol`         | str            | ✅               | The symbol to subscribe (e.g., `"EURUSD"`)                                  |
+| `interval_ms`    | int            | ❌               | Interval in milliseconds between each tick push (default: `500`)            |
+| `from`           | datetime/str   | ✅ (backtest)    | Start time of historical data (used only when `backtest_toggle=True`)       |
+| `to`             | datetime/str   | ✅ (acktest)     | End time of historical data (used only when `backtest_toggle=True`)         |
+| `flags`          | int            | ❌               | Tick source flags, default is `mt5.COPY_TICKS_ALL` (used in real-time mode) |
+| `mode`           | str            | ❌               | Simulation tick mode: `"all"` or `"trade"` (default: `"all"`)               |
+| `backtest_toggle`| bool           | ❌               | Whether to enable simulation mode (default: `False`)                        |
 
 ---
 
-### 💡 範例程式碼
+### Function Return
+
+| Name   | Type | Description                        |
+|--------|------|------------------------------------|
+| None   | None | No return value. Triggers tick data streaming |
+
+---
+
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS
@@ -65,7 +65,7 @@ def main():
         }
         mas_client.login(login_params)
 
-        #回測模式參數
+        # Backtest mode parameters
         params = {
             "symbol": "EURUSD",
             "from": '2025-07-07 12:00:00',
@@ -74,7 +74,7 @@ def main():
         }
         mas_client.subscribe_ticks(params)
 
-        #實盤模式參數
+        # Live mode parameters
         params = {
             "symbol": "EURUSD",
             "backtest_toggle": False

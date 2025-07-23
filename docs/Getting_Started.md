@@ -4,11 +4,11 @@ title: Getting Started
 sidebar_position: 2
 ---
 
-## ⚙️ MT5設定
+## ⚙️ MT5 Configuration
 
-1. 將【允許演算法交易】打勾 
-- 工具 -> 設定 -> EA交易 ->【允許演算法交易】-> 確定
+1. Enable Algorithmic Trading
+- Tools -> Optins -> Expert Advisors ->【Allow algorithmic trading】-> OK
 
-![](/img/MT5_Setting_1.png)
+![](/img/MT5_Setting_3.png)
 
-![](/img/MT5_Setting_2.png)
+![](/img/MT5_Setting_4.png)

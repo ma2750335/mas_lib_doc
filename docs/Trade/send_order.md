@@ -1,83 +1,84 @@
 ---
 sidebar_position: 1
 ---
-### function 名稱
+### Function Name
 
 `send_order`
 
 ---
 
-### function 用途
+### Function Purpose
 
-發送一筆交易訂單（支援市價、限價、停損限價、GTC 與指定時間、完整 request 欄位）。
-此函式為統一下單入口，根據 `backtest_toggle` 參數的值，自動切換：
+Submits a trading order (supports market, limit, stop-limit, GTC or expiration time, and full request parameters).  
+This is a unified order entry function that automatically switches behavior based on the `backtest_toggle` parameter:
 
-- 若為 `True`：使用模擬交易流程進行下單，不連接 MetaTrader5 。
-- 若為 `False`：使用實盤交易流程進行下單，連接 MetaTrader5 進行真實交易。
+- If `True`: simulated trading flow (does not connect to MetaTrader5).
+- If `False`: real trading flow, sends request to MetaTrader5 live trading server.
 
-下單成功後推播訂單狀態與成交資訊。
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
-
-| dict 欄位名稱      | 型別       | 必填 | 說明                                                  |
-|-------------------|------------|------|-------------------------------------------------------|
-| `backtest_toggle` | bool       | ✅   | 是否為回測模式（`True` 表示回測模式）。                     |
-| `symbol`          | str        | ✅   | 交易商品代碼，例如 `"EURUSD.sml"`。                     |
-| `order_type`      | str        | ✅   | 訂單類型：`buy`, `sell`, `buy_limit`, `sell_stop` 等。 |
-| `volume`          | float      | ✅   | 下單數量，如 `0.1`。                                   |
-| `price`           | float      | ❌   | 限價單 / 停損單價格（市價單會自動使用 bid/ask）。         |
-| `sl`              | float      | ❌   | 停損價格。                                             |
-| `tp`              | float      | ❌   | 停利價格。                                             |
-| `stoplimit`       | float      | ❌   | 停損限價價格。                                         |
-| `deviation`       | int        | ❌   | 最大價格滑點（預設 10）。                               |
-| `magic`           | int        | ❌   | 自訂識別碼EA ID（預設 123456）。                        |
-| `comment`         | str        | ❌   | 訂單備註（預設為 `"MAS Order"`）。                      |
-| `type_time`       | enum/int   | ❌   | 訂單有效時間型態，預設為 `mt5.ORDER_TIME_GTC`。        |
-| `expiration`      | datetime   | ❌   | 限單或停損單的到期時間（限 type_time 為指定時間）。      |
-| `type_filling`    | enum/int   | ❌   | 成交方式，預設為 `mt5.ORDER_FILLING_FOK`。            |
-| `position`        | int        | ❌   | 針對某個 position 修改下單。                          |
-| `position_by`     | int        | ❌   | 用於對沖模式下指定 position_by。                      |
+Upon successful order placement, it triggers status and execution push notifications.
 
 ---
 
-### request內容
+### Function Parameters
 
-| 欄位名稱      | 型別   | 說明 |
-|---------------|--------|------|
-| action        | int    | 交易操作類型。 |
-| magic         | int    | EA ID，可用來標記策略來源。 |
-| order         | int    | 訂單編號，修改委託單時必填。 |
-| symbol        | str    | 商品代碼（例如 `"EURUSD"`），修改或平倉時非必填 |
-| volume        | float  | 下單數量。 |
-| price         | float  | 下單價格。若為市價單且屬於「市場成交型」（Market Execution），此欄位可不填。 |
-| stoplimit     | float  | 當市價觸及 `price` 時，用於啟用限價單的價格（觸發後才送出）。 |
-| sl            | float  | 停損價格。 |
-| tp            | float  | 停利價格。 |
-| deviation     | int    | 可接受的最大滑價（以點為單位）。 |
-| type          | int    | 訂單類型。 |
-| type_filling  | int    | 撮合方式。 |
-| type_time     | int    | 訂單有效時間型態。 |
-| expiration    | datetime | 掛單的到期時間。 |
-| comment       | str    | 訂單備註。 |
-| position      | int    | 持倉編號，用於修改或平倉指定倉位（通常與開倉訂單編號一致）。 |
-| position_by   | int    | 反向倉位編號，用於「對沖平倉」操作（以相反方向的持倉進行平倉）。 |
+| Name   | Type | Description |
+|--------|------|-------------|
+| params | dict | A dictionary containing the following fields: |
 
----
-
-### function 回傳內容
-
-| 名稱        | 型別 | 備註說明                                         |
-|------------|------|--------------------------------------------------|
-| `order_id` | str  | 成功下單後回傳訂單編號(order_id)，失敗則回傳錯誤訊息。 |
+| Field Name       | Type       | Required | Description |
+|------------------|------------|----------|-------------|
+| `backtest_toggle`| bool       | ✅        | Whether to use backtest mode (`True` means backtest). |
+| `symbol`         | str        | ✅        | Trading symbol (e.g., `"EURUSD.sml"`). |
+| `order_type`     | str        | ✅        | Order type: `buy`, `sell`, `buy_limit`, `sell_stop`, etc. |
+| `volume`         | float      | ✅        | Trading volume (e.g., `0.1`). |
+| `price`          | float      | ❌        | Order price (for limit/stop orders; ignored for market orders). |
+| `sl`             | float      | ❌        | Stop loss price. |
+| `tp`             | float      | ❌        | Take profit price. |
+| `stoplimit`      | float      | ❌        | Stop-limit price. |
+| `deviation`      | int        | ❌        | Max slippage allowed (default 10). |
+| `magic`          | int        | ❌        | Custom EA ID (default 123456). |
+| `comment`        | str        | ❌        | Order comment (default `"MAS Order"`). |
+| `type_time`      | enum/int   | ❌        | Order time type (default: `mt5.ORDER_TIME_GTC`). |
+| `expiration`     | datetime   | ❌        | Expiration time for pending orders (when using time-limited type). |
+| `type_filling`   | enum/int   | ❌        | Order fill policy (default: `mt5.ORDER_FILLING_FOK`). |
+| `position`       | int        | ❌        | Modify specific position. |
+| `position_by`    | int        | ❌        | Used in hedging mode to close opposing positions. |
 
 ---
 
-### 💡 範例程式碼（實盤）
+### Request Structure
+
+| Field Name     | Type     | Description |
+|----------------|----------|-------------|
+| action         | int      | Trading action type. |
+| magic          | int      | EA ID for strategy identification. |
+| order          | int      | Order ID (required when modifying an order). |
+| symbol         | str      | Trading symbol (optional when closing/modifying). |
+| volume         | float    | Trading volume. |
+| price          | float    | Order price (can be omitted for market execution). |
+| stoplimit      | float    | Stop-limit trigger price. |
+| sl             | float    | Stop loss price. |
+| tp             | float    | Take profit price. |
+| deviation      | int      | Max slippage (in points). |
+| type           | int      | Order type. |
+| type_filling   | int      | Fill policy. |
+| type_time      | int      | Time policy. |
+| expiration     | datetime | Order expiration time. |
+| comment        | str      | Order comment. |
+| position       | int      | Position ID to modify or close. |
+| position_by    | int      | Opposing position ID for hedging close. |
+
+---
+
+### Function Return
+
+| Name      | Type | Description |
+|-----------|------|-------------|
+| order_id  | str  | If successful, returns order ID; otherwise, returns error message. |
+
+---
+
+### 💡 Example Code (Live Trading)
 ```python
 from mas.mas import MAS
 
@@ -119,10 +120,10 @@ def main():
         }
         mas_client.send_order(order_params)
     except Exception as e:
-        print(f"登入失敗:{str(e)}")
+        print(f"Login failed:{str(e)}")
 ```
 
-### 💡 範例程式碼（模擬）
+### 💡 Example Code (Backtest)
 
 ```python
 from mas.mas import MAS
@@ -155,6 +156,6 @@ def main():
         }
         mas_client.send_order(order_params)
     except Exception as e:
-        print(f"登入失敗:{str(e)}")
+        print(f"Login failed:{str(e)}")
 ```
 ---

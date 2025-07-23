@@ -1,35 +1,35 @@
 ---
 sidebar_position: 3
 ---
-### function 名稱
+### Function Name
 
 `reconnect_mt5`
 
 ---
 
-### function 用途
+### Function Purpose
 
-重新連線 MetaTrader 5（MT5）（如中斷後自動重連）。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明     |
-|----------|------|--------------|
-| 無       | 無   | 此函式不需任何參數 |
+Reconnects to MetaTrader 5 (MT5), typically used when the connection has been lost.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明                                |
-|--------|------|-------------------------------------------|
-|（匿名） | bool | 若連線成功則回傳 `True`，否則為 `False` |
+| Name | Type | Description        |
+|------|------|--------------------|
+| None | None | This function takes no parameters. |
 
 ---
 
-### 💡 範例程式碼
+### Function Return 
+
+| Name        | Type | Description                                |
+|-------------|------|--------------------------------------------|
+| (anonymous) | bool | Returns `True` if reconnection is successful, otherwise `False`. |
+
+---
+
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS
@@ -42,14 +42,14 @@ def main():
     try:
         mas_client = MAS_Client()
         if not mas_client.check_connection():
-            print("MT5 掉線，正在重新連線...")
+            print("MT5 disconnected, attempting to reconnect...")
             success = mas_client.reconnect_mt5()
         if success:
-            print("重新連線成功")
+            print("Reconnected successfully")
         else:
-            print("重新連線失敗")
+            print("Reconnection failed")
             
     except Exception as e:
-        print(f"初始化失敗:{str(e)}")
+        print(f"Initialization error:{str(e)}")
 ```
 ---

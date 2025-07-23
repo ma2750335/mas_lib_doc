@@ -1,41 +1,41 @@
 ---
 sidebar_position: 3
 ---
-### function 名稱
+### Function Name
 
 `cancel_order`
 
 ---
 
-### function 用途
+### Function Purpose
 
-取消一筆尚未成交的掛單。  
-此函式會根據傳入的 `order_id` 建立取消請求至 MT5 平台執行刪單動作。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
-
-| dict 欄位名稱 | 型別 | 必填  | 說明                                      |
-|--------------|-------------|------|------------------------------------|
-| `order_id`   | int  | ✅   | 欲取消之原始掛單的訂單編號（ticket）。        |
-| `comment`    | str  | ❌   | 取消原因備註，預設為 `"Cancel by MAS"`。    |
+Cancels a pending order that has not yet been filled.  
+This function sends a cancellation request to the MT5 platform using the provided `order_id`.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱     | 型別 | 備註說明              |
-|----------|------|-----------------------|
-| （匿名） | bool | 取消成功則回傳 `True`，否則為 `False` |
+| Name   | Type | Description |
+|--------|------|-------------|
+| params | dict | Dictionary containing the fields below: |
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
+| `order_id` | int  | ✅       | The order ticket number to be cancelled. |
+| `comment`  | str  | ❌       | Reason for cancellation; default is `"Cancel by MAS"`. |
 
 ---
 
-### 💡 範例程式碼
+### Function Return 
+
+| Name         | Type | Description                             |
+|--------------|------|-----------------------------------------|
+| (anonymous)  | bool | Returns `True` if cancellation succeeds, otherwise `False`. |
+
+---
+
+### 💡 Example Code
 
 ```python
 import time
@@ -77,7 +77,7 @@ def main():
         }
         mas_client.cancel_order(cancel_order_params)
     except Exception as e:
-        print(f"登入失敗:{str(e)}")
+        print(f"Login failed:{str(e)}")
 ```
 
 ---

@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "MAS Docs",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Guide": {
+    "message": "Guide",
+    "description": "Navbar item with label Guide"
+  },
+  "item.label.Official Website": {
+    "message": "Official Website",
+    "description": "Navbar item with label Official Website"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

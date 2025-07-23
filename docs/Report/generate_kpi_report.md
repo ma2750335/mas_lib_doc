@@ -1,30 +1,30 @@
-### function 名稱
+### Function Name
 
 `generate_kpi_report`
 
 ---
 
-### function 用途
+### Function Purpose
 
-根據歷史交易紀錄計算績效指標（如勝率、獲利因子、總損益、交易次數等），並產生報表統計結果檔案。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| 無       | 無   | 函式會自動從內部交易歷史來源產生報表，無需傳入參數 |
+Generates a KPI performance report based on historical trading records (e.g., win rate, profit factor, net profit/loss, number of trades), and outputs a summarized report file.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明                                                |
-|--------|------|---------------------------------------------------------|
-| return | dict | 回傳是否產出成功，失敗時包含錯誤資訊|
+| Name | Type | Description |
+|------|------|-------------|
+| None | None | This function automatically reads internal trade history to generate the report; no arguments are required. |
 
-回傳格式：
+---
+
+### Function Return 
+
+| Name   | Type | Description                                     |
+|--------|------|-------------------------------------------------|
+| return | dict | Result indicating success or failure with error details if any. |
+
+Return format:
 
 ```python
 {
@@ -39,7 +39,7 @@
 
 ---
 
-### 💡 範例程式碼
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS
@@ -104,7 +104,7 @@ def main():
 ```
 
 ---
-### 💡 範例圖表
+### 💡 Sample Report Preview
 <a
   href="/html/kpi_report.html"
   target="_blank"

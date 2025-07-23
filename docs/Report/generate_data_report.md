@@ -1,32 +1,32 @@
-### function 名稱
+### Function Name
 
 `generate_data_report`
 
 ---
 
-### function 用途
+### Function Purpose
 
-根據歷史交易紀錄計算績效指標（如勝率、獲利因子、總損益、交易次數等），並回傳報表統計結果。
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| 無       | 無   | 函式內部將直接取用 clientpost 物件中的歷史交易資料，不需傳入參數 |
+Calculates performance metrics (such as win rate, profit factor, net profit/loss, number of trades, etc.) based on historical trading records and returns a structured report.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 欄位名稱 | 型別    | 說明                               |
-|----------|--------|-----------------------------------|
-| `status` | bool   | 是否成功產生報表                   |
-| `data`   | dict   | 報表原始資料內容（status = True）, 依照使用者權限顯示不同資料   |
-| `error`  | str    | 錯誤訊息（status = False）         |
+| Name | Type | Description |
+|------|------|-------------|
+| None | None | This function directly reads historical trading data from the internal `clientpost` object and requires no parameters. |
 
-data格式如下：
+---
+
+### Function Return 
+
+| Name    | Type  | Description                                                                 |
+|---------|-------|-----------------------------------------------------------------------------|
+| status  | bool  | Indicates whether the report was successfully generated                     |
+| data    | dict  | Raw report data (available when `status = True`), content may vary by user role |
+| error   | str   | Error message (available when `status = False`)                             |
+
+Return data(dict) format：
 
 ```python
 return {
@@ -69,7 +69,7 @@ return {
 ```
 ---
 
-### 💡 範例程式碼
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS

@@ -1,74 +1,75 @@
 ---
 sidebar_position: 1
 ---
-### function 名稱
+### Function Name
 
 `subscribe_bars`
 
 ---
 
-### function 用途
+### Function Purpose
 
-訂閱指定商品的即時 Bar（K 線）資料，或於回測模式中送出歷史 Bar 推播。  
-根據 `backtest_toggle` 參數的值，自動切換資料來源：
+Subscribe to real-time Bar (candlestick) data for a specific symbol,  
+or dispatch historical Bars in backtest mode.  
+The data source automatically switches based on the `backtest_toggle` value:
 
-- 若為 `True`：呼叫歷史資料模組送出 Bar 推播  
-- 若為 `False`：建立背景執行緒，每間隔 `interval_ms` 毫秒從 MT5 取得最新 Bar 並推播
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| params   | dict | 字典內容如下方欄位說明 |
-
-| 名稱             | 型別          | 必填        | 說明                                                          |
-|------------------|---------------|------------|---------------------------------------------------------------|
-| `symbol`         | str           | ✅        | 商品代碼（如 `"EURUSD"`）。                                     |
-| `timeframe`      | str           | ✅        | Bar 時間週期（如 `"M1"`、`"H1"`、`"D1"`）。                     |
-| `interval_ms`    | int           | ❌        | 實盤推播間隔時間，預設為 `1000` 毫秒。                          |
-| `from`           | datetime/str  | ✅(回測)  | 歷史資料起始時間（僅在 `backtest_toggle = True` 時使用）。       |
-| `to`             | datetime/str  | ✅(回測)  | 歷史資料結束時間（僅在 `backtest_toggle = True` 時使用）。       |
-| `backtest_toggle`| bool          | ❌        | 是否為回測模式，預設為 `False`。                               |      
-
-
-timeframe說明:
-| ID | 說明 |
-|----------|----------|
-| M1 | 1 minute | 
-| M2 | 2 minutes | 
-| M3 | 3 minutes | 
-| M4 | 4 minutes | 
-| M5 | 5 minutes | 
-| M6 | 6 minutes | 
-| M10 | 10 minutes | 
-| M12 | 12 minutes | 
-| M15 | 15 minutes | 
-| M20 | 20 minutes | 
-| M30 | 30 minutes | 
-| H1 | 1 hour | 
-| H2 | 2 hours | 
-| H3 | 3 hours | 
-| H4 | 4 hours | 
-| H6 | 6 hours | 
-| H8 | 8 hours | 
-| H12 | 12 hours | 
-| D1 | 1 day | 
-| W1 | 1 week | 
-| MN1 | 1 month | 
+- If `True`: uses the historical module to push Bar data
+- If `False`: starts a background thread to fetch the latest Bar data from MT5 at `interval_ms` intervals
 
 ---
 
-### function 回傳內容
+### Function 參數
 
-| 名稱   | 型別 | 備註說明                          |
-|--------|------|-----------------------------------|
-| return | None | 此函式無回傳值，用於觸發 Bar 資料推播 |
+| Name     | Type  | Description |
+|----------|-------|-------------|
+| `params` | dict  | A dictionary containing the following fields: |
+
+| Key               | Type          | Required     | Description                                                                 |
+|------------------|---------------|--------------|-----------------------------------------------------------------------------|
+| `symbol`         | str           | ✅           | Symbol to subscribe (e.g. `"EURUSD"`)                                       |
+| `timeframe`      | str           | ✅           | Bar timeframe (e.g. `"M1"`, `"H1"`, `"D1"`)                                 |
+| `interval_ms`    | int           | ❌           | Interval in milliseconds for live feed (default is `1000`)                 |
+| `from`           | datetime/str  | ✅ (backtest) | Start time for historical data (used only when `backtest_toggle = True`)   |
+| `to`             | datetime/str  | ✅ (backtest) | End time for historical data (used only when `backtest_toggle = True`)     |
+| `backtest_toggle`| bool          | ❌           | Whether to run in backtest mode (default is `False`)                        | 
+
+
+Timeframe Reference:
+| ID   | Description   |
+|------|---------------|
+| M1   | 1 minute      |
+| M2   | 2 minutes     |
+| M3   | 3 minutes     |
+| M4   | 4 minutes     |
+| M5   | 5 minutes     |
+| M6   | 6 minutes     |
+| M10  | 10 minutes    |
+| M12  | 12 minutes    |
+| M15  | 15 minutes    |
+| M20  | 20 minutes    |
+| M30  | 30 minutes    |
+| H1   | 1 hour        |
+| H2   | 2 hours       |
+| H3   | 3 hours       |
+| H4   | 4 hours       |
+| H6   | 6 hours       |
+| H8   | 8 hours       |
+| H12  | 12 hours      |
+| D1   | 1 day         |
+| W1   | 1 week        |
+| MN1  | 1 month       |
 
 ---
 
-### 💡 範例程式碼
+### Function Return
+
+| Name   | Type | Description                        |
+|--------|------|------------------------------------|
+| None   | None | No return value. Triggers bar data streaming |
+
+---
+
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS
@@ -90,7 +91,7 @@ def main():
         }
         mas_client.login(login_params)
 
-        #回測模式參數
+        # Backtest mode parameters
         params = {
             "symbol": "EURUSD",
             "timeframe": "M1",
@@ -100,7 +101,7 @@ def main():
         }
         mas_client.subscribe_bars(params)
 
-        #實盤模式參數
+        # Live mode parameters
         params = {
             "symbol": "EURUSD",
             "timeframe": "M1",

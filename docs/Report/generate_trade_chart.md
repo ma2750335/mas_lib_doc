@@ -1,29 +1,30 @@
-### function 名稱
+### Function Name
 
 `generate_trade_chart`
 
 ---
 
-### function 用途
+### Function Purpose
 
-根據歷史交易紀錄，產生包含進出場點、資金曲線（Equity Curve）、累積損益等資訊的交易圖表。  
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明 |
-|----------|------|----------|
-| 無       | 無   | 函式會自動從內部交易資料取得內容產生圖表，無需傳入參數 |
+Generates a trading chart based on historical trading records, including entry/exit points, equity curve, and cumulative PnL (profit and loss).
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明                                               |
-|--------|------|--------------------------------------------------------|
-| return | 任意 | 回傳是否產出成功，失敗時包含錯誤資訊 |
+| Name | Type | Description |
+|------|------|-------------|
+| None | None | This function automatically uses internal trade data to generate the chart; no parameters are required. |
 
+---
+
+### Function Return
+
+| Name   | Type | Description                                                 |
+|--------|------|-------------------------------------------------------------|
+| return | Any  | Returns generation status; includes error message if failed |
+
+Return format:
 ```python
 {
     "status": True
@@ -36,7 +37,7 @@
 ```
 
 ---
-### 💡 範例程式碼
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS
@@ -101,7 +102,7 @@ def main():
 ```
 
 ---
-### 💡 範例圖表 
+### 💡 Sample Report Preview 
 <a
   href="/html/trade_report.html"
   target="_blank"

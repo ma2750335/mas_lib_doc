@@ -1,35 +1,35 @@
 ---
 sidebar_position: 4
 ---
-### function 名稱
+### Function Name
 
 `shutdown_mt5`
 
 ---
 
-### function 用途
+### Function Purpose
 
-關閉 MetaTrader 5（MT5）平台連線。  
-
----
-
-### function 參數
-
-| 參數名稱 | 型別 | 備註說明     |
-|----------|------|--------------|
-| 無       | 無   | 此函式不需任何參數 |
+Closes the MetaTrader 5 (MT5) platform connection.
 
 ---
 
-### function 回傳內容
+### Function Parameters
 
-| 名稱   | 型別 | 備註說明                 |
-|--------|------|--------------------------|
-| 無     | None | 無回傳值，僅執行關閉 MT5 動作 |
+| Name | Type | Description            |
+|------|------|------------------------|
+| None | None | This function takes no parameters. |
 
 ---
 
-### 💡 範例程式碼
+### Function Return 
+
+| Name | Type | Description                       |
+|------|------|------------------------------------|
+| None | None | No return value. Simply shuts down the MT5 connection. |
+
+---
+
+### 💡 Example Code
 
 ```python
 from mas.mas import MAS
@@ -42,9 +42,9 @@ def main():
     try:
         mas_client = MAS_Client()
         mas_client.shutdown_mt5()
-        print("已關閉 MT5 連線")
+        print("MT5 connection has been shut down")
             
     except Exception as e:
-        print(f"初始化失敗:{str(e)}")
+        print(f"Initialization error:{str(e)}")
 ```
 ---
