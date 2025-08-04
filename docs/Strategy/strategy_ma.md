@@ -70,7 +70,7 @@ You can switch between backtesting and live trading using the `toggle` parameter
 
 toggle = True  # Backtesting mode
 # toggle = False  # Live trading mode
-mas_c = MASStrategy(toggle)
+mas_c = MAS_Client(toggle)
 
 ```
 
@@ -106,10 +106,10 @@ After execution, the following will be generated automatically:
 
 ```python
 
-from mas.mas import MAS
+import mas
 import pandas as pd
 
-class MASStrategy(MAS):
+class MAS_Client(mas):
     def __init__(self, toggle):
         super().__init__()
         self.toggle = toggle
@@ -159,7 +159,7 @@ class MASStrategy(MAS):
 def main():
     try:
         toggle = True  # True: backtest mode, False: live mode
-        mas_c = MASStrategy(toggle)
+        mas_c = MAS_Client(toggle)
 
         login_params = {
             "account": "YOUR_ACCOUNT",

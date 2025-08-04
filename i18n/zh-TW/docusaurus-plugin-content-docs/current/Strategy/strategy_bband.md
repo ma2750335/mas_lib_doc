@@ -69,7 +69,7 @@ sidebar_position: 5
 
 toggle = True  # 回測模式
 # toggle = False  # 實盤模式
-mas_c = MASStrategy(toggle)
+mas_c = MAS_Client(toggle)
 
 ```
 
@@ -103,7 +103,7 @@ params = {
 
 ```python
 
-from mas.mas import MAS
+import mas
 import pandas as pd
 
 class BBand_Strategy(MAS):

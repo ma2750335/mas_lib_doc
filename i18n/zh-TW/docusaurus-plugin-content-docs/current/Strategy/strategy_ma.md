@@ -71,7 +71,7 @@ if len(self.closes) >= 21:
 
 toggle = True  # 回測模式
 # toggle = False  # 實盤模式
-mas_c = MASStrategy(toggle)
+mas_c = MAS_Client(toggle)
 
 ```
 
@@ -105,10 +105,10 @@ params = {
 
 ```python
 
-from mas.mas import MAS
+import mas
 import pandas as pd
 
-class MASStrategy(MAS):
+class MAS_Client(mas):
     def __init__(self, toggle):
         super().__init__()
         self.toggle = toggle
@@ -158,7 +158,7 @@ class MASStrategy(MAS):
 def main():
     try:
         toggle = True  # True: 回測模式, False: 實盤模式
-        mas_c = MASStrategy(toggle)
+        mas_c = MAS_Client(toggle)
 
         login_params = {
             "account": "YOUR_ACCOUNT",

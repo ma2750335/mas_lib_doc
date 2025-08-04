@@ -16,9 +16,9 @@ MAS SDK provides a simple way to run backtesting. Just extend the `MAS` class an
 Here’s a basic moving average strategy backtesting example:
 
 ```python
-from mas.mas import MAS
+import mas
 
-class MASStrategy(MAS):
+class MAS_Client(mas):
     def __init__(self, toggle):
         super().__init__()
         self.index = 0
@@ -60,7 +60,7 @@ class MASStrategy(MAS):
 def main():
     try:
         toggle = True
-        mas_c = MASStrategy(toggle)
+        mas_c = MAS_Client(toggle)
         params = {
             "account": "YOUR_ACCOUNT",
             "password": "YOUR_PASSWORD",
@@ -129,7 +129,7 @@ try:
     # toggle = True → backtesting mode
     toggle = False  # switch to live trading
 
-    mas_c = MASStrategy(toggle)
+    mas_c = MAS_Client(toggle)
     params = {
         "account": "YOUR_ACCOUNT",
         "password": "YOUR_PASSWORD",

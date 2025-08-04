@@ -34,9 +34,9 @@ sidebar_position: 7
 
 ```python
 import time
-from mas.mas import MAS
+import mas
 
-class MAS_Client(MAS):
+class MAS_Client(mas):
     def __init__(self):
         super().__init__()
 

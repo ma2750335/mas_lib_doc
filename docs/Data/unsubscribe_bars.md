@@ -39,9 +39,9 @@ This function terminates the internal background thread and stops receiving live
 
 ```python
 import time
-from mas.mas import MAS
+import mas
 
-class MAS_Client(MAS):
+class MAS_Client(mas):
     def __init__(self):
         super().__init__()
 

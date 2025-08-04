@@ -16,9 +16,9 @@ MAS SDK 提供了簡單的方式進行策略回測。你只需繼承 `MAS` 類�
 下面是一段簡單的均線策略回測範例：
 
 ```python
-from mas.mas import MAS
+import mas
 
-class MASStrategy(MAS):
+class MAS_Client(mas):
     def __init__(self, toggle):
         super().__init__()
         self.index = 0
@@ -60,7 +60,7 @@ class MASStrategy(MAS):
 def main():
     try:
         toggle = True
-        mas_c = MASStrategy(toggle)
+        mas_c = MAS_Client(toggle)
         params = {
             "account": "YOUR_ACCOUNT",
             "password": "YOUR_PASSWORD",
@@ -129,7 +129,7 @@ try:
     # toggle = True 表示進行回測
     toggle = False  # 切換為真實交易
 
-    mas_c = MASStrategy(toggle)
+    mas_c = MAS_Client(toggle)
     params = {
         "account": "YOUR_ACCOUNT",
         "password": "YOUR_PASSWORD",

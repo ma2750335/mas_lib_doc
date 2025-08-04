@@ -80,9 +80,9 @@ sidebar_position: 1
 
 ### 💡 範例程式碼（實盤）
 ```python
-from mas.mas import MAS
+import mas
 
-class MAS_Client(MAS):
+class MAS_Client(mas):
     def __init__(self):
         super().__init__()
 
@@ -126,9 +126,9 @@ def main():
 ### 💡 範例程式碼（模擬）
 
 ```python
-from mas.mas import MAS
+import mas
 
-class MAS_Client(MAS):
+class MAS_Client(mas):
     def __init__(self):
         super().__init__()
 

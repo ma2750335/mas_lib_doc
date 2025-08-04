@@ -32,9 +32,9 @@ Reconnects to MetaTrader 5 (MT5), typically used when the connection has been lo
 ### 💡 Example Code
 
 ```python
-from mas.mas import MAS
+import mas
 
-class MAS_Client(MAS):
+class MAS_Client(mas):
     def __init__(self):
         super().__init__()
 

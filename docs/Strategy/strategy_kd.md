@@ -70,7 +70,7 @@ You can switch between backtesting and live trading using the `toggle` parameter
 
 toggle = True  # Backtesting mode
 # toggle = False  # Live trading mode
-mas_c = MASStrategy(toggle)
+mas_c = MAS_Client(toggle)
 
 ```
 
@@ -106,7 +106,7 @@ After execution, the following will be generated automatically:
 
 ```python
 
-from mas.mas import MAS
+import mas
 import pandas as pd
 
 class KD_Strategy(MAS):

@@ -69,7 +69,7 @@ MACD（Moving Average Convergence Divergence）是經典的趨勢追蹤指標，
 
 toggle = True  # 回測模式
 # toggle = False  # 實盤模式
-mas_c = MASStrategy(toggle)
+mas_c = MAS_Client(toggle)
 
 ```
 
@@ -103,7 +103,7 @@ params = {
 
 ```python
 
-from mas.mas import MAS
+import mas
 import pandas as pd
 
 class MACD_Strategy(MAS):

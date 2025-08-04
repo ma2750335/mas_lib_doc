@@ -66,7 +66,7 @@ RSI（Relative Strength Index，相對強弱指標）是一種用於衡量資產
 
 toggle = True  # 回測模式
 # toggle = False  # 實盤模式
-mas_c = MASStrategy(toggle)
+mas_c = MAS_Client(toggle)
 
 ```
 
@@ -100,7 +100,7 @@ params = {
 
 ```python
 
-from mas.mas import MAS
+import mas
 import pandas as pd
 
 class RSI_Strategy(MAS):

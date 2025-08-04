@@ -56,7 +56,7 @@ pip install mas
 Minimal example:
 
 ```python
-from mas.mas import MAS
+import mas
 
 def main():
     # Test login credentials
@@ -105,9 +105,10 @@ if __name__ == "__main__":
 
 ## 🤖 Don’t know Python? MAS AI Assistant does it for you!
 
+<!--
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WZJoxikns4Q?si=WUG36ZHWNOzRble4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br /><br />
-
+-->
 Just describe your logic, MAS AI Assistant will:
 
 ✅ Auto-generate trading strategy code  
