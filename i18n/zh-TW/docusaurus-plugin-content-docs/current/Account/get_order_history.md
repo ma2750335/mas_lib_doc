@@ -1,17 +1,21 @@
-### function 名稱
+---
+description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
+---
+
+### 🧩 函式名稱
 
 `get_order_history`
 
 ---
 
-### function 用途
+### 🎯 函式用途
 
 查詢帳戶在指定時間區間內的歷史成交紀錄（已成交的交易）。 
 可依時間範圍、商品、訂單 ID 或部位 ID 進行過濾。
 
 ---
 
-### function 參數
+### 🔧 函式參數
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
@@ -27,7 +31,7 @@
 
 ---
 
-### function 回傳內容
+### 📤 回傳資料內容
 
 | 名稱   | 型別           | 備註說明                               |
 |--------|---------------|----------------------------------------|

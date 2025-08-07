@@ -1,60 +1,65 @@
-### Function Name
+---
+description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
+---
+
+### 🧩 Function Name
 
 `get_account_info`
 
 ---
 
-### Function Purpose
+### 🎯 Function Purpose
 
-Retrieve basic account information of the currently logged-in MetaTrader 5 (MT5) account.
+Retrieves comprehensive account details for the currently logged-in MetaTrader 5 (MT5) trading account.  
 
 ---
 
-### Function Parameters
+### 🔧 Function Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| None | None | This function does not take any parameters. |
+| None | None | This function does not require any input parameters. |
 
 ---
 
-### Function Return
+### 📤 Function Return
 
 | Name   | Type | Description |
 |--------|------|-------------|
-| return | dict | Returns a dictionary with account information on success, or `{"error": "Failed to retrieve account information"}` on failure. |
+| return | dict | Returns a dictionary of MT5 account data on success.  
+If the query fails, it returns: `{"error": "Failed to retrieve account information"}`.  
+Details of the returned fields are as follows: |
 
 | Field Name            | Type  | Description |
 |-----------------------|-------|-------------|
-| `login`               | int   | User account ID. |
-| `trade_mode`          | int   | Trading mode (0=Real, 1=Demo, 2=Contest). |
-| `leverage`            | int   | Leverage ratio. |
-| `limit_orders`        | int   | Maximum number of pending orders. |
-| `margin_so_mode`      | int   | Stop-out calculation mode (0=Percent, 1=Money). |
-| `trade_allowed`       | int   | Manual trading allowed (0 or 1). |
-| `trade_expert`        | int   | Expert Advisor (EA) trading allowed (0 or 1). |
-| `margin_mode`         | int   | Margin mode (0=Netting, 1=Exchange, 2=Hedging). |
-| `currency_digits`     | int   | Number of decimal digits in account currency. |
-| `fifo_close`          | int   | FIFO closing enabled (0 or 1). |
+| `login`               | int   | Account login ID. |
+| `trade_mode`          | int   | Account trade mode (0=Real, 1=Demo, 2=Contest). |
+| `leverage`            | int   | Account leverage ratio. |
+| `limit_orders`        | int   | Maximum number of allowed pending orders. |
+| `margin_so_mode`      | int   | Stop Out mode: `0=Percent`, `1=Money`. |
+| `trade_allowed`       | int   | Whether manual trading is allowed (0 or 1). |
+| `trade_expert`        | int   | Whether Expert Advisors (EAs) are allowed (0 or 1). |
+| `margin_mode`         | int   | Margin calculation mode: `0=Netting`, `1=Exchange`, `2=Hedging`. |
+| `currency_digits`     | int   | Number of decimal digits in the account's base currency. |
+| `fifo_close`          | int   | Whether FIFO (First-In-First-Out) closing rule is enabled (0 or 1). Applicable in hedging mode. |
 | `balance`             | float | Total account balance. |
-| `credit`              | float | Credit amount. |
+| `credit`              | float | Credit granted to the account. |
 | `profit`              | float | Floating profit/loss. |
 | `equity`              | float | Equity. |
 | `margin`              | float | Used margin. |
 | `margin_free`         | float | Free margin. |
-| `margin_level`        | float | Margin level (%). |
-| `margin_so_call`      | float | Margin Call level. |
-| `margin_so_so`        | float | Stop Out level. |
-| `margin_initial`      | float | Initial margin. |
-| `margin_maintenance`  | float | Maintenance margin. |
-| `assets`              | float | Total assets. |
-| `liabilities`         | float | Total liabilities. |
-| `commission_blocked`  | float | Blocked commission. |
-| `name`                | str   | User name. |
-| `server`              | str   | Server name. |
+| `margin_level`        | float | Margin level percentage: (Equity / Margin) × 100. |
+| `margin_so_call`      | float | Margin Call threshold. Alerts when margin level falls below this value. |
+| `margin_so_so`        | float | Stop Out threshold. Positions may be forcibly closed when this level is reached. |
+| `margin_initial`      | float | Total reserved margin for all pending orders. |
+| `margin_maintenance`  | float | Minimum margin required to maintain positions. |
+| `assets`              | float | Total account assets. |
+| `liabilities`         | float | Total account liabilities. |
+| `commission_blocked`  | float | Total blocked commission amount. |
+| `name`                | str   | MT5 Account name. |
+| `server`              | str   | MT5 server name. |
 | `currency`            | str   | Account base currency. |
-| `company`             | str   | Broker name. |
-
+| `company`             | str   | Broker or company name. |
 
 Return Format:
 ```python

@@ -1,16 +1,20 @@
-### Function Name
+---
+description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
+---
+
+### 🧩 Function Name
 
 `generate_kpi_report`
 
 ---
 
-### Function Purpose
+### 🎯 Function Purpose
 
 Generates a KPI performance report based on historical trading records (e.g., win rate, profit factor, net profit/loss, number of trades), and outputs a summarized report file.
 
 ---
 
-### Function Parameters
+### 🔧 Function Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -18,7 +22,7 @@ Generates a KPI performance report based on historical trading records (e.g., wi
 
 ---
 
-### Function Return 
+### 📤 Function Return 
 
 | Name   | Type | Description                                     |
 |--------|------|-------------------------------------------------|

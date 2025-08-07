@@ -69,6 +69,13 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/mas_logo.jpg',
+      metadata: [
+        {
+          name: 'keywords',
+          content:
+          'AI Forex Margin Trading,AI Automated Trading Platform,No-Code Trading,Automated Strategy Generation,Forex Backtesting Tools,Investment Strategy Optimization,Multi-Broker Automated Trading,Quantitative Trading for Beginners,AI Trading Assistant,Low-Risk Automated Trading,Beginner Automated Investing,Forex Auto Execution,AI Quantitative Trading Platform,One-Click Backtesting,Algorithmic Trading Learning,Stable Passive Income,Emotional Trading Solutions,No-Coding Investment Strategies,AI Strategy Generator,Automated Risk Management,MetaTrader Integration,MT5 Trading API,MT5 Automated Backtesting,MT5 Multi-Broker Support,AI MT5 Trading Bot,Automated MetaTrader 5 Strategy',
+        },
+      ],
       navbar: {
         title: 'MAS Docs',
         logo: {

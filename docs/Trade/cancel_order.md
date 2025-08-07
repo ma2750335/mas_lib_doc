@@ -1,20 +1,22 @@
 ---
 sidebar_position: 3
+description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
-### Function Name
+
+### 🧩 Function Name
 
 `cancel_order`
 
 ---
 
-### Function Purpose
+### 🎯 Function Purpose
 
 Cancels a pending order that has not yet been filled.  
 This function sends a cancellation request to the MT5 platform using the provided `order_id`.
 
 ---
 
-### Function Parameters
+### 🔧 Function Parameters
 
 | Name   | Type | Description |
 |--------|------|-------------|
@@ -27,7 +29,7 @@ This function sends a cancellation request to the MT5 platform using the provide
 
 ---
 
-### Function Return 
+### 📤 Function Return 
 
 | Name         | Type | Description                             |
 |--------------|------|-----------------------------------------|

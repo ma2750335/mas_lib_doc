@@ -1,13 +1,15 @@
 ---
 sidebar_position: 1
+description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
-### function 名稱
+
+### 🧩 函式名稱
 
 `subscribe_bars`
 
 ---
 
-### function 用途
+### 🎯 函式用途
 
 訂閱指定商品的即時 Bar（K 線）資料，或於回測模式中送出歷史 Bar 推播。  
 根據 `backtest_toggle` 參數的值，自動切換資料來源：
@@ -17,7 +19,7 @@ sidebar_position: 1
 
 ---
 
-### function 參數
+### 🔧 函式參數
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
@@ -60,7 +62,7 @@ timeframe說明:
 
 ---
 
-### function 回傳內容
+### 📤 回傳資料內容
 
 | 名稱   | 型別 | 備註說明                          |
 |--------|------|-----------------------------------|

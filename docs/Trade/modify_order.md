@@ -1,13 +1,15 @@
 ---
 sidebar_position: 2
+description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
-### Function Name
+
+### 🧩 Function Name
 
 `modify_order`
 
 ---
 
-### Function Purpose
+### 🎯 Function Purpose
 
 Modifies a pending limit order that has not been filled.  
 This function sends a modification request to the MT5 platform using the given `order_id`.  
@@ -16,7 +18,7 @@ If the modification is successful, the order status will be pushed via notificat
 
 ---
 
-### Function Parameters
+### 🔧 Function Parameters
 
 | Name   | Type | Description |
 |--------|------|-------------|
@@ -34,7 +36,7 @@ If the modification is successful, the order status will be pushed via notificat
 
 ---
 
-### Function Return 
+### 📤 Function Return 
 
 | Name          | Type | Description                                  |
 |---------------|------|----------------------------------------------|

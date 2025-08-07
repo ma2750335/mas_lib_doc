@@ -1,19 +1,21 @@
 ---
 sidebar_position: 3
+description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
-### function 名稱
+
+### 🧩 函式名稱
 
 `reconnect_mt5`
 
 ---
 
-### function 用途
+### 🎯 函式用途
 
 重新連線 MetaTrader 5（MT5）（如中斷後自動重連）。
 
 ---
 
-### function 參數
+### 🔧 函式參數
 
 | 參數名稱 | 型別 | 備註說明     |
 |----------|------|--------------|
@@ -21,7 +23,7 @@ sidebar_position: 3
 
 ---
 
-### function 回傳內容
+### 📤 回傳資料內容
 
 | 名稱   | 型別 | 備註說明                                |
 |--------|------|-------------------------------------------|

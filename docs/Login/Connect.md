@@ -1,21 +1,22 @@
 ---
 id: login
 title: login
+description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
-### Function Name
+### 🧩 Function Name
 
 `login`
 
 ---
 
-### Function Purpose
+### 🎯 Function Purpose
 
 Initializes MetaTrader 5 (MT5) and logs into the specified trading account.
 
 ---
 
-### Function Parameters
+### 🔧 Function Parameters
 
 | Name   | Type | Description |
 |--------|------|-------------|
@@ -30,7 +31,7 @@ Initializes MetaTrader 5 (MT5) and logs into the specified trading account.
 
 ---
 
-### Function Return
+### 📤 Function Return
 
 | Name       | Type | Description                                        |
 |------------|------|----------------------------------------------------|

@@ -3,49 +3,51 @@ id: intro
 title: Introduction
 slug: /
 sidebar_position: 1
+description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
 # <img src="/img/mas_logo.png" alt="brain icon" width="48" style={{ verticalAlign: 'middle' }} /> MAS Python SDK Overview
 
-MAS Python SDK is a lightweight Python library designed for algorithmic and quantitative traders.  
-It enables automated trading and backtesting of customized Forex strategies—without needing to understand broker APIs or packet structures.
+MAS Python SDK is a lightweight and modular Python toolkit built for quantitative and algorithmic trading.  
+It allows you to create, backtest, and deploy automated Forex strategies—without needing to master broker APIs or low-level data structures.
 
 ---
 
 ## 🚀 What Can You Do with MAS SDK?
 
-- 📥 Receive real-time quotes and historical candlestick data  
-- 📈 Automate trading and compare live vs. backtest results  
-- 🧠 Execute custom strategies (with support for indicators, stop-loss/take-profit logic)  
-- 🔗 Integrate your account and performance reports via the MAS Web Platform  
+- 📥 Access real-time market quotes and historical candlestick data (Forex, indices, and more)  
+- 📈 Automate your trading strategies and compare live trades against backtest performance  
+- 🧠 Implement custom logic with support for indicators, stop-loss/take-profit conditions  
+- 🔗 Seamlessly integrate with the MAS Web Platform to manage accounts and view performance reports
 
 ---
 
-## 📊 Backtesting & Performance Reporting
+## 📊 Strategy Backtesting & Performance Reporting
 
-After each backtest or live execution, MAS SDK automatically generates a full performance report, helping you evaluate strategy returns, risk metrics, and key entry/exit signals:
+MAS SDK automatically generates comprehensive performance reports after each backtest or live trade execution.  
+These reports help you evaluate strategy profitability, risk exposure, and trade-level insights:
 
-| Report Type | Description | Output Format |
-|-------------|-------------|----------------|
-| 📘 Raw Trade Records | Time, direction, price, position, order type, etc. | JSON |
-| 📈 Static KPI Report | Net profit, win rate, max drawdown, trade count, avg. holding time | HTML |
-| 💹 Strategy Metrics (Silver and above) | Equity curve, cumulative return, max risk exposure | JSON |
-| 🔎 Advanced Risk Metrics (Silver and above) | Sharpe Ratio, Sortino Ratio, win/loss ratio | HTML |
-| 🧮 Dynamic Trade Analysis (Gold and above) | Entry/exit time, price, PnL, strategy rationale | HTML |
+| Report Type                  | Description                                                         | Format |
+|-----------------------------|---------------------------------------------------------------------|--------|
+| 📘 Raw Trade Log             | Includes time, direction, price, order type, and position details   | JSON   |
+| 📈 Static KPI Report         | Net profit, win rate, drawdown, trade count, average holding time   | HTML   |
+| 💹 Equity Curve (Silver+)    | Visualizes capital growth, cumulative returns, and risk exposure    | JSON   |
+| 🔎 Advanced Risk Metrics     | Sharpe Ratio, Sortino Ratio, win/loss ratio (Silver plan or above)  | HTML   |
+| 🧮 Dynamic Trade Breakdown   | Entry/exit timing, PnL analysis, and rationale (Gold plan only)     | HTML   |
 
-☑️ All reports can be viewed/exported via MAS SDK (availability depends on subscription plan)
-
----
-
-## 🧩 Before You Start
-
-1. Sign up for a MAS platform account  
-2. Download the MAS desktop app [Click here to download](https://mindaismart.com/) and log in to view your plan level   
-3. Install MAS SDK and begin developing your strategy  
+☑️ Reports can be viewed and exported directly within MAS SDK, depending on your plan tier.
 
 ---
 
-## ⚙️ Quick Start
+## 🧩 Before You Begin
+
+1. Register a MAS account on the official platform  
+2. Download the MAS desktop app [Click here to download](https://mindaismart.com/), then log in to check your current plan  
+3. Install MAS SDK and start building your trading strategy
+
+---
+
+## ⚙️ Quick Start Guide
 
 Install MAS SDK:
 
@@ -86,67 +88,67 @@ if __name__ == "__main__":
 
 ## 📚 Documentation Sections
 
-| Section              | Description                                 |
-| -------------------- | ------------------------------------------- |
-| Installation & Setup | How to install and run your first strategy  |
-| API Reference        | Full method and parameter explanations      |
-| Strategy Examples    | Various strategy use cases and walkthroughs |
-| MAS Web Integration  | How to link to web platform and deploy .exe |
+| Section              | Description                                                |
+|----------------------|------------------------------------------------------------|
+| Installation & Setup | Step-by-step guide to install and launch your first strategy |
+| API Reference        | Full SDK function list and parameter documentation         |
+| Strategy Examples    | Pre-built strategies using indicators like RSI, MACD, etc. |
+| Web Integration      | How to upload strategies and deploy them to MT5 via Web    |
 
 ---
 
 ## 🖥️ System Requirements
 
-- Python 3.8+
-- Supported OS: Windows / macOS
-- Dependencies: requests, pandas, matplotlib (installed automatically)
+- Python 3.8 or above  
+- Operating Systems: Windows, macOS  
+- Dependencies: requests, pandas, matplotlib (auto-installed)
 
 ---
 
-## 🤖 Don’t know Python? MAS AI Assistant does it for you!
+## 🤖 No Coding? MAS AI Strategy Assistant Has You Covered
 
 <!--
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WZJoxikns4Q?si=WUG36ZHWNOzRble4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br /><br />
 -->
-Just describe your logic, MAS AI Assistant will:
+Just describe your trading logic in natural language—MAS AI Assistant will:
 
-✅ Auto-generate trading strategy code  
-✅ Backtest it and provide detailed reports  
-✅ Export as .exe (no Python required)
-✅ Deploy directly to MT5 with your broker credentials
-
----
-
-## 🛠️ Feature Highlights
-
-| Feature                   | Description                                     |
-| ------------------------- | ----------------------------------------------- |
-| 🧠 Natural Language Input | e.g. "Buy when RSI < 30 and MACD golden cross"  |
-| 🔧 One-Click Generation   | Auto creates logic and runs backtest            |
-| 📊 Auto-Generated Reports | Metrics like total return, win rate, risk ratio |
-| 💻 Executable Download    | Get `.exe` file – no Python setup needed        |
-| 🔐 MT5 Deployment         | Deploy to live account via MAS platform         |
+✅ Automatically generate a complete trading strategy  
+✅ Run historical backtests and visualize performance  
+✅ Export your strategy as a ready-to-run `.exe` file (no Python required)  
+✅ Deploy directly to your MT5 broker account with login credentials
 
 ---
 
-## 📥 Sample Usage Flow
+## 🛠️ AI Assistant Features at a Glance
+
+| Feature                   | Description                                                        |
+|---------------------------|--------------------------------------------------------------------|
+| 🧠 Natural Language Input | e.g., “Buy when RSI < 30 and MACD shows a bullish crossover”       |
+| 🔧 One-Click Strategy Gen | Instantly creates, backtests, and packages your trading logic      |
+| 📊 Auto Performance Report| Shows ROI, win rate, and risk/reward ratio                         |
+| 💻 Downloadable Executable| Exports a standalone `.exe`—no setup required                     |
+| 🔐 MT5 Integration         | Easily connect and deploy to live MT5 trading accounts             |
+
+---
+
+## 📥 End-to-End Usage Flow
 
 ```diff
-🖋 Step 1: Describe your strategy in MAS AI Assistant
-Buy Logic: "Buy when RSI < 30 and volume > 5-day average"
-Sell Logic: "Sell when RSI > 70"
+🖋 Step 1: Input your strategy using natural language in the MAS AI Assistant  
+Buy Logic: “Buy when RSI < 30 and volume exceeds 5-day average”  
+Sell Logic: “Sell when RSI > 70”
 
-📊 Step 2: View backtest results
+📊 Step 2: Review the automatically generated backtest results  
 - Net Profit: +8.6%
 - Win Rate: 61%
 - Max Drawdown: -2.1%
 
-💾 Step 3: Download `.exe`
+💾 Step 3: Go to strategy manager and download your executable file  
 Filename: rsi_vol_strategy_2025Q2.exe
 
-🔐 Step 4: Run exe, enter broker info, start trading
-👉 Try MAS AI Strategy Assistant now!
+🔐 Step 4: Run the `.exe`, enter your broker credentials, and deploy your strategy live to MT5
+👉 Try MAS AI Strategy Assistant today and start automating your trades with ease!
 ```
 
 ---
