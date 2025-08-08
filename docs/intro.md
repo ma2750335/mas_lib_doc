@@ -112,7 +112,7 @@ if __name__ == "__main__":
 <br /><br />
 -->
 
-Just describe your trading logic in natural language—MAS AI Assistant will[LEARN MORE ↗](https://mindaismart.com/product_ai):
+Just describe your trading logic in natural language—MAS AI Assistant will：[LEARN MORE ↗](https://mindaismart.com/product_ai)
 
 ✅ Automatically generate a complete trading strategy  
 ✅ Run historical backtests and visualize performance  
