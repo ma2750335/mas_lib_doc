@@ -41,8 +41,8 @@ These reports help you evaluate strategy profitability, risk exposure, and trade
 
 ## 🧩 Before You Begin
 
-1. Register a MAS account on the official platform[【Sign Up】](https://mas.mindaismart.com/authentication/sign-up) (FREE)  
-2. Download the MAS desktop app [Click here to download](https://mindaismart.com/product_lib), then log in to check your current plan  
+1. Register a MAS account on the official platform[【Sign Up ↗】](https://mas.mindaismart.com/authentication/sign-up) (FREE)  
+2. Download the MAS desktop app [【Click here to download ↗】](https://mindaismart.com/product_lib), then log in to check your current plan  
 3. Install MAS SDK and start building your trading strategy
 
 ---

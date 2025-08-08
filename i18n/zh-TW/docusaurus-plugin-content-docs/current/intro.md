@@ -40,8 +40,8 @@ MAS SDK 可於回測與實單交易後，自動生成多種專業級報表，助
 
 ## 🧩 使用 MAS SDK 前的準備事項
 
-1. 註冊 MAS 平台帳號[【立即註冊】](https://mas.mindaismart.com/authentication/sign-up)（免費）
-2. 下載 MAS 軟體[【點我進行下載】](https://mindaismart.com/product_lib)，登入後可查看目前方案等級
+1. 註冊 MAS 平台帳號[【立即註冊↗】](https://mas.mindaismart.com/authentication/sign-up)（免費）
+2. 下載 MAS 軟體[【點我進行下載↗】](https://mindaismart.com/product_lib)，登入後可查看目前方案等級
 3. 安裝 MAS SDK 並啟動第一個策略專案
 
 ---
