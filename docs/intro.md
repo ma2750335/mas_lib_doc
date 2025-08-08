@@ -111,7 +111,8 @@ if __name__ == "__main__":
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WZJoxikns4Q?si=WUG36ZHWNOzRble4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br /><br />
 -->
-Just describe your trading logic in natural language—MAS AI Assistant will:
+
+Just describe your trading logic in natural language—MAS AI Assistant will[LEARN MORE ↗](https://mindaismart.com/product_ai):
 
 ✅ Automatically generate a complete trading strategy  
 ✅ Run historical backtests and visualize performance  

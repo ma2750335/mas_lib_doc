@@ -110,7 +110,7 @@ if __name__ == "__main__":
 <br /><br />
 -->
 
-只需輸入你的交易邏輯描述，MAS AI 助理可協助你：
+只需輸入你的交易邏輯描述，MAS AI 助理可協助你[了解更多 ↗](https://mindaismart.com/product_ai)：
 
 ✅ 自動生成專屬量化策略（基於 RSI、MACD 等指標）  
 ✅ 回測並產出 HTML 報表與盈虧指標  
