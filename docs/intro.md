@@ -62,7 +62,7 @@ import mas
 
 def main():
     # Test login credentials
-    params = {
+    login_params = {
         "account": "YOUR_ACCOUNT",
         "password": "YOUR_PASSWORD",
         "server": "YOUR_BROKER_SERVER",

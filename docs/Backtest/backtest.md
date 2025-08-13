@@ -4,18 +4,18 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ## 📘 What is Backtesting?
 
-Before engaging in any automated trading, **backtesting** is an essential step. By simulating a trading strategy using historical data, we can:
+Before starting any automated trading, **backtesting** is a crucial process. By simulating a trading strategy on historical market data, you can:
 
-- Verify if the strategy is profitable  
-- Test the performance across different market conditions  
-- Calculate risk metrics (e.g., max drawdown, win rate, Sharpe ratio)  
-- Save time and reduce risk compared to real trading
+- Validate if the strategy can consistently generate profits  
+- Assess performance under different market conditions  
+- Measure key risk metrics (e.g., maximum drawdown, win rate, Sharpe ratio)  
+- Reduce both time and financial risk compared to direct live testing  
 
 ---
 
 ## 🔧 How does MAS SDK perform backtesting?
 
-MAS SDK provides a simple way to run backtesting. Just extend the `MAS` class and override the `receive_bars` method to implement your logic.
+MAS SDK offers a streamlined approach to run backtests. By simply extending the `MAS` class and overriding the `receive_bars` method, you can quickly integrate your trading logic with historical data—no need for complex framework setup.
 
 Here’s a basic moving average strategy backtesting example:
 
@@ -65,13 +65,13 @@ def main():
     try:
         toggle = True
         mas_c = MAS_Client(toggle)
-        params = {
+        login_params = {
             "account": "YOUR_ACCOUNT",
             "password": "YOUR_PASSWORD",
             "server": "YOUR_SERVER"
         }
 
-        mas_c.login(params)
+        mas_c.login(login_params)
         params = {
             "symbol": "EURUSD",
             "from": '2020-01-01',
@@ -96,37 +96,36 @@ if __name__ == "__main__":
 
 ## 📈 KPI Reports After Backtesting
 
-When backtesting is completed, MAS SDK will automatically generate the following reports:
+Upon completion of backtesting, MAS SDK automatically generates multi-dimensional reports to help you evaluate strategy performance:
 
-- Data report: Detailed order records and P&L results (`generate_data_report()`)
+- **Data Report**: Detailed trade logs including entry/exit time, direction, and P&L results  
+- **KPI Report**: Comprehensive performance metrics such as Sharpe ratio, win rate, net profit, and maximum drawdown  
+- **Trade Chart**: Visual representation of all entry and exit points  
 
-- KPI report: Sharpe ratio, win rate, net profit, max drawdown, etc. (`generate_kpi_report()`)
-
-- Trade chart: Visualized entry and exit points (`generate_trade_chart()`)
-
-These reports help you evaluate and optimize your strategy parameters.
+These outputs enable quick strategy assessment and parameter optimization.
 
 ---
 
-## 🔄 Application Scenarios
+## 🔄 When to Use Backtesting
 
-- Early-stage development: Quickly test if strategy logic works
-
-- Parameter tuning: Combine with grid search for batch backtesting
-
-- Real-world simulation: Configure slippage, delay, fees, etc.
+- **Strategy R&D Phase**: Verify the correctness of trading logic before deployment  
+- **Parameter Optimization**: Perform batch tests using methods like Grid Search to find the best combinations  
+- **Real-Market Simulation**: Add realistic conditions such as fees, slippage, and execution delays  
 
 ---
 
 ## ⚙️ Switching to Live Trading Mode
 
-MAS SDK uses a "single-codebase, dual-mode" design. Users only need to toggle a parameter to switch between backtesting and live trading.
+MAS SDK features a **single codebase with dual-mode operation**, enabling seamless transition between backtesting and live trading. You only need to adjust one parameter—no code duplication required.
 
 ---
 
 ## ✅ How to Switch
 
-Just set `toggle` to `False`. All other code remains unchanged:
+Use the `toggle` parameter to instantly switch modes:
+
+- `True` → Backtest mode
+- `False` → Live trading mode
 
 ```python
 try:
@@ -134,7 +133,7 @@ try:
     toggle = False  # switch to live trading
 
     mas_c = MAS_Client(toggle)
-    params = {
+    login_params = {
         "account": "YOUR_ACCOUNT",
         "password": "YOUR_PASSWORD",
         "server": "YOUR_SERVER"
@@ -160,34 +159,35 @@ except Exception as e:
 
 ---
 
-## 🧩 Underlying Logic
+## 🧩 Switching Logic
 
-- Backtesting mode: `toggle=True`, all orders are handled by the simulation engine, no real trading
+- **Backtest Mode** (`toggle=True`): All trade executions are handled by the simulation engine, with no live orders sent  
+- **Live Mode** (`toggle=False`): All trade instructions are transmitted to the broker’s API for real-time execution  
 
-- Live mode: `toggle=False`, all orders are sent to broker via API for real execution
-
-Same structure, just one flag switch between test and live.
-
----
-
-## 🛡️ Checklist Before Live Deployment
-
-| Item                 | Recommendation          | Description                                  |
-| -------------------- | ----------------------- | -------------------------------------------- |
-| Strategy performance | ✅ Passed KPI threshold  | Positive net profit and win rate recommended |
-| Login test           | ✅ `login()` success     | Valid credentials                            |
-| Order API            | ✅ Send test order       | Use demo account or small volume             |
-| Risk controls        | ✅ Stop-loss logic added | Avoid unhedged exposure                      |
+This approach lets you safely validate in a simulated environment before moving to live deployment.
 
 ---
 
-## 🧩 Full Workflow Summary
+## 🛡️ Pre-Live Checklist
+
+Before going live, review the following to ensure readiness and mitigate risk:
+
+| Item                 | Recommendation                  | Notes                                          |
+| -------------------- | ------------------------------- | ---------------------------------------------- |
+| Strategy Performance | ✅ Pass KPI benchmarks           | Positive net profit and stable win rate        |
+| Login Test           | ✅ Successful `login()`          | Ensure credentials are valid                   |
+| Order API            | ✅ Test order executes correctly | Use a demo account or small trade for testing  |
+| Risk Controls        | ✅ Implemented stop-loss logic   | Avoid unhedged positions and excessive risk    |
+
+---
+
+## 🧩 End-to-End Workflow
 
 ```text
 
-[Strategy Design] → [Backtesting] → [KPI Review] → ✅ [Toggle Live] → [Real Trading]
+[Strategy Design] → [Historical Backtesting] → [Performance Review] → ✅ [One-Click Toggle] → [Live Trading]
 
 ```
-You only need one strategy file. No need to maintain separate logic for test/live.
+With MAS SDK, a single strategy file is sufficient—streamlining both testing and live deployment while lowering development and maintenance costs.
 
 ---

@@ -11,13 +11,13 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-發送一筆交易訂單（支援市價、限價、停損限價、GTC 與指定時間、完整 request 欄位）。
-此函式為統一下單入口，根據 `backtest_toggle` 參數的值，自動切換：
+發送一筆交易訂單（支援市價、限價、停損限價、GTC 與指定時間、完整 `request` 欄位）。  
+此函式為 **統一下單 API**，根據 `backtest_toggle` 參數自動切換下單模式：
 
-- 若為 `True`：使用模擬交易流程進行下單，不連接 MetaTrader5 。
-- 若為 `False`：使用實盤交易流程進行下單，連接 MetaTrader5 進行真實交易。
+- **回測模式 (`True`)**：使用模擬交易流程，不連接 MetaTrader5。
+- **實盤模式 (`False`)**：連接 MT5 進行真實交易。
 
-下單成功後推播訂單狀態與成交資訊。
+下單成功後系統會推播 **訂單狀態（Order Status）** 與 **成交資訊（Execution Data）**。
 
 ---
 
@@ -25,58 +25,57 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
+| params   | dict | 字典欄位說明如下： |
 
 | dict 欄位名稱      | 型別       | 必填 | 說明                                                  |
 |-------------------|------------|------|-------------------------------------------------------|
-| `backtest_toggle` | bool       | ✅   | 是否為回測模式（`True` 表示回測模式）。                     |
-| `symbol`          | str        | ✅   | 交易商品代碼，例如 `"EURUSD.sml"`。                     |
-| `order_type`      | str        | ✅   | 訂單類型：`buy`, `sell`, `buy_limit`, `sell_stop` 等。 |
-| `volume`          | float      | ✅   | 下單數量，如 `0.1`。                                   |
-| `price`           | float      | ❌   | 限價單 / 停損單價格（市價單會自動使用 bid/ask）。         |
-| `sl`              | float      | ❌   | 停損價格。                                             |
-| `tp`              | float      | ❌   | 停利價格。                                             |
-| `stoplimit`       | float      | ❌   | 停損限價價格。                                         |
-| `deviation`       | int        | ❌   | 最大價格滑點（預設 10）。                               |
-| `magic`           | int        | ❌   | 自訂識別碼EA ID（預設 123456）。                        |
-| `comment`         | str        | ❌   | 訂單備註（預設為 `"MAS Order"`）。                      |
-| `type_time`       | enum/int   | ❌   | 訂單有效時間型態，預設為 `mt5.ORDER_TIME_GTC`。        |
-| `expiration`      | datetime   | ❌   | 限單或停損單的到期時間（限 type_time 為指定時間）。      |
-| `type_filling`    | enum/int   | ❌   | 成交方式，預設為 `mt5.ORDER_FILLING_FOK`。            |
-| `position`        | int        | ❌   | 針對某個 position 修改下單。                          |
-| `position_by`     | int        | ❌   | 用於對沖模式下指定 position_by。                      |
-
+| `backtest_toggle` | bool     | ✅   | 是否為回測模式（`True` 表示回測）。 |
+| `symbol`          | str      | ✅   | 交易商品代碼（例如 `"EURUSD.sml"`）。 |
+| `order_type`      | str      | ✅   | 訂單類型：`buy`, `sell`, `buy_limit`, `sell_stop` 等。 |
+| `volume`          | float    | ✅   | 下單數量（例如 `0.1`）。 |
+| `price`           | float    | ❌   | 限價單 / 停損單價格（市價單會自動使用 bid/ask）。 |
+| `sl`              | float    | ❌   | 停損價格。 |
+| `tp`              | float    | ❌   | 停利價格。 |
+| `stoplimit`       | float    | ❌   | 停損限價價格。 |
+| `deviation`       | int      | ❌   | 最大價格滑點（預設 10）。 |
+| `magic`           | int      | ❌   | 自訂 EA 識別碼（預設 123456）。 |
+| `comment`         | str      | ❌   | 訂單備註（預設 `"MAS Order"`）。 |
+| `type_time`       | enum/int | ❌   | 訂單有效時間型態（預設 `mt5.ORDER_TIME_GTC`）。 |
+| `expiration`      | datetime | ❌   | 到期時間（限 `type_time` 為指定時間）。 |
+| `type_filling`    | enum/int | ❌   | 撮合方式（預設 `mt5.ORDER_FILLING_FOK`）。 |
+| `position`        | int      | ❌   | 修改某個持倉的下單編號。 |
+| `position_by`     | int      | ❌   | 對沖模式下的 `position_by` 值。 |
 ---
 
 ### request內容
 
-| 欄位名稱      | 型別   | 說明 |
-|---------------|--------|------|
-| action        | int    | 交易操作類型。 |
-| magic         | int    | EA ID，可用來標記策略來源。 |
-| order         | int    | 訂單編號，修改委託單時必填。 |
-| symbol        | str    | 商品代碼（例如 `"EURUSD"`），修改或平倉時非必填 |
-| volume        | float  | 下單數量。 |
-| price         | float  | 下單價格。若為市價單且屬於「市場成交型」（Market Execution），此欄位可不填。 |
-| stoplimit     | float  | 當市價觸及 `price` 時，用於啟用限價單的價格（觸發後才送出）。 |
-| sl            | float  | 停損價格。 |
-| tp            | float  | 停利價格。 |
-| deviation     | int    | 可接受的最大滑價（以點為單位）。 |
-| type          | int    | 訂單類型。 |
-| type_filling  | int    | 撮合方式。 |
-| type_time     | int    | 訂單有效時間型態。 |
-| expiration    | datetime | 掛單的到期時間。 |
-| comment       | str    | 訂單備註。 |
-| position      | int    | 持倉編號，用於修改或平倉指定倉位（通常與開倉訂單編號一致）。 |
-| position_by   | int    | 反向倉位編號，用於「對沖平倉」操作（以相反方向的持倉進行平倉）。 |
+| 欄位名稱   | 型別   | 說明 |
+|------------|--------|------|
+| action     | int    | 交易操作類型。 |
+| magic      | int    | EA ID（策略識別碼）。 |
+| order      | int    | 訂單編號（修改委託單時必填）。 |
+| symbol     | str    | 商品代碼（例如 `"EURUSD"`，修改或平倉時非必填）。 |
+| volume     | float  | 下單數量。 |
+| price      | float  | 下單價格（市價單可不填）。 |
+| stoplimit  | float  | 觸發限價單的價格。 |
+| sl         | float  | 停損價格。 |
+| tp         | float  | 停利價格。 |
+| deviation  | int    | 最大滑價（以點為單位）。 |
+| type       | int    | 訂單類型。 |
+| type_filling | int  | 撮合方式。 |
+| type_time  | int    | 訂單有效時間型態。 |
+| expiration | datetime | 掛單到期時間。 |
+| comment    | str    | 訂單備註。 |
+| position   | int    | 持倉編號（修改或平倉使用）。 |
+| position_by| int    | 反向倉位編號（對沖平倉使用）。 |
 
 ---
 
 ### 📤 回傳資料內容
 
-| 名稱        | 型別 | 備註說明                                         |
-|------------|------|--------------------------------------------------|
-| `order_id` | str  | 成功下單後回傳訂單編號(order_id)，失敗則回傳錯誤訊息。 |
+| 名稱        | 型別 | 說明 |
+|-------------|------|------|
+| `order_id`  | str  | 成功則回傳訂單編號，失敗則回傳錯誤訊息。 |
 
 ---
 

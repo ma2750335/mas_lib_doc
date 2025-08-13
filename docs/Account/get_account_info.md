@@ -16,9 +16,9 @@ Retrieves comprehensive account details for the currently logged-in MetaTrader 5
 
 ### 🔧 Function Parameters
 
-| Name | Type | Description |
-|------|------|-------------|
-| None | None | This function does not require any input parameters. |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| None           | None | This function does not require any input parameters. |
 
 ---
 

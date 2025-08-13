@@ -5,16 +5,17 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ## 📈 Golden Cross / Death Cross Strategy
 
-This strategy is a classic trend-following method based on technical indicators. It uses the crossover between the 5-day moving average (MA5) and the 20-day moving average (MA20) to determine entry and exit signals.
+This strategy is a classic **trend-following** trading model that identifies market direction by tracking crossovers between the short-term 5-day moving average (MA5) and the long-term 20-day moving average (MA20).  
+It is widely used in Forex, stock, and futures markets where sufficient liquidity exists.
 
 ---
 
 ## 💡 Strategy Logic
 
-- Golden Cross: When the short-term MA5 crosses above the long-term MA20 → Buy signal  
-- Death Cross: When MA5 crosses below MA20 → Sell signal  
+- **Golden Cross**: When MA5 crosses above MA20, it signals a potential bullish trend shift → trigger a buy entry.  
+- **Death Cross**: When MA5 crosses below MA20, it signals a potential bearish trend shift → trigger a sell or exit.  
 
-This strategy tends to produce false signals in sideways markets, but performs better in trending conditions.
+While this approach can generate false signals during sideways or choppy markets, it often performs well in strong trending conditions.
 
 ---
 
@@ -22,7 +23,7 @@ This strategy tends to produce false signals in sideways markets, but performs b
 
 ```text
 
-[On each new bar] → Calculate latest MA5 / MA20 → Check crossover conditions → Execute trade → Output reports
+[New bar update] → [Calculate MA5 & MA20] → [Check for crossover] → [Execute entry/exit] → [Generate performance report]
 
 ```
 
@@ -52,20 +53,23 @@ if len(self.closes) >= 21:
 
 ## 🧩 Strategy Characteristics
 
-| Item          | Description                                                                                                       |
-| ------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Strategy Type | Trend Following                                                                                                   |
-| Entry Signal  | MA5 crosses above MA20 (Golden Cross)                                                                             |
-| Exit Signal   | MA5 crosses below MA20 (Death Cross)                                                                              |
-| Market Type   | Forex / Stocks / Futures (must be liquid)                                                                         |
-| Pros          | Simple, stable, easy to test                                                                                      |
-| Cons          | Prone to false signals in consolidation phases; no built-in risk control, must implement stop-loss logic manually |
+| Item          | Description                                                                                            |
+| ------------- | ------------------------------------------------------------------------------------------------------ |
+| Strategy Type | Trend Following                                                                                        |
+| Entry Signal  | MA5 crosses above MA20 (Golden Cross)                                                                  |
+| Exit Signal   | MA5 crosses below MA20 (Death Cross)                                                                   |
+| Markets       | Forex / Stocks / Futures (requires good liquidity)                                                     |
+| Pros          | Clear rules, simple to implement, and easy to backtest                                                 |
+| Cons          | Vulnerable to whipsaws in range-bound markets; requires additional stop-loss and risk management logic |
 
 ---
 
 ## 🚀 Backtesting and Live Mode Switching
 
-You can switch between backtesting and live trading using the `toggle` parameter:
+Use the `toggle` parameter to instantly switch modes:
+
+- `True` → Backtest mode
+- `False` → Live trading mode
 
 ```python
 

@@ -10,7 +10,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-根據歷史交易紀錄，產生包含進出場點、資金曲線（Equity Curve）、累積損益等資訊的交易圖表。  
+依據歷史交易紀錄，自動生成完整的交易圖表，內容包含：
+
+- **進出場點**（買賣位置標註）
+- **資金曲線**（Equity Curve，顯示資金變化趨勢）
+- **累積損益圖**（Cumulative P/L）
+- 支援回測與即時策略績效監控
 
 ---
 
@@ -18,7 +23,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| 無       | 無   | 函式會自動從內部交易資料取得內容產生圖表，無需傳入參數 |
+| None     | None | 函式會自動從內部交易資料來源取得內容並生成圖表，無需傳入參數 |
 
 ---
 
@@ -26,8 +31,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 名稱   | 型別 | 備註說明                                               |
 |--------|------|--------------------------------------------------------|
-| return | 任意 | 回傳是否產出成功，失敗時包含錯誤資訊 |
+| return  | 任意 | 產出結果，成功則回傳 `status=True`，失敗則回傳錯誤訊息 |
 
+**回傳範例：**
 ```python
 {
     "status": True

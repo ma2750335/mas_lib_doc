@@ -11,28 +11,28 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Modifies a pending limit order that has not been filled.  
-This function sends a modification request to the MT5 platform using the given `order_id`.  
-Supports simultaneous updates of price, stop loss (SL), take profit (TP), stop limit, expiration time, and comment.  
-If the modification is successful, the order status will be pushed via notification callback.
+Updates a pending limit order that has not yet been executed.  
+This function sends a modification request to the MetaTrader 5 (MT5) platform using the specified **`order_id`**.  
+It supports updating **price**, **stop loss (SL)**, **take profit (TP)**, **stop limit**, **expiration time**, and **comment** fields in a single request.
+Upon successful modification, the updated order status will be pushed to the client via a notification callback.
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name   | Type | Description |
-|--------|------|-------------|
-| params | dict | A dictionary containing the fields below: |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| params         | dict | Dictionary containing the following fields: |
 
-| Field Name  | Type     | Required | Description                                                  |
-|-------------|----------|----------|--------------------------------------------------------------|
-| `order_id`  | int      | ✅       | The original pending order ticket number to modify.         |
-| `price`     | float    | ✅       | New price to set.                                            |
-| `sl`        | float    | ❌       | Stop loss price.                                             |
-| `tp`        | float    | ❌       | Take profit price.                                           |
-| `stoplimit` | float    | ❌       | Stop limit price.                                            |
-| `expiration`| datetime | ❌       | Order expiration time.                                       |
-| `comment`   | str      | ❌       | Order comment (default is `"Modified by MAS"`).              |
+| Field Name  | Type     | Required | Description |
+|-------------|----------|----------|-------------|
+| `order_id`  | int      | ✅       | The original pending order ticket number to be modified. |
+| `price`     | float    | ✅       | New price for the pending order. |
+| `sl`        | float    | ❌       | Stop loss price (SL). |
+| `tp`        | float    | ❌       | Take profit price (TP). |
+| `stoplimit` | float    | ❌       | Stop limit price. |
+| `expiration`| datetime | ❌       | Expiration date and time for the pending order. |
+| `comment`   | str      | ❌       | Order comment (default: `"Modified by MAS"`). |
 
 ---
 

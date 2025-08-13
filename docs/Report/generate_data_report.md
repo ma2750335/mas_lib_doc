@@ -10,27 +10,28 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Calculates performance metrics (such as win rate, profit factor, net profit/loss, number of trades, etc.) based on historical trading records and returns a structured report.
+Generates a structured performance report based on historical trading records, calculating multiple performance metrics such as win rate, profit factor, net profit/loss, total trades, maximum drawdown, and cumulative returns.  
+The function directly retrieves historical data from the internal `clientpost` object and requires no additional parameters.
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name | Type | Description |
-|------|------|-------------|
-| None | None | This function directly reads historical trading data from the internal `clientpost` object and requires no parameters. |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| None           | None | This function directly accesses the historical trading data stored in the `clientpost` object and requires no parameters. |
 
 ---
 
 ### 📤 Function Return 
 
-| Name    | Type  | Description                                                                 |
-|---------|-------|-----------------------------------------------------------------------------|
-| status  | bool  | Indicates whether the report was successfully generated                     |
-| data    | dict  | Raw report data (available when `status = True`), content may vary by user role |
-| error   | str   | Error message (available when `status = False`)                             |
+| Name      | Type  | Description                                                                 |
+|-----------|-------|-----------------------------------------------------------------------------|
+| `status`  | bool  | Indicates whether the report was successfully generated. |
+| `data`    | dict  | Raw report data (available when `status = True`), with content visibility varying by user role. |
+| `error`   | str   | Error message (available when `status = False`). |
 
-Return data(dict) format：
+**Return data(dict) format：**
 
 ```python
 return {

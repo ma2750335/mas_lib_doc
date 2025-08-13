@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-關閉 MetaTrader 5（MT5）平台連線。  
+關閉與 MetaTrader 5（MT5）平台的連線，並釋放相關資源。  
 
 ---
 
@@ -19,7 +19,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明     |
 |----------|------|--------------|
-| 無       | 無   | 此函式不需任何參數 |
+| 無       | 無   | 此函式不需任何參數。 |
 
 ---
 
@@ -27,7 +27,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 名稱   | 型別 | 備註說明                 |
 |--------|------|--------------------------|
-| 無     | None | 無回傳值，僅執行關閉 MT5 動作 |
+| 無     | None | 無回傳值，僅執行關閉 MT5 動作。 |
 
 ---
 

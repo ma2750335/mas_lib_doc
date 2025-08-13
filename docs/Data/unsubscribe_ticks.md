@@ -11,16 +11,16 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Unsubscribes from real-time tick data for a specified symbol — intended for live trading mode only.  
-This function terminates the internal background thread and stops receiving live tick data for the specified symbol.
+Cancels the subscription to real-time tick data for a specified symbol — applicable to live trading mode only.  
+This function stops the internal background subscription thread and disables real-time quote monitoring for the given symbol.
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name   | Type | Description |
-|--------|------|-------------|
-| params | dict | symbol（str）：The symbol to unsubscribe (e.g., `"EURUSD"`). |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| params         | dict | symbol（str）：The symbol to unsubscribe (e.g., `"EURUSD"`). |
 
 ---
 
@@ -28,7 +28,7 @@ This function terminates the internal background thread and stops receiving live
 
 | Name | Type | Description                                  |
 |------|------|----------------------------------------------|
-| None | None | No return value. Calling this function stops the subscription. |
+| None | None | No return value. Stops the tick data subscription for the specified symbol. |
 
 ---
 

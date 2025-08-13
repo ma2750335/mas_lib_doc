@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-查詢帳戶在指定時間區間內的歷史成交紀錄（已成交的交易）。 
-可依時間範圍、商品、訂單 ID 或部位 ID 進行過濾。
+查詢 MT5 交易帳戶在特定時間區間內的**歷史成交紀錄**（已成交之訂單資訊）。  
+支援依據時間範圍、商品代碼、訂單編號（ticket）或部位編號（position）進行條件過濾。  
 
 ---
 
@@ -19,15 +19,15 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| params   | dict | 字典內容如下方欄位說明 |
+| params   | dict | 查詢條件設定字典，欄位說明如下： |
 
 | dict 欄位名稱 | 型別          | 必填 | 說明                                                       |
 |-------------|---------------|------|------------------------------------------------------------|
-| `symbol`    | str           | ❌   | 指定查詢的商品（使用 `group` 欄位過濾）                      |
-| `from`      | datetime/str  | ❌   | 起始時間，預設為 `2000-01-01`                               |
-| `to`        | datetime/str  | ❌   | 結束時間，預設為 `datetime.now()`                           |
-| `ticket`    | int           | ❌   | 指定訂單的成交紀錄（僅支援單一參數使用）                      |
-| `position`  | int           | ❌   | 指定部位的成交紀錄（僅支援單一參數使用）                      |
+| `symbol`    | str           | ❌   | 指定查詢的商品代碼，可搭配 `group` 欄位進行篩選。             |
+| `from`      | datetime/str  | ❌   | 起始時間（預設為 `2000-01-01`）。                            |
+| `to`        | datetime/str  | ❌   | 結束時間（預設為目前時間 `datetime.now()`）。                 |
+| `ticket`    | int           | ❌   | 查詢指定訂單編號的成交紀錄（不可與其他條件並用）。              |
+| `position`  | int           | ❌   | 查詢指定部位編號的所有成交紀錄（不可與其他條件並用）。           |
 
 ---
 
@@ -35,27 +35,27 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 名稱   | 型別           | 備註說明                               |
 |--------|---------------|----------------------------------------|
-| result |  `list[dict]` | 回傳所有符合條件的歷史成交紀錄，每筆為一筆成交紀錄，若無資料則回傳空陣列 `[]`，字典內容如下方欄位說明 |
+| result |  `list[dict]` | 回傳符合條件的所有成交資料，若無資料則為空陣列 `[]`。每筆成交紀錄為一筆 dictionary，欄位說明如下： |
 
-| 欄位名稱       | 型別      | 說明                                 |
-|----------------|-----------|--------------------------------------|
-| `ticket`        | int       | 成交紀錄的唯一 ID                    |
-| `order`         | int       | 所屬訂單編號                          |
-| `position_id`   | int       | 對應的部位 ID                        |
-| `symbol`        | str       | 商品代碼                             |
-| `type`          | int       | 成交方向（買/賣）                    |
-| `entry`         | int       | 成交類型（建倉、平倉、調整等）      |
-| `reason`        | int       | 成交原因（手動、自動、到期等）      |
-| `volume`        | float     | 成交手數                             |
-| `price`         | float     | 成交價格                             |
-| `commission`    | float     | 手續費                               |
-| `swap`          | float     | 庫存費                               |
-| `fee`           | float     | 其他費用                             |
-| `profit`        | float     | 該筆成交的盈虧                       |
-| `comment`       | str       | 備註                                 |
-| `external_id`   | str       | 外部系統參照 ID                      |
-| `time`          | datetime  | 成交時間（轉換為 `datetime`）        |
-| `time_msc`      | int       | 成交時間（毫秒 timestamp）           |
+| 欄位名稱       | 型別      | 說明 |
+|----------------|-----------|------|
+| `ticket`        | int       | 成交紀錄的唯一 ID（Ticket）。 |
+| `order`         | int       | 所屬原始訂單編號。 |
+| `position_id`   | int       | 該筆成交所屬的部位 ID。 |
+| `symbol`        | str       | 商品代碼（如 EURUSD、XAUUSD）。 |
+| `type`          | int       | 成交方向（0=Buy，1=Sell）。 |
+| `entry`         | int       | 成交類型（0=建倉、1=平倉、2=反向、3=交割、4=調整）。 |
+| `reason`        | int       | 成交原因（0=手動、1=EA 自動、2=止盈止損、3=保證金強平等）。 |
+| `volume`        | float     | 成交手數。 |
+| `price`         | float     | 成交價格。 |
+| `commission`    | float     | 手續費。 |
+| `swap`          | float     | 庫存費（Swap）。 |
+| `fee`           | float     | 其他費用（若有）。 |
+| `profit`        | float     | 此筆成交的實際盈虧。 |
+| `comment`       | str       | 成交註解（如：策略名稱、交易備註等）。 |
+| `external_id`   | str       | 外部系統參照 ID（如對接第三方標記）。 |
+| `time`          | datetime  | 成交時間（已轉換為 datetime 物件）。 |
+| `time_msc`      | int       | 成交時間（Unix timestamp 毫秒）。 |
 
 回傳格式如下：
 

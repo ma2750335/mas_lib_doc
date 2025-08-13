@@ -17,31 +17,30 @@ Receives real-time or backtesting Bar (candlestick) data via push updates, trigg
 
 ### 🔧 Function Parameters
 
-| Name    | Type    | Description                                 |
-|---------|---------|---------------------------------------------|
-| symbol  | str     | The instrument symbol (e.g., `"EURUSD"`).   |
-| data    | dict    | A dictionary representing a single Bar.     |
-| is_end  | bool    | Indicates the end of the push stream (used in backtesting mode). |
+| Parameter Name | Type | Description |
+|----------------|-------|-------------|
+| `symbol`       | str   | The instrument symbol (e.g., `"EURUSD"`). |
+| `data`         | dict  | A single Bar data structure. See field details below. |
+| `is_end`       | bool  | Indicates the end of a push stream (used in backtesting mode). |
 
-
-Bar `data` structure:
-| Key        | Type     | Description                                     |
-|------------|----------|-------------------------------------------------|
-| `time`     | datetime | The opening timestamp of the Bar.              |
-| `open`     | float    | Opening price.                                 |
-| `high`     | float    | Highest price during the Bar.                  |
-| `low`      | float    | Lowest price during the Bar.                   |
-| `close`    | float    | Closing price.                                 |
-| `volume`   | float    | Trade volume.                                  |
-| `timeframe`| str      | Bar timeframe (e.g., `M1`, `H1`, `D1`).        |
+**`data` Field Structure**:  
+| Key         | Type     | Description |
+|-------------|----------|-------------|
+| `time`      | datetime | Bar start time. |
+| `open`      | float    | Opening price. |
+| `high`      | float    | Highest price during the Bar. |
+| `low`       | float    | Lowest price during the Bar. |
+| `close`     | float    | Closing price. |
+| `volume`    | float    | Trading volume. |
+| `timeframe` | str      | Bar timeframe (e.g., `"M1"`, `"H1"`, `"D1"`). |
 
 ---
 
 ### 📤 Function Return
 
-| Name   | Type | Description                              |
-|--------|------|------------------------------------------|
-| None   | None | No return value. This function is for receiving and handling push updates only. |
+| Name | Type | Description |
+|------|------|-------------|
+| None | None | No return value. This function only processes received push data. |
 
 ---
 

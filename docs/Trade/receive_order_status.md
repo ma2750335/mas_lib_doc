@@ -16,27 +16,28 @@ This function is triggered when MT5 returns the status of an order, and can be u
 
 ---
 
-### Function 參數
+### Function Parameters
 
-| Name         | Type   | Description                           |
-|--------------|--------|---------------------------------------|
-| order_id     | str    | The ticket number of the order.       |
-| status_data  | dict   | A dictionary containing the following fields: |
 
-| Field Name   | Type   | Description                                       |
-|--------------|--------|---------------------------------------------------|
-| `status`     | int    | Order status (usually same as MT5 `retcode`).     |
-| `retcode`    | int    | Return code from MT5 indicating result.           |
-| `message`    | str    | Response message from MT5 (e.g., `"Request executed"`). |
-| `request`    | dict   | The original request payload for the order.       |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| `order_id`     | str  | The order ticket number. |
+| `status_data`  | dict | A dictionary containing the following fields: |
+
+| Field Name | Type  | Description |
+|------------|-------|-------------|
+| `status`   | int   | Order status code (usually matches MT5 `retcode`). |
+| `retcode`  | int   | Original order status return code from MT5. |
+| `message`  | str   | Status message returned from MT5 (e.g., `"Request executed"`). |
+| `request`  | dict  | The original order request payload. |
 
 ---
 
 ### 📤 Function Return 
 
-| Name | Type     | Description                                |
-|------|----------|--------------------------------------------|
-| None | NoneType | No return value; this is a push message handler. |
+| Name | Type     | Description |
+|------|----------|-------------|
+| None | NoneType | No return value; used solely as a push message handler. |
 
 ---
 

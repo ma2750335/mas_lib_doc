@@ -5,26 +5,27 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ## 📈 MACD Strategy
 
-MACD (Moving Average Convergence Divergence) is a classic trend-following indicator that detects bullish or bearish momentum based on the crossover between short- and long-term moving averages.
+The MACD (Moving Average Convergence Divergence) is a widely used **trend-following** technical indicator that measures momentum by tracking the relationship between short-term and long-term exponential moving averages (EMAs).  
+It helps traders identify potential bullish or bearish market shifts through line crossovers and histogram analysis.
 
 ---
 
 ## 💡 Strategy Logic
 
-- **MACD Line Calculation**
-  - The difference between the fast EMA(12) and slow EMA(26) forms the MACD Line.
-  - The Signal Line is the EMA(9) of the MACD Line.
+- **MACD Line Calculation**  
+  - The **MACD Line** is derived from the difference between the short-term EMA(12) and the long-term EMA(26).  
+  - The **Signal Line** is calculated as the EMA(9) of the MACD Line.
 
-- **Buy Condition: Golden Cross**
-  - MACD Line crosses above the Signal Line
-  - No current position → Trigger buy
+- **Buy Condition (Golden Cross)**  
+  - MACD Line crosses above the Signal Line.  
+  - No current open position → Trigger a buy order.
 
-- **Sell Condition: Death Cross**
-  - MACD Line crosses below the Signal Line
-  - Position held → Trigger sell
+- **Sell Condition (Death Cross)**  
+  - MACD Line crosses below the Signal Line.  
+  - An active position exists → Trigger a sell order.
 
-- **Histogram**
-  - Represents the difference between MACD and Signal Line, used to help filter noise
+- **Histogram**  
+  - Shows the gap between the MACD Line and the Signal Line, helping to filter noise and gauge momentum strength.
 
 ---
 
@@ -32,17 +33,17 @@ MACD (Moving Average Convergence Divergence) is a classic trend-following indica
 
 ```text
 
-[Receive historical candlestick data]
+[Receive historical OHLC data]
         ↓
 [Calculate EMA(12) and EMA(26)]
         ↓
 [Calculate MACD Line and Signal Line]
         ↓
-[Detect crossover → Golden Cross or Death Cross]
+[Check for Golden Cross / Death Cross]
         ↓
-[Place Buy/Sell Orders]
+[Execute buy or sell order]
         ↓
-[Backtest ends → Output KPIs and trade chart]
+[Backtest complete → Generate KPIs and trade chart]
 
 ```
 
@@ -50,21 +51,24 @@ MACD (Moving Average Convergence Divergence) is a classic trend-following indica
 
 ## 🧩 Strategy Characteristics
 
-| Item          | Description                                                                               |
-| ------------- | ----------------------------------------------------------------------------------------- |
-| Strategy Type | Trend-following                                                                           |
-| Indicator     | MACD (12,26,9)                                                                            |
-| Buy Logic     | MACD crosses above Signal                                                                 |
-| Sell Logic    | MACD crosses below Signal                                                                 |
-| Market        | Forex / Stocks / Index / Futures                                                          |
-| Pros          | Trend-following, filters out noise, works for both short and long term                    |
-| Cons          | May produce delayed signals during sideways markets; should be used with other mechanisms |
+| Item          | Description                                                                                      |
+| ------------- | ------------------------------------------------------------------------------------------------ |
+| Strategy Type | Trend-Following                                                                                  |
+| Indicator     | MACD (12, 26, 9)                                                                                 |
+| Buy Logic     | MACD Line crosses above the Signal Line                                                          |
+| Sell Logic    | MACD Line crosses below the Signal Line                                                          |
+| Markets       | Forex / Stocks / Indices / Futures                                                               |
+| Pros          | Works across multiple timeframes, filters out some market noise, suitable for trend confirmation |
+| Cons          | May lag in choppy markets; recommended to pair with additional filters or risk controls          |
 
 ---
 
 ## 🚀 Backtesting and Live Mode Switching
 
-You can switch between backtesting and live trading using the `toggle` parameter:
+Use the `toggle` parameter to instantly switch modes:
+
+- `True` → Backtest mode
+- `False` → Live trading mode
 
 ```python
 
@@ -109,7 +113,7 @@ After execution, the following will be generated automatically:
 import mas
 import pandas as pd
 
-class MACD_Strategy(MAS):
+class MAS_Client(mas):
     def __init__(self, toggle):
         super().__init__()
         self.toggle = toggle
@@ -173,7 +177,7 @@ class MACD_Strategy(MAS):
 def main():
     try:
         toggle = True  # True = Backtest, False = Live
-        mas_c = MACD_Strategy(toggle)
+        mas_c = MAS_Client(toggle)
 
         login_params = {
             "account": "YOUR_ACCOUNT",
@@ -185,7 +189,7 @@ def main():
         params = {
             "symbol": "EURUSD",
             "from": '2020-01-01',
-            "to': '2024-12-31',
+            "to": '2024-12-31',
             "timeframe": "D1",
             "backtest_toggle": mas_c.toggle
         }

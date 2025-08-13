@@ -11,35 +11,34 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Receives Tick data via push updates, triggered by the `on_tick()` handler.
+Receives real-time or backtesting Tick data via push updates, triggered by the `on_bar()` handler.
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name    | Type    | Description                                 |
-|---------|---------|---------------------------------------------|
-| symbol  | str     | The instrument symbol (e.g., `"EURUSD"`).   |
-| data    | dict    | A dictionary representing a single tick.    |
-| is_end  | bool    | Indicates the end of the push stream (used in backtesting mode). |
+| Parameter Name     | Type    | Description |
+|--------------------|---------|-------------|
+| `symbol`           | str     | The instrument symbol (e.g., `"EURUSD"`). |
+| `data`             | dict    | A dictionary containing the tick data fields, described below. |
+| `is_end`           | bool    | Indicates the end of the push stream (used in backtesting mode). |
 
-Tick `data` structure:
-
-| Key      | Type     | Description                  |
-|----------|----------|------------------------------|
-| `time`   | datetime | Timestamp of the tick.       |
-| `bid`    | float    | Bid price.                   |
-| `ask`    | float    | Ask price.                   |
-| `last`   | float    | Last transaction price.      |
-| `volume` | float    | Transaction volume.          |
+**`data` structure**:  
+| Key       | Type     | Description |
+|-----------|----------|-------------|
+| `time`    | datetime | The timestamp of the tick. |
+| `bid`     | float    | Bid price (the price at which the market is willing to buy). |
+| `ask`     | float    | Ask price (the price at which the market is willing to sell). |
+| `last`    | float    | Last trade price (final executed transaction price). |
+| `volume`  | float    | Trade volume associated with the tick. |
 
 ---
 
 ### 📤 Function Return
 
-| Name   | Type | Description                              |
-|--------|------|------------------------------------------|
-| None   | None | No return value. This function only handles incoming tick data. |
+| Name | Type | Description |
+|------|------|-------------|
+| None | None | No return value. This function only processes received push data. |
 
 ---
 

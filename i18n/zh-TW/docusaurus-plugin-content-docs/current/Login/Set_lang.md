@@ -5,13 +5,13 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🧩 函式名稱
 
-`login`
+`set_lang`
 
 ---
 
 ### 🎯 函式用途
 
-設定系統預設語言。  
+設定系統的預設顯示語言，影響所有訊息顯示與國際化（i18n）翻譯內容。
 
 ---
 
@@ -19,7 +19,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱    | 型別    | 必填 | 備註說明 |
 |------------|---------|------|----------|
-| lang       | str     | ❌   | 語言代碼，可選：`'en'`（英文，預設）、`'zh-tw'`（繁體中文）、`'zh-cn'`（簡體中文）。 |
+| lang          | str  | ❌   | 語言代碼，可選：`'en'`（英文，預設）、`'zh-tw'`（繁體中文）、`'zh-cn'`（簡體中文）。 |
 
 ---
 
@@ -27,7 +27,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 名稱   | 型別    | 備註說明               |
 |--------|---------|------------------------|
-| None   | NoneType | 僅設定內部語言狀態，無回傳值 |
+| None   | NoneType | 僅更新內部語言設定，無回傳值。 |
 
 ---
 

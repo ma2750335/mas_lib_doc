@@ -11,15 +11,15 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Checks whether the connection to MetaTrader 5 (MT5) is still active.
+Checks and reports whether the system is currently connected to MetaTrader 5 (MT5).  
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name | Type | Description |
-|------|------|-------------|
-| None | None | This function takes no parameters. |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| None           | None | This function does not require any parameters. |
 
 ---
 
@@ -27,7 +27,7 @@ Checks whether the connection to MetaTrader 5 (MT5) is still active.
 
 | Name        | Type | Description                          |
 |-------------|------|--------------------------------------|
-| (anonymous) | bool | Returns `True` if MT5 is connected; otherwise, returns `False`. |
+| (anonymous)    | bool | Returns `True` if the MT5 connection is active; returns `False` if disconnected, which can be used as a trigger for reconnection. |
 
 ---
 

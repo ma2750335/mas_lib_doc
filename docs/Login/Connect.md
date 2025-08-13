@@ -12,30 +12,31 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Initializes MetaTrader 5 (MT5) and logs into the specified trading account.
+Initializes the **MetaTrader 5 (MT5)** trading terminal and logs into a specified trading account.  
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name   | Type | Description |
-|--------|------|-------------|
-| params | dict | A dictionary containing the following fields: |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| params         | dict | A dictionary containing the following fields: |
 
-| Field      | Type   | Required | Description                                               |
-|------------|--------|----------|-----------------------------------------------------------|
-| `account`  | int    | ✅        | Your MT5 trading account number.                         |
-| `password` | str    | ✅        | Your MT5 account password.                               |
-| `server`   | str    | ✅        | Name of the trading server.                              |
-| `timeout`  | int    | ❌        | Connection timeout in milliseconds (default: `60000`).   |
+| Field          | Type   | Required | Description                                               |
+|----------------|--------|----------|-----------------------------------------------------------|
+| `account`      | int    | ✅        | MT5 trading account number (valid for both live and demo accounts). |
+| `password`     | str    | ✅        | MT5 account password (must match the account number). |
+| `server`       | str    | ✅        | Name of the MT5 trading server (available from MT5 login settings). |
+| `timeout`      | int    | ❌        | Connection timeout in milliseconds (default: `60000` / 60 seconds). Recommended to increase in high-latency environments. |
+
 
 ---
 
 ### 📤 Function Return
 
-| Name       | Type | Description                                        |
-|------------|------|----------------------------------------------------|
-| (anonymous)| bool | Returns `True` if login succeeds; otherwise raises an exception. |
+| Name       | Type | Description |
+|------------|------|-------------|
+| (anonymous)| bool | Returns `True` if login is successful, otherwise raises an exception with the MT5 API error code and message. |
 
 ---
 

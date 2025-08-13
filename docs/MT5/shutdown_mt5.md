@@ -11,15 +11,15 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Closes the MetaTrader 5 (MT5) platform connection.
+Safely closes the connection to the MetaTrader 5 (MT5) platform and releases associated resources.  
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name | Type | Description            |
-|------|------|------------------------|
-| None | None | This function takes no parameters. |
+| Parameter Name | Type | Description            |
+|----------------|------|------------------------|
+| None           | None | This function takes no parameters. |
 
 ---
 

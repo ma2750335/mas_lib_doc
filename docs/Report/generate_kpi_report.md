@@ -10,25 +10,25 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Generates a KPI performance report based on historical trading records (e.g., win rate, profit factor, net profit/loss, number of trades), and outputs a summarized report file.
+Generates a comprehensive KPI performance report based on historical trading records, including key metrics such as win rate, profit factor, net profit/loss, maximum drawdown, and total number of trades.  
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name | Type | Description |
-|------|------|-------------|
-| None | None | This function automatically reads internal trade history to generate the report; no arguments are required. |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| None           | None | Automatically retrieves internal historical trade data to generate the KPI report; no arguments are required. |
 
 ---
 
 ### 📤 Function Return 
 
-| Name   | Type | Description                                     |
-|--------|------|-------------------------------------------------|
-| return | dict | Result indicating success or failure with error details if any. |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| return         | dict | Indicates whether the report was generated successfully; if failed, includes error message details. |
 
-Return format:
+**Return format:**
 
 ```python
 {

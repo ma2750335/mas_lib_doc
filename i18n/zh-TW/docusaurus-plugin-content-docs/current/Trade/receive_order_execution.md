@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-接收系統回傳的訂單成交資訊，用於後續處理或顯示。
+接收 **交易訂單成交資訊推播**，用於後續的資料處理、交易紀錄更新、績效統計或即時顯示。  
 
 ---
 
@@ -19,25 +19,24 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱     | 型別  | 備註說明 |
 |--------------|--------|----------|
-| order_id     | str    | 訂單編號。 |
-| execution_data | dict | 傳入的字典內容如下方欄位說明。 |
+| ` order_id`      | str    | 訂單編號。 |
+| ` execution_data`  | dict | 字典欄位說明如下：  |
 
-| execution_data 欄位 | 型別   | 備註說明 |
-|----------------------|--------|----------|
-| `price`              | float  | 成交價格。 |
-| `volume`             | float  | 成交數量。 |
-| `symbol`             | str    | 商品代碼。 |
-| `time`               | datetime | 成交時間（通常為當下推播時間）。 |
-| `type`               | str    | 訂單類型。 |
+| execution_data 欄位 | 型別      | 備註說明 |
+|---------------------|----------|----------|
+| `price`             | float    | 成交價格。 |
+| `volume`            | float    | 成交數量（交易手數）。 |
+| `symbol`            | str      | 交易商品代碼（如 `EURUSD`）。 |
+| `time`              | datetime | 成交時間（一般為伺服器推播時間）。 |
+| `type`              | str      | 訂單類型（如市價、市價平倉、限價等）。 |
 
 ---
 
 ### 📤 回傳資料內容
 
-| 名稱   | 型別 | 備註說明              |
-|--------|------|-----------------------|
-| 無     | None | 無回傳值（單純接收推播訊息處理） |
-
+| 名稱  | 型別 | 備註說明              |
+|------|------|-----------------------|
+| 無   | None | 無回傳值（僅接收並處理成交推播訊息）。 |
 ---
 
 ### 💡 範例程式碼

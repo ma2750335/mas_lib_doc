@@ -100,8 +100,8 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/ma2750335/mas_lib_doc',
-            label: 'GitHub',
+            href: 'https://pypi.org/project/mas/',
+            label: 'Python',
             position: 'right',
           },
         ],
@@ -131,8 +131,8 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/ma2750335/mas_lib_doc',
+                label: 'Python',
+                href: 'https://pypi.org/project/mas/',
               },
             ],
           },

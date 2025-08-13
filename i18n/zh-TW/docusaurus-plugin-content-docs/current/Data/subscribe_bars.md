@@ -11,11 +11,11 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-訂閱指定商品的即時 Bar（K 線）資料，或於回測模式中送出歷史 Bar 推播。  
-根據 `backtest_toggle` 參數的值，自動切換資料來源：
+訂閱指定交易商品的即時 **Bar（K 線）資料**，或於回測模式中發送歷史 Bar 推播。  
+根據 `backtest_toggle` 參數值自動切換資料來源：  
 
-- 若為 `True`：呼叫歷史資料模組送出 Bar 推播  
-- 若為 `False`：建立背景執行緒，每間隔 `interval_ms` 毫秒從 MT5 取得最新 Bar 並推播
+- **True**：啟動歷史資料模組，依時間區間推送歷史 Bar 資料  
+- **False**：建立背景執行緒，每隔 `interval_ms` 毫秒從 MT5 取得最新 Bar 並推播
 
 ---
 
@@ -23,19 +23,18 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| params   | dict | 字典內容如下方欄位說明 |
+| params   | dict | 字典欄位說明如下： |
 
-| 名稱             | 型別          | 必填        | 說明                                                          |
-|------------------|---------------|------------|---------------------------------------------------------------|
-| `symbol`         | str           | ✅        | 商品代碼（如 `"EURUSD"`）。                                     |
-| `timeframe`      | str           | ✅        | Bar 時間週期（如 `"M1"`、`"H1"`、`"D1"`）。                     |
-| `interval_ms`    | int           | ❌        | 實盤推播間隔時間，預設為 `1000` 毫秒。                          |
-| `from`           | datetime/str  | ✅(回測)  | 歷史資料起始時間（僅在 `backtest_toggle = True` 時使用）。       |
-| `to`             | datetime/str  | ✅(回測)  | 歷史資料結束時間（僅在 `backtest_toggle = True` 時使用）。       |
-| `backtest_toggle`| bool          | ❌        | 是否為回測模式，預設為 `False`。                               |      
+| 名稱             | 型別          | 必填        | 說明 |
+|------------------|---------------|------------|------|
+| `symbol`         | str           | ✅        | 商品代碼（例如 `"EURUSD"`）。 |
+| `timeframe`      | str           | ✅        | Bar 時間週期（例如 `"M1"`、`"H1"`、`"D1"`）。 |
+| `interval_ms`    | int           | ❌        | 實盤推播間隔時間（毫秒），預設 `1000`。 |
+| `from`           | datetime/str  | ✅(回測)  | 歷史資料起始時間（僅於 `backtest_toggle = True` 時使用）。 |
+| `to`             | datetime/str  | ✅(回測)  | 歷史資料結束時間（僅於 `backtest_toggle = True` 時使用）。 |
+| `backtest_toggle`| bool          | ❌        | 是否啟用回測模式，預設 `False`。 | 
 
-
-timeframe說明:
+**timeframe 說明：**
 | ID | 說明 |
 |----------|----------|
 | M1 | 1 minute | 
@@ -64,9 +63,9 @@ timeframe說明:
 
 ### 📤 回傳資料內容
 
-| 名稱   | 型別 | 備註說明                          |
-|--------|------|-----------------------------------|
-| return | None | 此函式無回傳值，用於觸發 Bar 資料推播 |
+| 名稱   | 型別 | 備註說明 |
+|--------|------|----------|
+| 無     | None | 無回傳值，僅用於觸發 Bar 資料推播 |
 
 ---
 

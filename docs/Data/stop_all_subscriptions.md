@@ -11,16 +11,16 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Stops all active data subscriptions for both Tick and Bar feeds.  
-This is applicable in live trading mode.
+Stops all active data subscriptions for both **Tick** and **Bar** feeds.  
+This is applicable in **live trading mode**.
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name | Type | Description                |
-|------|------|----------------------------|
-| None | None | This function takes no parameters. |
+| Parameter Name | Type | Description                |
+|----------------|------|----------------------------|
+| None           | None | This function takes no parameters. |
 
 ---
 

@@ -5,29 +5,22 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ## 📈 BBAND  Strategy
 
-Bollinger Bands (BBands) is a volatility-based technical indicator that uses standard deviation to assess price range and market status.  
-This strategy utilizes the middle, upper, and lower bands to determine entry and exit points, representing a typical **mean reversion** model.
+Bollinger Bands (BBands) is a volatility-based technical analysis tool that uses standard deviation to determine price range and market conditions.  
+This strategy applies the middle, upper, and lower bands to identify entry and exit opportunities, representing a classic **mean reversion** trading model that works best in sideways markets.
 
 ---
 
 ## 💡 Strategy Logic
 
-- **Middle Band**:  
-  - Moving average of the past N closing prices (default N = 20)
+- **Middle Band**: Moving average of the past N closing prices (default N = 20)  
+- **Upper Band**: Middle Band + K × Standard Deviation (default K = 2)  
+- **Lower Band**: Middle Band − K × Standard Deviation (default K = 2)  
 
-- **Upper Band**:  
-  - Middle Band + K × Standard Deviation (default K = 2)
+**Entry & Exit Rules**:  
+- **Buy**: Close price ≤ Lower Band → Interpreted as oversold → Enter long position  
+- **Sell**: Close price ≥ Upper Band → Interpreted as overbought → Exit long / enter short position  
 
-- **Lower Band**:  
-  - Middle Band − K × Standard Deviation (default K = 2)
-
-- **Buy Condition**:  
-  - Close price ≤ Lower Band → Price is considered oversold → Trigger Buy
-
-- **Sell Condition**:  
-  - Close price ≥ Upper Band → Price is considered overbought → Trigger Sell
-
-This is a **reversion strategy**, assuming prices tend to return to the mean, ideal for sideways or range-bound markets.
+This is a **reversion-to-mean** strategy, assuming price will revert toward its average value, making it effective in ranging or consolidating markets.
 
 ---
 
@@ -37,13 +30,13 @@ This is a **reversion strategy**, assuming prices tend to return to the mean, id
 
 [Receive historical candlestick data]
         ↓
-[Calculate Moving Average and Standard Deviation → Bands]
+[Calculate Middle, Upper, Lower Bands]
         ↓
-[Check if close price touches Lower Band → Buy]
+[Close ≤ Lower Band → Buy]
         ↓
-[Check if close price touches Upper Band → Sell]
+[Close ≥ Upper Band → Sell]
         ↓
-[Backtest ends → Output KPI and trade chart]
+[End of backtest → Generate KPI & trade chart]
 
 ```
 
@@ -51,21 +44,24 @@ This is a **reversion strategy**, assuming prices tend to return to the mean, id
 
 ## 🧩 Strategy Characteristics
 
-| Item          | Description                                                       |
-| ------------- | ----------------------------------------------------------------- |
-| Strategy Type | Mean Reversion                                                    |
-| Indicator     | Bollinger Bands (20, 2)                                           |
-| Buy Logic     | Close price ≤ Lower Band                                          |
-| Sell Logic    | Close price ≥ Upper Band                                          |
-| Applicable To | Forex / Stocks / Index / Range-bound instruments                  |
-| Pros          | Simple and intuitive, works well in range-bound conditions        |
-| Cons          | May incur continuous losses in trending markets without stop-loss |
+| Item          | Description                                                                             |
+| ------------- | --------------------------------------------------------------------------------------- |
+| Strategy Type | Mean Reversion                                                                          |
+| Indicator     | Bollinger Bands (20, 2)                                                                 |
+| Buy Logic     | Close ≤ Lower Band                                                                      |
+| Sell Logic    | Close ≥ Upper Band                                                                      |
+| Markets       | Forex / Stocks / Indices / Range-bound instruments                                      |
+| Pros          | Simple and intuitive, responsive in sideways conditions                                 |
+| Cons          | Risk of consecutive losses in strong trending markets without stop-loss or trend filter |
 
 ---
 
 ## 🚀 Backtesting and Live Mode Switching
 
-You can switch between backtesting and live trading using the `toggle` parameter:
+Use the `toggle` parameter to instantly switch modes:
+
+- `True` → Backtest mode
+- `False` → Live trading mode
 
 ```python
 
@@ -75,7 +71,7 @@ mas_c = MAS_Client(toggle)
 
 ```
 
-Pass `backtest_toggle` into `subscribe_bars()`:
+Pass `backtest_toggle` into `subscribe_bars()` :
 
 ```python
 
@@ -103,14 +99,14 @@ After execution, the following will be generated automatically:
 
 ---
 
-## 📘 KD Strategy Example
+## 📘 bband Strategy Example
 
 ```python
 
 import mas
 import pandas as pd
 
-class BBand_Strategy(MAS):
+class MAS_Client(mas):
     def __init__(self, toggle, period=20, std_k=2):
         super().__init__()
         self.toggle = toggle
@@ -170,7 +166,7 @@ class BBand_Strategy(MAS):
 def main():
     try:
         toggle = True  # True = Backtest, False = Live
-        mas_c = BBand_Strategy(toggle, period=20, std_k=2)
+        mas_c = MAS_Client(toggle, period=20, std_k=2)
 
         login_params = {
             "account": "YOUR_ACCOUNT",
@@ -182,7 +178,7 @@ def main():
         params = {
             "symbol": "EURUSD",
             "from": '2020-01-01',
-            "to': '2024-12-31',
+            "to": '2024-12-31',
             "timeframe": "D1",
             "backtest_toggle": mas_c.toggle
         }

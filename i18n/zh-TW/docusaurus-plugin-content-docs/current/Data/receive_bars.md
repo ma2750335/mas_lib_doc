@@ -11,37 +11,36 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-接收 Bar（K 線）資料推播，由 `on_bar()` 呼叫觸發。
+接收 **Bar（K 線）資料推播**，由 `on_bar()` 回呼函式觸發。  
 
 ---
 
 ### 🔧 函式參數
 
 | 參數名稱 | 型別  | 備註說明 |
-|----------|--------|----------|
-| symbol   | str    | 商品代碼（如 `"EURUSD"`） |
-| data     | dict   | 一筆 Bar 結構資料 |
-| is_end   | bool   | 是否為推播結束標記（回測模式中使用）|
+|----------|-------|----------|
+| `symbol` | str   | 商品代碼（例如 `"EURUSD"`）。 |
+| `data`   | dict  | 單筆 Bar 結構資料，欄位說明如下： |
+| `is_end` | bool  | 是否為推播結束標記（回測模式中使用）。 |
 
-
- data 結構說明:
-| 欄位名稱   | 型別     | 說明       |
-|------------|----------|------------|
-| `time`     | datetime | Bar 起始時間。 |
-| `open`     | float    | 開盤價。     |
-| `high`     | float    | 最高價。     |
-| `low`      | float    | 最低價。     |
-| `close`    | float    | 收盤價。     |
-| `volume`   | float    | 成交量。     |
-| `timeframe`| str      | Bar 的時間週期（如 M1, H1, D1）。 |
+**`data` 欄位結構**：  
+| 欄位名稱    | 型別     | 說明 |
+|-------------|----------|------|
+| `time`      | datetime | Bar 起始時間。 |
+| `open`      | float    | 開盤價。 |
+| `high`      | float    | 最高價。 |
+| `low`       | float    | 最低價。 |
+| `close`     | float    | 收盤價。 |
+| `volume`    | float    | 成交量。 |
+| `timeframe` | str      | Bar 的時間週期（如 `"M1"`、`"H1"`、`"D1"`）。 |
 
 ---
 
 ### 📤 回傳資料內容
 
-| 名稱   | 型別 | 備註說明                    |
-|--------|------|-----------------------------|
-| 無     | None | 無回傳值（單純接收推播訊息處理）|
+| 名稱 | 型別 | 備註說明 |
+|------|------|----------|
+| 無   | None | 無回傳值（僅處理接收到的推播資料）。 |
 
 ---
 

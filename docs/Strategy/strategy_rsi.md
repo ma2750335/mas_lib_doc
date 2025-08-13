@@ -5,23 +5,27 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ## 📈 RSI Strategy
 
-The RSI (Relative Strength Index) is a momentum oscillator used to measure the speed and change of price movements, commonly applied in ranging markets. By comparing the magnitude of recent gains to recent losses, the RSI indicates whether an asset is overbought or oversold.
+The RSI (Relative Strength Index) is a popular momentum oscillator that measures the strength and speed of price movements, often applied in sideways or ranging markets.  
+By comparing the magnitude of recent gains to recent losses, RSI helps identify whether an asset is in an **overbought** or **oversold** condition.
 
-This strategy is based on a 14-day RSI. It issues a buy signal when RSI < 30 (oversold) and a sell signal when RSI > 70 (overbought), making it a simple yet practical momentum reversal strategy.
+This strategy uses a **14-day RSI**:  
+- **Buy** when RSI < 30 (oversold zone)  
+- **Sell** when RSI > 70 (overbought zone)  
+It is a straightforward yet effective momentum reversal approach.
 
 ---
 
 ## 💡 Strategy Logic
 
-- **Buy Conditions**:
-  - RSI is below 30 (oversold zone)
-  - No current open position
+- **Buy Condition**:  
+  - RSI is below 30 (oversold zone)  
+  - No current open position  
 
-- **Sell Conditions**:
-  - RSI is above 70 (overbought zone)
-  - A position is currently held
+- **Sell Condition**:  
+  - RSI is above 70 (overbought zone)  
+  - A position is currently held  
 
-This strategy follows a contrarian approach, aiming to profit from potential rebounds after excessive price deviations.
+This contrarian-style strategy aims to capture potential reversals after excessive price moves.
 
 ---
 
@@ -29,17 +33,15 @@ This strategy follows a contrarian approach, aiming to profit from potential reb
 
 ```text
 
-[Receive historical bar data]
-    ↓
-[Accumulate closing prices and calculate RSI]
-    ↓
-[Check if RSI is overbought or oversold]
-    ↓
-[Check position status → Execute buy or sell order]
-    ↓
-[Continue updating → Output reports and charts when backtest ends]
-
-Internally, the strategy uses 14 bars to calculate RSI, and processes data one bar at a time using MAS SDK’s receive_bars method.
+[Receive historical price bars]
+        ↓
+[Accumulate close prices and calculate RSI]
+        ↓
+[Check if RSI is in overbought / oversold territory]
+        ↓
+[Execute buy/sell based on position status]
+        ↓
+[Backtest ends → Output performance reports & charts]
 
 ```
 
@@ -47,21 +49,24 @@ Internally, the strategy uses 14 bars to calculate RSI, and processes data one b
 
 ## 🧩 Strategy Features
 
-| Item        | Description                                                  |
-| ----------- | ------------------------------------------------------------ |
-| Type        | Momentum Reversal Strategy (Contrarian Trading)              |
-| Indicator   | RSI (14-day)                                                 |
-| Entry Logic | RSI < 30 (Buy)                                               |
-| Exit Logic  | RSI > 70 (Sell)                                              |
-| Applicable  | Forex / Stocks / Indices (Ideal for sideway market)          |
-| Pros        | Simple and beginner-friendly; effective in ranging markets   |
-| Cons        | Not suitable for strong trends; requires stop-loss mechanism |
+| Item          | Description                                                      |
+| ------------- | ---------------------------------------------------------------- |
+| Strategy Type | Momentum Reversal (Contrarian Trading)                           |
+| Indicator     | RSI (14-day)                                                     |
+| Buy Logic     | RSI < 30 (Oversold → Buy)                                        |
+| Sell Logic    | RSI > 70 (Overbought → Sell)                                     |
+| Markets       | Forex / Stocks / Indices (especially effective in ranging moves) |
+| Pros          | Simple, beginner-friendly, works well in consolidation phases    |
+| Cons          | Poor performance in strong trending markets; needs stop-loss     |
 
 ---
 
-## 🚀 Backtest vs. Live Mode Toggle
+## 🚀 Backtesting and Live Mode Switching
 
-You can toggle between backtest and live trading using the `toggle` parameter:
+Use the `toggle` parameter to instantly switch modes:
+
+- `True` → Backtest mode
+- `False` → Live trading mode
 
 ```python
 
@@ -106,7 +111,7 @@ After execution, the following will be generated automatically:
 import mas
 import pandas as pd
 
-class RSI_Strategy(MAS):
+class MAS_Client(mas):
     def __init__(self, toggle):
         super().__init__()
         self.toggle = toggle
@@ -166,7 +171,7 @@ class RSI_Strategy(MAS):
 def main():
     try:
         toggle = True
-        mas_c = RSI_Strategy(toggle)
+        mas_c = MAS_Client(toggle)
 
         login_params = {
             "account": "YOUR_ACCOUNT",

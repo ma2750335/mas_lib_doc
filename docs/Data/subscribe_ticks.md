@@ -14,23 +14,23 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 Subscribes to real-time tick data or pushes historical tick data in simulation mode.  
 The data source will switch automatically based on the value of `backtest_toggle`:
 
-- If `True`: historical tick data will be pushed using the simulation module  
-- If `False`: a background thread will be started to fetch and push the latest tick from MT5 every `interval_ms` milliseconds
+- **True**: historical tick data will be pushed using the simulation module  
+- **False**: a background thread will be started to fetch and push the latest tick from MT5 every `interval_ms` milliseconds
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name     | Type  | Description |
-|----------|-------|-------------|
-| `params` | dict  | A dictionary containing the following fields: |
+| Parameter Name | Type  | Description |
+|----------------|-------|-------------|
+| `params`       | dict  | A dictionary containing the following fields: |
 
-| Field             | Type           | Required         | Description                                                                 |
-|------------------|----------------|-------------------|-----------------------------------------------------------------------------|
+| Name             | Type           | Required         | Description                                                                 |
+|------------------|----------------|------------------|-----------------------------------------------------------------------------|
 | `symbol`         | str            | ✅               | The symbol to subscribe (e.g., `"EURUSD"`)                                  |
 | `interval_ms`    | int            | ❌               | Interval in milliseconds between each tick push (default: `500`)            |
 | `from`           | datetime/str   | ✅ (backtest)    | Start time of historical data (used only when `backtest_toggle=True`)       |
-| `to`             | datetime/str   | ✅ (acktest)     | End time of historical data (used only when `backtest_toggle=True`)         |
+| `to`             | datetime/str   | ✅ (backtest)    | End time of historical data (used only when `backtest_toggle=True`)         |
 | `flags`          | int            | ❌               | Tick source flags, default is `mt5.COPY_TICKS_ALL` (used in real-time mode) |
 | `mode`           | str            | ❌               | Simulation tick mode: `"all"` or `"trade"` (default: `"all"`)               |
 | `backtest_toggle`| bool           | ❌               | Whether to enable simulation mode (default: `False`)                        |

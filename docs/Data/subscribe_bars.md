@@ -11,32 +11,31 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Subscribe to real-time Bar (candlestick) data for a specific symbol,  
-or dispatch historical Bars in backtest mode.  
-The data source automatically switches based on the `backtest_toggle` value:
+Subscribes to **real-time Bar (candlestick) data** for a specified trading symbol,  
+or dispatches historical Bars in backtest mode.  
+The data source automatically switches based on the `backtest_toggle` parameter:
 
-- If `True`: uses the historical module to push Bar data
-- If `False`: starts a background thread to fetch the latest Bar data from MT5 at `interval_ms` intervals
+- **True**: Activates the historical data module to push Bars within the specified date range  
+- **False**: Launches a background thread to fetch the latest Bar data from MT5 at the given `interval_ms` interval
 
 ---
 
-### Function 參數
+### Function Parameters
 
-| Name     | Type  | Description |
-|----------|-------|-------------|
-| `params` | dict  | A dictionary containing the following fields: |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| `params`       | dict | Parameter settings dictionary, with the following fields: |
 
-| Key               | Type          | Required     | Description                                                                 |
-|------------------|---------------|--------------|-----------------------------------------------------------------------------|
-| `symbol`         | str           | ✅           | Symbol to subscribe (e.g. `"EURUSD"`)                                       |
-| `timeframe`      | str           | ✅           | Bar timeframe (e.g. `"M1"`, `"H1"`, `"D1"`)                                 |
-| `interval_ms`    | int           | ❌           | Interval in milliseconds for live feed (default is `1000`)                 |
-| `from`           | datetime/str  | ✅ (backtest) | Start time for historical data (used only when `backtest_toggle = True`)   |
-| `to`             | datetime/str  | ✅ (backtest) | End time for historical data (used only when `backtest_toggle = True`)     |
-| `backtest_toggle`| bool          | ❌           | Whether to run in backtest mode (default is `False`)                        | 
+| Name             | Type          | Required     | Description |
+|------------------|---------------|--------------|-------------|
+| `symbol`         | str           | ✅           | Trading symbol to subscribe (e.g., `"EURUSD"`). |
+| `timeframe`      | str           | ✅           | Bar timeframe (e.g., `"M1"`, `"H1"`, `"D1"`). |
+| `interval_ms`    | int           | ❌           | Interval in milliseconds for live mode (default: `1000`). |
+| `from`           | datetime/str  | ✅ (backtest) | Start time for historical data (only used when `backtest_toggle = True`). |
+| `to`             | datetime/str  | ✅ (backtest) | End time for historical data (only used when `backtest_toggle = True`). |
+| `backtest_toggle`| bool          | ❌           | Whether to enable backtest mode (default: `False`). |
 
-
-Timeframe Reference:
+**Timeframe Reference:**
 | ID   | Description   |
 |------|---------------|
 | M1   | 1 minute      |
@@ -65,9 +64,9 @@ Timeframe Reference:
 
 ### 📤 Function Return
 
-| Name   | Type | Description                        |
-|--------|------|------------------------------------|
-| None   | None | No return value. Triggers bar data streaming |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| None           | None | No return value. Used to trigger Bar data streaming. |
 
 ---
 

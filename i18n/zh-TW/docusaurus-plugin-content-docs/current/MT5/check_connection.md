@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-檢查 MetaTrader 5（MT5）是否仍保持連線。  
+檢查並回報當前系統是否與 MetaTrader 5（MT5） 保持有效連線。  
 
 ---
 
@@ -19,7 +19,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明     |
 |----------|------|--------------|
-| 無       | 無   | 此函式不需任何參數 |
+| 無       | 無   | 此函式不需任何參數。|
 
 ---
 
@@ -27,7 +27,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 名稱   | 型別 | 備註說明                                |
 |--------|------|-------------------------------------------|
-|（匿名） | bool | 若連線正常則回傳 `True`，否則回傳 `False` |
+| （匿名） | bool | 若連線正常則回傳 `True`；若斷線則回傳 `False`，可作為重連判斷依據。 |
 
 ---
 

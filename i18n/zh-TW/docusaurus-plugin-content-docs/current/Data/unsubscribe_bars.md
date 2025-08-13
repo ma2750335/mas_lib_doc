@@ -11,8 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-取消指定商品的即時 Bar（K 線）資料訂閱 -> 適用於實盤模式。
-此函式會中止內部背景訂閱執行緒，關閉對該商品的即時報價監控。  
+取消指定交易商品的**即時 Bar（K 線）資料訂閱**，僅適用於**實盤模式**。  
+執行此函式後，系統會中止內部背景訂閱執行緒，並關閉對該商品的即時報價與 K 線更新監控。  
 
 ---
 
@@ -20,20 +20,20 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
+| params   | dict | 字典欄位說明如下： |
 
 | dict 欄位名稱 | 型別 | 備註說明 |
 |---------------|------|----------|
-| `symbol `     | str  | 商品代碼（如 EURUSD）。 |
-| `timeframe`   | str  | Bar 時間週期（如 M1, H1, D1）。 |
+| `symbol`     | str  | 商品代碼（例如 `"EURUSD"`）。 |
+| `timeframe`  | str  | Bar 時間週期（例如 `"M1"`、`"H1"`、`"D1"`）。 |
 
 ---
 
 ### 📤 回傳資料內容
 
-| 名稱   | 型別 | 備註說明                             |
+| 名稱   | 型別  | 備註說明                             |
 |--------|------|--------------------------------------|
-| return | None | 無回傳值，執行後即停止訂閱 |
+| None   | None | 此函式無回傳值，執行後即停止指定商品的 Bar 訂閱。 |
 
 ---
 

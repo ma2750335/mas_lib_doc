@@ -10,7 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-根據歷史交易紀錄計算績效指標（如勝率、獲利因子、總損益、交易次數等），並回傳報表統計結果。
+根據歷史交易紀錄自動計算多項績效指標（如勝率、獲利因子、總損益、交易次數、最大回撤、累積報酬率等），並回傳可用於**策略回測報告**與**交易績效分析**的統計結果。  
+該函式可直接從 `clientpost` 物件內的交易資料生成報表，無需額外輸入參數。
 
 ---
 
@@ -18,19 +19,19 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| 無       | 無   | 函式內部將直接取用 clientpost 物件中的歷史交易資料，不需傳入參數 |
+| 無       | 無   | 函式內部會直接讀取 `clientpost` 物件中的歷史交易資料，不需傳入任何參數。 |
 
 ---
 
 ### 📤 回傳資料內容
 
-| 欄位名稱 | 型別    | 說明                               |
-|----------|--------|-----------------------------------|
-| `status` | bool   | 是否成功產生報表                   |
-| `data`   | dict   | 報表原始資料內容（status = True）, 依照使用者權限顯示不同資料   |
-| `error`  | str    | 錯誤訊息（status = False）         |
+| 欄位名稱 | 型別   | 說明                               |
+|----------|-------|-----------------------------------|
+| `status` | bool  | 是否成功生成報表。 |
+| `data`   | dict  | 報表原始資料內容（僅在 `status = True` 時存在），依照使用者權限顯示不同範圍資料。 |
+| `error`  | str   | 錯誤訊息（僅在 `status = False` 時存在）。 |
 
-data格式如下：
+**`data` 格式：**
 
 ```python
 return {

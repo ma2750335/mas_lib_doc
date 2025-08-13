@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Reconnects to MetaTrader 5 (MT5), typically used when the connection has been lost.
+Attempts to re-establish the connection to MetaTrader 5 (MT5) when it has been lost, ensuring uninterrupted data streaming and trade execution.  
 
 ---
 

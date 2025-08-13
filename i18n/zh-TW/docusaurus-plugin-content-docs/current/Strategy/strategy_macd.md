@@ -5,26 +5,26 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ## 📈 MACD 策略
 
-MACD（Moving Average Convergence Divergence）是經典的趨勢追蹤指標，透過長短期均線差值與訊號線交叉判斷多空動能。
+MACD（Moving Average Convergence Divergence）是經典的趨勢追蹤技術指標，透過長期與短期均線的差值以及訊號線交叉，來判斷多空動能變化與市場趨勢方向。
 
 ---
 
 ## 💡 策略邏輯
 
-- **MACD 線計算**
-  - 快線 EMA(12) 與慢線 EMA(26) 的差值作為 MACD Line
-  - 對 MACD Line 取 EMA(9) 作為 Signal Line
+- **MACD 線計算**  
+  - 使用短期 EMA(12) 與長期 EMA(26) 的差值作為 **MACD Line**  
+  - 對 MACD Line 取 EMA(9) 作為 **Signal Line**  
 
-- **買進條件：黃金交叉**
-  - MACD Line 由下往上突破 Signal Line
-  - 當前尚未持倉 → 觸發買進
+- **買進條件（黃金交叉）**  
+  - MACD Line 由下往上突破 Signal Line  
+  - 當前無持倉時觸發買進  
 
-- **賣出條件：死亡交叉**
-  - MACD Line 由上往下跌破 Signal Line
-  - 當前已有持倉 → 觸發賣出
+- **賣出條件（死亡交叉）**  
+  - MACD Line 由上往下跌破 Signal Line  
+  - 當前有持倉時觸發賣出  
 
-- **柱狀圖 (Histogram)**
-  - 代表多空能量差異，可作為過濾雜訊的輔助判斷
+- **柱狀圖（Histogram）**  
+  - 顯示多空能量差值，可用於濾除雜訊並輔助判斷趨勢強弱  
 
 ---
 
@@ -32,17 +32,17 @@ MACD（Moving Average Convergence Divergence）是經典的趨勢追蹤指標，
 
 ```text
 
-[接收歷史K棒] 
-    ↓
-[計算 EMA(12) 與 EMA(26)]
-    ↓
-[計算 MACD Line 與 Signal Line]
-    ↓
-[檢測交叉 → 黃金交叉 or 死亡交叉]
-    ↓
-[下單買進 / 賣出]
-    ↓
-[回測結束 → 輸出 KPI 與買賣點圖表]
+[接收歷史K線]  
+        ↓
+[計算 EMA(12) 與 EMA(26)]  
+        ↓
+[計算 MACD Line 與 Signal Line]  
+        ↓
+[檢查是否黃金交叉 / 死亡交叉]  
+        ↓
+[執行買進或賣出]  
+        ↓
+[回測結束 → 輸出KPI與交易圖表]
 
 ```
 
@@ -50,21 +50,25 @@ MACD（Moving Average Convergence Divergence）是經典的趨勢追蹤指標，
 
 ## 🧩 策略特點
 
-| 項目       | 說明                                       |
-|------------|-------------------------------------------|
-| 策略類型   | 趨勢追蹤型                                  |
-| 使用指標   | MACD (12,26,9)                             |
-| 買進邏輯   | MACD 上穿 Signal                           |
-| 賣出邏輯   | MACD 下穿 Signal                           |
-| 適用市場   | 外匯 / 股票 / 指數 / 期貨                   |
-| 優點       | 順勢型策略，濾除雜訊，適合長短期皆用         |
-| 缺點       | 震盪行情可能出現延遲訊號，需要搭配其他機制    |
+| 項目   | 說明                     |
+| ---- | ---------------------- |
+| 策略類型 | 趨勢追蹤型                  |
+| 技術指標 | MACD (12, 26, 9)       |
+| 買進條件 | MACD 上穿 Signal         |
+| 賣出條件 | MACD 下穿 Signal         |
+| 適用市場 | 外匯 / 股票 / 指數 / 期貨      |
+| 優點   | 順勢型策略，能濾除部分雜訊，適用於不同週期  |
+| 缺點   | 在震盪行情中可能延遲反應，需結合其他過濾機制 |
 
 ---
 
 ## 🚀 回測與實盤切換
 
-你可透過 `toggle` 參數，快速在回測模式與真實交易間切換：
+可透過`toggle`參數快速切換模式：
+
+- `True` → 回測模式
+
+- `False` → 實盤模式
 
 ```python
 

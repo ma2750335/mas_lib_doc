@@ -10,54 +10,53 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Retrieve all current open positions for the authenticated MetaTrader 5 (MT5) account.
-
-You can filter positions by a specific symbol, group, or position ticket.  
-Each position is returned as a dictionary with detailed information such as price, volume, PnL, and timestamps.
+Fetches all **active open positions** from the authenticated MetaTrader 5 (MT5) account.  
+Supports filtering by **trading symbol**, **symbol group**, or **position ticket** for precise data queries.  
+Each position is returned as a Python dictionary containing **trade direction, entry price, stop loss/take profit levels, floating P/L, swap fees, and update timestamps**.
 
 ---
 
 ### 🔧 Function Parameters
 
-| Parameter | Type | Description |
-|----------|------|-------------|
-| `params` | dict | A dictionary containing the following fields: |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| `params`       | dict | A dictionary specifying query filters. See the following fields: |
 
 | Field Name | Type | Required | Description |
 |------------|------|----------|-------------|
-| `symbol`   | str  | ❌      | Filter by symbol (highest priority). |
-| `group`    | str  | ❌      | Filter by group name (e.g., `"USD*"`). |
-| `ticket`   | int  | ❌      | Filter by position ticket (ignored if `symbol` is used). |
+| `symbol`   | str  | ❌       | Filter by specific trading symbol (highest priority). |
+| `group`    | str  | ❌       | Filter by symbol group (supports wildcard patterns, e.g., `"USD*"`). |
+| `ticket`   | int  | ❌       | Filter by position ticket ID. Ignored if `symbol` is specified. |
 
 ---
 
 ### 📤 Function Return
 
-| Name   | Type        | Description |
-|--------|-------------|-------------|
-| result | list[dict]  | A list of open positions matching the filter. Empty list `[]` if none found. Each item has the following structure: |
+| Name   | Type       | Description |
+|--------|------------|-------------|
+| result | list[dict] | List of matching open positions. Returns an empty list `[]` if no positions are found. Each position dictionary contains: |
 
 | Field Name        | Type     | Description |
 |-------------------|----------|-------------|
-| `ticket`          | int      | Unique position ticket. |
-| `symbol`          | str      | Trading symbol. |
-| `type`            | int      | Position direction: `0 = Buy`, `1 = Sell`. |
-| `magic`           | int      | EA's magic number. |
-| `identifier`      | int      | Strategy-specific ID. |
-| `reason`          | int      | Order reason (manual, EA, etc). |
-| `volume`          | float    | Volume (in lots). |
+| `ticket`          | int      | Unique position ticket ID. |
+| `symbol`          | str      | Trading symbol (e.g., `EURUSD`, `XAUUSD`). |
+| `type`            | int      | Position direction: `0 = Buy (long)`, `1 = Sell (short)`. |
+| `magic`           | int      | Expert Advisor (EA) magic number. |
+| `identifier`      | int      | Custom strategy-specific identifier. |
+| `reason`          | int      | Order opening reason (e.g., manual, EA, automated strategy). |
+| `volume`          | float    | Position volume in lots. |
 | `price_open`      | float    | Opening price. |
-| `sl`              | float    | Stop Loss. |
-| `tp`              | float    | Take Profit. |
+| `sl`              | float    | Stop Loss price level. |
+| `tp`              | float    | Take Profit price level. |
 | `price_current`   | float    | Current market price. |
-| `swap`            | float    | Accumulated swap. |
-| `profit`          | float    | Floating profit/loss. |
-| `comment`         | str      | User comment. |
+| `swap`            | float    | Accumulated swap fee. |
+| `profit`          | float    | Floating profit or loss. |
+| `comment`         | str      | User comment or strategy label. |
 | `external_id`     | str      | External reference ID. |
-| `time`            | datetime | Open time (`datetime` format). |
-| `time_msc`        | int      | Open time in milliseconds since epoch. |
-| `time_update`     | datetime | Last update time. |
-| `time_update_msc` | int      | Last update time in milliseconds. |
+| `time`            | datetime | Position opening time (Python `datetime` object). |
+| `time_msc`        | int      | Position opening time in milliseconds since epoch. |
+| `time_update`     | datetime | Last update time (Python `datetime` object). |
+| `time_update_msc` | int      | Last update time in milliseconds since epoch. |
 
 Return Format：
 ```python

@@ -11,8 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-初始化 MetaTrader 5（MT5）環境並建立與終端機的連線。
-📌 備註：一般情況下不需要獨立呼叫，通常由 `login()` 函式內部自動執行。
+初始化 **MetaTrader 5（MT5）** 環境並建立與終端機的連線。  
+📌 **備註**：此函式通常不需手動呼叫，會由 `login()` 函式自動執行，除非需要獨立測試或重新初始化 MT5 連線。
 
 ---
 
@@ -20,7 +20,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明     |
 |----------|------|--------------|
-| 無       | 無   | 此函式不需任何參數 |
+| 無       | 無   | 此函式不需任何參數。 |
 
 ---
 
@@ -28,7 +28,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 名稱   | 型別 | 備註說明                           | 
 |--------|------|-----------------------------------|
-|（匿名） | bool | 若成功則回傳 `True`，否則為 `False` |
+|（匿名） | bool | 若成功則回傳 `True`，否則為 `False`。 |
 
 ---
 

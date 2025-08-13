@@ -11,39 +11,39 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Submits a trading order (supports market, limit, stop-limit, GTC or expiration time, and full request parameters).  
-This is a unified order entry function that automatically switches behavior based on the `backtest_toggle` parameter:
+Submits a trading order through a **unified MT5 order API**, supporting market, limit, stop-limit, GTC, and time-expiration orders with full parameter control.  
+Automatically switches between **live trading** and **backtest simulation** according to the `backtest_toggle` parameter:
 
-- If `True`: simulated trading flow (does not connect to MetaTrader5).
-- If `False`: real trading flow, sends request to MetaTrader5 live trading server.
+- **`True` (Backtest Mode)**: Runs in simulation without connecting to MetaTrader 5.
+- **`False` (Live Trading Mode)**: Connects to the MT5 server for real market execution.
 
-Upon successful order placement, it triggers status and execution push notifications.
+Upon successful execution, the system sends **real-time order status** and **execution data** push notifications.
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name   | Type | Description |
-|--------|------|-------------|
-| params | dict | A dictionary containing the following fields: |
+| Parameter Name   | Type | Description |
+|------------------|------|-------------|
+| params           | dict | A dictionary containing the following fields: |
 
 | Field Name       | Type       | Required | Description |
 |------------------|------------|----------|-------------|
-| `backtest_toggle`| bool       | ✅        | Whether to use backtest mode (`True` means backtest). |
+| `backtest_toggle`| bool       | ✅        | Enable backtest mode (`True` for backtesting). |
 | `symbol`         | str        | ✅        | Trading symbol (e.g., `"EURUSD.sml"`). |
 | `order_type`     | str        | ✅        | Order type: `buy`, `sell`, `buy_limit`, `sell_stop`, etc. |
-| `volume`         | float      | ✅        | Trading volume (e.g., `0.1`). |
-| `price`          | float      | ❌        | Order price (for limit/stop orders; ignored for market orders). |
+| `volume`         | float      | ✅        | Trade volume (e.g., `0.1`). |
+| `price`          | float      | ❌        | Price for limit/stop orders; ignored for market orders. |
 | `sl`             | float      | ❌        | Stop loss price. |
 | `tp`             | float      | ❌        | Take profit price. |
 | `stoplimit`      | float      | ❌        | Stop-limit price. |
-| `deviation`      | int        | ❌        | Max slippage allowed (default 10). |
-| `magic`          | int        | ❌        | Custom EA ID (default 123456). |
-| `comment`        | str        | ❌        | Order comment (default `"MAS Order"`). |
-| `type_time`      | enum/int   | ❌        | Order time type (default: `mt5.ORDER_TIME_GTC`). |
-| `expiration`     | datetime   | ❌        | Expiration time for pending orders (when using time-limited type). |
+| `deviation`      | int        | ❌        | Maximum slippage allowed (default: 10 points). |
+| `magic`          | int        | ❌        | Custom Expert Advisor (EA) ID (default: `123456`). |
+| `comment`        | str        | ❌        | Order comment (default: `"MAS Order"`). |
+| `type_time`      | enum/int   | ❌        | Order validity type (default: `mt5.ORDER_TIME_GTC`). |
+| `expiration`     | datetime   | ❌        | Expiration date/time for pending orders (when applicable). |
 | `type_filling`   | enum/int   | ❌        | Order fill policy (default: `mt5.ORDER_FILLING_FOK`). |
-| `position`       | int        | ❌        | Modify specific position. |
+| `position`       | int        | ❌        | Modify a specific position ID. |
 | `position_by`    | int        | ❌        | Used in hedging mode to close opposing positions. |
 
 ---
@@ -52,19 +52,19 @@ Upon successful order placement, it triggers status and execution push notificat
 
 | Field Name     | Type     | Description |
 |----------------|----------|-------------|
-| action         | int      | Trading action type. |
-| magic          | int      | EA ID for strategy identification. |
-| order          | int      | Order ID (required when modifying an order). |
-| symbol         | str      | Trading symbol (optional when closing/modifying). |
-| volume         | float    | Trading volume. |
-| price          | float    | Order price (can be omitted for market execution). |
+| action         | int      | MT5 trade action type. |
+| magic          | int      | Expert Advisor ID for strategy identification. |
+| order          | int      | Order ID (required for order modifications). |
+| symbol         | str      | Trading symbol (optional for modifications/closing). |
+| volume         | float    | Trade volume. |
+| price          | float    | Order price (optional for market execution). |
 | stoplimit      | float    | Stop-limit trigger price. |
 | sl             | float    | Stop loss price. |
 | tp             | float    | Take profit price. |
-| deviation      | int      | Max slippage (in points). |
-| type           | int      | Order type. |
+| deviation      | int      | Maximum slippage in points. |
+| type           | int      | MT5 order type. |
 | type_filling   | int      | Fill policy. |
-| type_time      | int      | Time policy. |
+| type_time      | int      | Time validity policy. |
 | expiration     | datetime | Order expiration time. |
 | comment        | str      | Order comment. |
 | position       | int      | Position ID to modify or close. |
@@ -76,7 +76,7 @@ Upon successful order placement, it triggers status and execution push notificat
 
 | Name      | Type | Description |
 |-----------|------|-------------|
-| order_id  | str  | If successful, returns order ID; otherwise, returns error message. |
+| `order_id`| str  | Returns order ID if successful; otherwise, returns the error message. |
 
 ---
 

@@ -10,15 +10,19 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Generates a trading chart based on historical trading records, including entry/exit points, equity curve, and cumulative PnL (profit and loss).
+Generates a fully visualized trading chart based on historical trade records, featuring:
+
+- **Entry/Exit Points** — Marks trade opening and closing positions
+- **Equity Curve** — Displays account equity trend over time
+- **Cumulative PnL** — Shows aggregated profit and loss progression
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name | Type | Description |
-|------|------|-------------|
-| None | None | This function automatically uses internal trade data to generate the chart; no parameters are required. |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| None           | None | Automatically retrieves trade data from the internal database to generate charts; no arguments are required. |
 
 ---
 
@@ -26,9 +30,9 @@ Generates a trading chart based on historical trading records, including entry/e
 
 | Name   | Type | Description                                                 |
 |--------|------|-------------------------------------------------------------|
-| return | Any  | Returns generation status; includes error message if failed |
+| return         | Any  | Returns generation status; includes error details if unsuccessful. |
 
-Return format:
+**Return Example:**
 ```python
 {
     "status": True

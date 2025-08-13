@@ -11,21 +11,22 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Unsubscribes from real-time bar (candlestick) data for a specified symbol — intended for live trading mode only.  
-This function terminates the internal background thread and stops receiving live bar data for the specified symbol.
+Cancels the subscription to **real-time bar (candlestick) data** for a specified trading symbol.  
+This function is intended for **live trading mode** only.  
+Once executed, it stops the internal background subscription thread and halts live bar updates for the specified symbol.  
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name    | Type | Description |
-|---------|------|-------------|
-| params  | dict | A dictionary containing the following fields: |
+| Parameter Name | Type | Description |
+|----------------|------|-------------|
+| `params`       | dict | Subscription configuration dictionary containing the following fields: |
 
 | Field       | Type | Description                                 |
 |-------------|------|---------------------------------------------|
-| `symbol`    | str  | Symbol to unsubscribe (e.g., `"EURUSD"`).   |
-| `timeframe` | str  | Bar timeframe (e.g., `"M1"`, `"H1"`, `"D1"`). |
+| `symbol`     | str  | Trading symbol to unsubscribe from (e.g., `"EURUSD"`). |
+| `timeframe`  | str  | Bar timeframe (e.g., `"M1"`, `"H1"`, `"D1"`). |
 
 ---
 
@@ -33,7 +34,7 @@ This function terminates the internal background thread and stops receiving live
 
 | Name   | Type | Description                                    |
 |--------|------|------------------------------------------------|
-| None   | None | No return value. Calling this function stops the subscription. |
+| None   | None | This function has no return value; executing it stops the bar subscription. |
 
 ---
 

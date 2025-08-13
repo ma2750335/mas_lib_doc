@@ -5,21 +5,21 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🧩 Function Name
 
-`login`
+`set_lang`
 
 ---
 
 ### 🎯 Function Purpose
 
-Sets the default language for the system.
+Sets the default display language for the system, affecting all message outputs and internationalized (i18n) content.  
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name  | Type | Required | Description |
-|-------|------|----------|-------------|
-| lang  | str  | ❌      | Language code. Options: `'en'` (English, default), `'zh-tw'` (Traditional Chinese), `'zh-cn'` (Simplified Chinese). |
+| Parameter Name | Type | Required | Description |
+|----------------|------|----------|-------------|
+| lang           | str  | ❌       | Language code. Options: `'en'` (English, default), `'zh-tw'` (Traditional Chinese), `'zh-cn'` (Simplified Chinese). |
 
 ---
 
@@ -27,7 +27,7 @@ Sets the default language for the system.
 
 | Name | Type     | Description                        |
 |------|----------|------------------------------------|
-| None | NoneType | Sets internal language only; no return value. |
+| None | NoneType | Updates the internal language setting only; no return value. |
 
 ---
 

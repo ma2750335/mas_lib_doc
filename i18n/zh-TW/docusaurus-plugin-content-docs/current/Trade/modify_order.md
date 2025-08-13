@@ -11,9 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-修改一筆未成交的掛單（限價單）。  
-根據傳入的 `order_id`，建立交易修改請求至 MT5 平台。
-支援同步調整價格（price）、停損（sl）、停利（tp）、stoplimit、到期時間與備註。
+修改尚未成交的掛單（限價單或其他可修改掛單類型）。  
+此函式會依據 **`order_id`** 發送交易修改請求至 MT5 平台，支援同步調整價格（price）、停損（sl）、停利（tp）、停損限價（stoplimit）、到期時間（expiration）以及訂單備註（comment）。  
 若修改成功，會觸發推播更新訂單狀態。
 
 ---
@@ -22,17 +21,17 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
+| params   | dict | 字典欄位說明如下： |
 
-| dict 欄位名稱 | 型別       | 必填 | 說明                                    |
-|--------------|------------|------|----------------------------------------|
-| `order_id`   | int        | ✅   | 欲修改之原始掛單的訂單編號（ticket）。    |
-| `price`      | float      | ✅   | 修改後的新價格。                        |
-| `sl`         | float      | ❌   | 停損價格。                             |
-| `tp`         | float      | ❌   | 停利價格。                             |
-| `stoplimit`  | float      | ❌   | 停損限價。                             |
-| `expiration` | datetime   | ❌   | 掛單的到期時間。                        |
-| `comment`    | str        | ❌   | 訂單備註（預設為 `"Modified by MAS"`）。 |
+| dict 欄位名稱 | 型別       | 必填  | 說明                                    |
+|--------------|------------|-------|----------------------------------------|
+| `order_id`  | int         | ✅   | 欲修改的掛單訂單編號（MT5 ticket）。 |
+| `price`     | float       | ✅   | 修改後的新掛單價格。 |
+| `sl`        | float       | ❌   | 停損價格（Stop Loss）。 |
+| `tp`        | float       | ❌   | 停利價格（Take Profit）。 |
+| `stoplimit` | float       | ❌   | 停損限價（Stop Limit Price）。 |
+| `expiration`| datetime    | ❌   | 掛單到期時間（Expiration Time）。 |
+| `comment`   | str         | ❌   | 訂單備註，預設為 `"Modified by MAS"`。 |
 
 ---
 

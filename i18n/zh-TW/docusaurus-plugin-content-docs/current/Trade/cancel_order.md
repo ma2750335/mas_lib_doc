@@ -11,8 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-取消一筆尚未成交的掛單。  
-此函式會根據傳入的 `order_id` 建立取消請求至 MT5 平台執行刪單動作。
+取消尚未成交的掛單訂單。  
+此函式會依據傳入的 **`order_id`**（MT5 訂單編號 ticket）向 MetaTrader 5 平台發送刪單請求，確保未成交的訂單即時撤銷，避免不必要的持倉或市場風險。  
 
 ---
 
@@ -20,12 +20,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
+| params   | dict | 字典欄位說明如下： |
 
 | dict 欄位名稱 | 型別 | 必填  | 說明                                      |
-|--------------|-------------|------|------------------------------------|
-| `order_id`   | int  | ✅   | 欲取消之原始掛單的訂單編號（ticket）。        |
-| `comment`    | str  | ❌   | 取消原因備註，預設為 `"Cancel by MAS"`。    |
+|--------------|-------------|------------------------------------------|
+| `order_id`   | int  | ✅   | 欲取消之掛單的 MT5 訂單編號（ticket） |
+| `comment`    | str  | ❌   | 取消原因備註，預設為 `"Cancel by MAS"` |
 
 ---
 

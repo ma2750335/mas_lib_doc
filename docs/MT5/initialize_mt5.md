@@ -11,8 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Initializes the MetaTrader 5 (MT5) environment and establishes a connection with the terminal.  
-📌 Note: Normally, you don't need to call this function manually—it is automatically executed inside the `login()` function.
+Initializes the **MetaTrader 5 (MT5)** environment and establishes a connection with the trading terminal.  
+📌 **Note**: This function is usually executed automatically by the `login()` function and does not need to be called manually unless you need to perform independent testing or reinitialize the MT5 connection.
 
 ---
 

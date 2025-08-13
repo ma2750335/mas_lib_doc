@@ -10,9 +10,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-查詢目前 MT5 帳號中的持倉部位（Position）。
-支援依商品、群組或特定持倉編號（ticket）進行篩選。
-每筆部位資訊會整理為 `dict` 回傳，包含價格、盈虧、時間等詳細欄位。
+查詢目前 MT5 交易帳號中的**未平倉部位（Position）**資訊。  
+可依據**商品代碼**、**商品群組**或**特定持倉編號（ticket）**進行篩選。  
+每筆部位會以 `dict` 物件回傳，內容包含**價格、手數、停損/止盈、浮動盈虧、建倉時間**等完整資訊。
 
 ---
 
@@ -20,43 +20,43 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| params   | dict | 傳入的字典內容如下方欄位說明 |
+| `params` | dict | 查詢條件設定字典，欄位說明如下： |
 
-| dict 欄位名稱  | 型別 | 必填 | 說明                                                |
-|---------------|------|------|-----------------------------------------------------|
-| `symbol`      | str  | ❌   | 過濾指定商品代碼的持倉（優先順序最高）。                |
-| `group`       | str  | ❌   | 過濾指定商品群組的持倉（例如 "USD\*"）。               |
-| `ticket`      | int  | ❌   | 過濾指定持倉 ticket（若指定 symbol 則此欄無效）。       |
+| dict 欄位名稱 | 型別 | 必填 | 說明 |
+|---------------|------|------|------|
+| `symbol`      | str  | ❌   | 過濾指定商品代碼的持倉（優先順序最高）。 |
+| `group`       | str  | ❌   | 過濾指定商品群組的持倉（支援萬用字元，如 `"USD*"`）。 |
+| `ticket`      | int  | ❌   | 過濾指定持倉編號（ticket）。若同時指定 `symbol`，此欄位將被忽略。 |
 
 ---
 
 ### 📤 回傳資料內容
 
-| 名稱   | 型別         | 備註說明                                  |
-|--------|-------------|-------------------------------------------|
-| result | list[dict]  | 回傳所有符合條件的未平倉部位資料，每筆為一筆持倉的資訊，若無資料則回傳空陣列 `[]`，字典內容如下方欄位說明|
+| 名稱   | 型別        | 備註說明 |
+|--------|-------------|----------|
+| result | list[dict]  | 回傳符合條件的所有未平倉部位；若無資料則為空陣列 `[]`。每筆資料為一個 `dict`，欄位如下： |
 
-| 欄位名稱           | 型別        | 說明                              |
-|--------------------|-------------|-----------------------------------|
-| `ticket`           | int         | 持倉編號（唯一值）                 |
-| `symbol`           | str         | 商品代碼                           |
-| `type`             | int         | 買/賣方向（0=buy, 1=sell）         |
-| `magic`            | int         | 下單時的 magic number              |
-| `identifier`       | int         | 持倉識別碼（可能來自策略程式）     |
-| `reason`           | int         | 建倉原因（手動、自動等）           |
-| `volume`           | float       | 持倉手數                            |
-| `price_open`       | float       | 建倉價格                            |
-| `sl`               | float       | 停損價                              |
-| `tp`               | float       | 止盈價                              |
-| `price_current`    | float       | 最新市場價格                        |
-| `swap`             | float       | 庫存費                              |
-| `profit`           | float       | 浮動損益                            |
-| `comment`          | str         | 備註                                |
-| `external_id`      | str         | 外部系統參照 ID                     |
-| `time`             | datetime    | 建倉時間（轉換為 `datetime`）       |
-| `time_msc`         | int         | 建倉時間（毫秒時間戳）              |
-| `time_update`      | datetime    | 最後更新時間（轉換為 `datetime`）   |
-| `time_update_msc`  | int         | 最後更新時間（毫秒時間戳）          |
+| 欄位名稱          | 型別      | 說明 |
+|-------------------|-----------|------|
+| `ticket`          | int       | 持倉唯一編號（Position Ticket ID）。 |
+| `symbol`          | str       | 商品代碼（例如 EURUSD、XAUUSD）。 |
+| `type`            | int       | 持倉方向（0=Buy 多單，1=Sell 空單）。 |
+| `magic`           | int       | Magic Number（策略/EA 指定的識別碼）。 |
+| `identifier`      | int       | 自定義持倉識別碼（可能由策略程式設定）。 |
+| `reason`          | int       | 建倉原因（例如：手動、EA 自動等）。 |
+| `volume`          | float     | 持倉手數（Lot）。 |
+| `price_open`      | float     | 開倉價格。 |
+| `sl`              | float     | 停損價（Stop Loss）。 |
+| `tp`              | float     | 止盈價（Take Profit）。 |
+| `price_current`   | float     | 最新市場價格。 |
+| `swap`            | float     | 庫存費（Swap）。 |
+| `profit`          | float     | 浮動盈虧（Floating P/L）。 |
+| `comment`         | str       | 備註或策略名稱。 |
+| `external_id`     | str       | 外部系統參照 ID。 |
+| `time`            | datetime  | 建倉時間（轉為 `datetime` 物件）。 |
+| `time_msc`        | int       | 建倉時間（毫秒時間戳）。 |
+| `time_update`     | datetime  | 最後更新時間（轉為 `datetime` 物件）。 |
+| `time_update_msc` | int       | 最後更新時間（毫秒時間戳）。 |
 
 回傳格式如下：
 ```python

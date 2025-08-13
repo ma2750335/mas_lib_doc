@@ -5,25 +5,24 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ## 📈 KD Strategy
 
-The KD indicator (Stochastic Oscillator) is a momentum indicator used to evaluate the closing price relative to the high-low range over a specified period.
-
-This strategy utilizes the crossover signals between the K and D lines to determine entry and exit points, combined with overbought/oversold zones to filter signals. It is commonly used for short- to mid-term swing trading.
+The KD indicator (Stochastic Oscillator) is a momentum-based technical analysis tool that measures the closing price’s position within a specified period’s high-low range.  
+This strategy combines K–D line crossovers with overbought/oversold zone filters, making it a popular choice for short- to mid-term swing trading.
 
 ---
 
 ## 💡 Strategy Logic
 
-- **Buy Condition: Golden Cross + Oversold**
-  - Trigger a buy when the K line crosses above the D line and K < 20 (oversold zone)
+- **Buy Condition: Golden Cross + Oversold Zone**  
+  - Enter a long position when the K line crosses above the D line and K < 20, indicating a potential bullish reversal from oversold conditions.
 
-- **Sell Condition: Death Cross + Overbought**
-  - Trigger a sell when the K line crosses below the D line and K > 80 (overbought zone)
+- **Sell Condition: Death Cross + Overbought Zone**  
+  - Exit or go short when the K line crosses below the D line and K > 80, signaling a potential bearish reversal from overbought levels.
 
-- **Calculation Method:**
-  - **RSV** = (Close - Lowest Low) / (Highest High - Lowest Low) × 100  
+- **Calculation Formula:**  
+  - **RSV** = (Close − Lowest Low) ÷ (Highest High − Lowest Low) × 100  
   - **K** = (Previous K × 2 + Current RSV) ÷ 3  
   - **D** = (Previous D × 2 + Current K) ÷ 3  
-    *(Default period: 9 days; smoothing factor: 3 for both K and D)*
+    *(Default period: 9 days; smoothing factor = 3 for both K and D)*
 
 ---
 
@@ -31,19 +30,19 @@ This strategy utilizes the crossover signals between the K and D lines to determ
 
 ```text
 
-[Receive historical bar data]
+[Receive historical OHLC data]
         ↓
-[Update high / low / close prices]
+[Update highest / lowest / closing prices]
         ↓
 [Calculate RSV → K → D]
         ↓
-[Check K and D crossover]
+[Check for K–D crossover]
         ↓
-[Check overbought / oversold zone]
+[Determine if within overbought / oversold zones]
         ↓
 [Trigger buy or sell signal]
         ↓
-[Backtest ends → Output KPIs and trade chart]
+[End of backtest → Generate KPI metrics & trade chart]
 
 ```
 
@@ -51,21 +50,24 @@ This strategy utilizes the crossover signals between the K and D lines to determ
 
 ## 🧩 Strategy Characteristics
 
-| Item          | Description                                                        |
-| ------------- | ------------------------------------------------------------------ |
-| Strategy Type | Momentum Reversal + Trend Following Hybrid                         |
-| Indicator     | KD (Stochastic Oscillator)                                         |
-| Buy Logic     | K crosses above D + K < 20                                         |
-| Sell Logic    | K crosses below D + K > 80                                         |
-| Market        | Forex / Stocks / Futures / Crypto                                  |
-| Pros          | Responsive in short term; overbought/oversold filter reduces noise |
-| Cons          | Prone to false signals in sideways markets; requires trend filter  |
+| Item          | Description                                                                        |
+| ------------- | ---------------------------------------------------------------------------------- |
+| Strategy Type | Momentum Reversal + Trend-Following Hybrid                                         |
+| Indicator     | KD (Stochastic Oscillator)                                                         |
+| Buy Logic     | K crosses above D with K < 20                                                      |
+| Sell Logic    | K crosses below D with K > 80                                                      |
+| Markets       | Forex / Stocks / Futures / Cryptocurrency                                          |
+| Pros          | Fast reaction for short-term trades; overbought/oversold filter helps reduce noise |
+| Cons          | Susceptible to false signals in choppy markets; benefits from a trend filter       |
 
 ---
 
 ## 🚀 Backtesting and Live Mode Switching
 
-You can switch between backtesting and live trading using the `toggle` parameter:
+Use the `toggle` parameter to instantly switch modes:
+
+- `True` → Backtest mode
+- `False` → Live trading mode
 
 ```python
 
@@ -110,7 +112,7 @@ After execution, the following will be generated automatically:
 import mas
 import pandas as pd
 
-class KD_Strategy(MAS):
+class MAS_Client(mas):
     def __init__(self, toggle):
         super().__init__()
         self.toggle = toggle
@@ -186,7 +188,7 @@ class KD_Strategy(MAS):
 def main():
     try:
         toggle = True  # True = Backtest, False = Live
-        mas_c = KD_Strategy(toggle)
+        mas_c = MAS_Client(toggle)
 
         login_params = {
             "account": "YOUR_ACCOUNT",

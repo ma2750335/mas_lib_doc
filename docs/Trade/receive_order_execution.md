@@ -11,33 +11,33 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Handles the system's execution report for an order.  
-This function is used to process or display trade execution data after an order is filled.
+Receives **real-time trade execution push notifications** from the system when an order is filled.  
+This function is typically triggered automatically during live trading or backtesting to update internal trade records, trigger performance tracking, or display execution details in dashboards or logs.  
 
 ---
 
 ### 🔧 Function Parameters
 
-| Name          | Type   | Description                    |
-|---------------|--------|--------------------------------|
-| order_id      | str    | The ticket number of the order. |
-| execution_data| dict   | A dictionary containing the following fields: |
+| Parameter Name  | Type   | Description |
+|-----------------|--------|-------------|
+| `order_id`      | str    | Unique identifier (ticket number) of the executed order. |
+| `execution_data`| dict   | Dictionary containing execution details with the following fields: |
 
-| Field Name | Type     | Description             |
-|------------|----------|-------------------------|
-| `price`    | float    | Executed price.         |
-| `volume`   | float    | Executed volume.        |
-| `symbol`   | str      | Trading symbol.         |
-| `time`     | datetime | Execution time (usually the push time). |
-| `type`     | str      | Order type.             |
+| Field Name | Type     | Description |
+|------------|----------|-------------|
+| `price`    | float    | Executed price of the trade. |
+| `volume`   | float    | Executed trade volume (lots). |
+| `symbol`   | str      | Trading symbol (e.g., `EURUSD`). |
+| `time`     | datetime | Execution timestamp (usually the push event time). |
+| `type`     | str      | Order type (e.g., market order, limit order). |
 
 ---
 
 ### 📤 Function Return 
 
-| Name | Type  | Description                          |
-|------|-------|--------------------------------------|
-| None | NoneType | No return value; this is a passive push handler. |
+| Name | Type     | Description |
+|------|----------|-------------|
+| None | NoneType | No return value; the function acts solely as a passive execution data handler. |
 
 ---
 

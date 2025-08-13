@@ -11,8 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-取消指定商品的即時 Tick 資料訂閱 -> 適用於實盤模式。  
-此函式會中止內部背景訂閱執行緒，關閉對該商品的即時報價監控。  
+取消指定商品的即時 Tick（逐筆成交）資料訂閱，適用於實盤模式。  
+執行此函式會終止內部背景訂閱執行緒，並關閉對該商品的即時報價監控。
 
 ---
 
@@ -28,7 +28,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 名稱   | 型別 | 備註說明                            |
 |--------|------|-------------------------------------|
-| 無     | None | 無回傳值，執行後即停止訂閱 |
+| 無     | None | 此函式無回傳值，呼叫後即停止指定商品的 Tick 資料訂閱。 |
 
 ---
 

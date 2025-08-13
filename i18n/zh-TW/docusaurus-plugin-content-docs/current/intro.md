@@ -61,7 +61,7 @@ import mas
 
 def main():
     # 測試用登入資料
-    params = {
+    login_params = {
         "account": "YOUR_ACCOUNT",
         "password": "YOUR_PASSWORD",
         "server": "YOUR_BROKER_SERVER",
