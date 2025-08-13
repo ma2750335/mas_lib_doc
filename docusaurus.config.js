@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -55,10 +55,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           //editUrl:
-            //'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },       
+          //'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        },
         theme: {
           customCss: './src/css/custom.css',
+        },
+        gtag: {
+          trackingID: 'G-SN1Q8NDH0J',
+          anonymizeIP: true,
         },
       }),
     ],
@@ -73,7 +77,7 @@ const config = {
         {
           name: 'keywords',
           content:
-          'AI Forex Margin Trading,AI Automated Trading Platform,No-Code Trading,Automated Strategy Generation,Forex Backtesting Tools,Investment Strategy Optimization,Multi-Broker Automated Trading,Quantitative Trading for Beginners,AI Trading Assistant,Low-Risk Automated Trading,Beginner Automated Investing,Forex Auto Execution,AI Quantitative Trading Platform,One-Click Backtesting,Algorithmic Trading Learning,Stable Passive Income,Emotional Trading Solutions,No-Coding Investment Strategies,AI Strategy Generator,Automated Risk Management,MetaTrader Integration,MT5 Trading API,MT5 Automated Backtesting,MT5 Multi-Broker Support,AI MT5 Trading Bot,Automated MetaTrader 5 Strategy',
+            'AI Forex Margin Trading,AI Automated Trading Platform,No-Code Trading,Automated Strategy Generation,Forex Backtesting Tools,Investment Strategy Optimization,Multi-Broker Automated Trading,Quantitative Trading for Beginners,AI Trading Assistant,Low-Risk Automated Trading,Beginner Automated Investing,Forex Auto Execution,AI Quantitative Trading Platform,One-Click Backtesting,Algorithmic Trading Learning,Stable Passive Income,Emotional Trading Solutions,No-Coding Investment Strategies,AI Strategy Generator,Automated Risk Management,MetaTrader Integration,MT5 Trading API,MT5 Automated Backtesting,MT5 Multi-Broker Support,AI MT5 Trading Bot,Automated MetaTrader 5 Strategy',
         },
       ],
       navbar: {
@@ -88,13 +92,13 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Guide',
-            
-          },  
+
+          },
           {
             href: 'https://mindaismart.com/',
             label: 'Official Website',
             position: 'left',
-          },       
+          },
           {
             type: 'localeDropdown',
             position: 'right',
