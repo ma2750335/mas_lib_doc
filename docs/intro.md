@@ -107,10 +107,10 @@ if __name__ == "__main__":
 
 ## 🤖 No Coding? MAS AI Strategy Assistant Has You Covered
 
-<!--
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WZJoxikns4Q?si=WUG36ZHWNOzRble4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eTDXYtKvPVA?si=2oKLbL7Ig8QDJc-j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br /><br />
--->
+
 
 Just describe your trading logic in natural language—MAS AI Assistant will：[【Learn More ↗】](https://mindaismart.com/product_ai)
 

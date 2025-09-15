@@ -33,6 +33,7 @@ The data source will switch automatically based on the value of `backtest_toggle
 | `to`             | datetime/str   | ✅ (backtest)    | End time of historical data (used only when `backtest_toggle=True`)         |
 | `flags`          | int            | ❌               | Tick source flags, default is `mt5.COPY_TICKS_ALL` (used in real-time mode) |
 | `mode`           | str            | ❌               | Simulation tick mode: `"all"` or `"trade"` (default: `"all"`)               |
+| `captital`　　　　| bool           | ❌               | Set the initial capital, default is `10,000 `USD. | 
 | `backtest_toggle`| bool           | ❌               | Whether to enable simulation mode (default: `False`)                        |
 
 ---
@@ -72,6 +73,7 @@ def main():
             "symbol": "EURUSD",
             "from": '2025-07-07 12:00:00',
             "to": '2025-07-07 13:00:00',
+            "captital": 1000,
             "backtest_toggle": True
         }
         mas_client.subscribe_ticks(params)

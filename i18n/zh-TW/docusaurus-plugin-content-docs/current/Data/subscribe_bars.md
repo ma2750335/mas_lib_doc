@@ -32,6 +32,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `interval_ms`    | int           | ❌        | 實盤推播間隔時間（毫秒），預設 `1000`。 |
 | `from`           | datetime/str  | ✅(回測)  | 歷史資料起始時間（僅於 `backtest_toggle = True` 時使用）。 |
 | `to`             | datetime/str  | ✅(回測)  | 歷史資料結束時間（僅於 `backtest_toggle = True` 時使用）。 |
+| `captital`　　　　| bool          | ❌        | 設定本金，預設為`10000`(美元)。 | 
 | `backtest_toggle`| bool          | ❌        | 是否啟用回測模式，預設 `False`。 | 
 
 **timeframe 說明：**
@@ -97,6 +98,7 @@ def main():
             "timeframe": "M1",
             "from": '2024-01-01',
             "to": '2024-12-31',
+            "captital": 1000,
             "backtest_toggle": True
         }
         mas_client.subscribe_bars(params)

@@ -33,6 +33,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `to`            | datetime/str  | ✅（回測） | 歷史資料結束時間（僅於 `backtest_toggle = True` 時使用）。 |
 | `flags`         | int           | ❌        | Tick 資料來源類型，預設為 `mt5.COPY_TICKS_ALL`（僅即時模式使用）。 |
 | `mode`          | str           | ❌        | 回測 Tick 模式：`"all"`（全部）或 `"trade"`（僅成交），預設為 `"all"`。 |
+| `captital`　　　　| bool         | ❌        | 設定本金，預設為`10000`(美元)。 | 
 | `backtest_toggle`| bool          | ❌        | 是否啟用回測模式，預設為 `False`。 |
 
 ---
@@ -72,6 +73,7 @@ def main():
             "symbol": "EURUSD",
             "from": '2025-07-07 12:00:00',
             "to": '2025-07-07 13:00:00',
+            "captital": 1000,
             "backtest_toggle": True
         }
         mas_client.subscribe_ticks(params)

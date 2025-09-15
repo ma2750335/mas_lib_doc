@@ -33,6 +33,7 @@ The data source automatically switches based on the `backtest_toggle` parameter:
 | `interval_ms`    | int           | ❌           | Interval in milliseconds for live mode (default: `1000`). |
 | `from`           | datetime/str  | ✅ (backtest) | Start time for historical data (only used when `backtest_toggle = True`). |
 | `to`             | datetime/str  | ✅ (backtest) | End time for historical data (only used when `backtest_toggle = True`). |
+| `captital`　　　　| bool          | ❌           | Set the initial capital, default is `10,000 `USD. | 
 | `backtest_toggle`| bool          | ❌           | Whether to enable backtest mode (default: `False`). |
 
 **Timeframe Reference:**
@@ -98,6 +99,7 @@ def main():
             "timeframe": "M1",
             "from": '2024-01-01',
             "to": '2024-12-31',
+            "captital": 1000,
             "backtest_toggle": True
         }
         mas_client.subscribe_bars(params)

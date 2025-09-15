@@ -69,6 +69,7 @@ def main():
             "symbol": "EURUSD",
             "from": '2025-07-07 12:00:00',
             "to": '2025-07-07 13:00:00',
+            "captital": 1000,
             "backtest_toggle": True
         }
         mas_client.subscribe_ticks(params)

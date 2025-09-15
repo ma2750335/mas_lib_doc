@@ -105,10 +105,10 @@ if __name__ == "__main__":
 ---
 
 ## 🤖 不會寫程式也能用？MAS AI 策略助理來幫你！
-<!--
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WZJoxikns4Q?si=WUG36ZHWNOzRble4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fE8EPfdRPOk?si=WlRZvAjQi30UsDEj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br /><br />
--->
+
 
 只需輸入你的交易邏輯描述，MAS AI 助理可協助你：[【了解更多 ↗】](https://mindaismart.com/product_ai)
 

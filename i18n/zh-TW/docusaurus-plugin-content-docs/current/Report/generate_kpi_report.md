@@ -100,6 +100,7 @@ def main():
             "from": '2020-01-01',
             "to": '2024-12-31',
             "timeframe": "D1",
+            "captital": 1000,
             "backtest_toggle": mas_client.toggle
         }
         mas_client.subscribe_bars(params)

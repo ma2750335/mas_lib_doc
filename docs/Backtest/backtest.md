@@ -77,6 +77,7 @@ def main():
             "from": '2020-01-01',
             "to": '2024-12-31',
             "timeframe": "D1",
+            "captital": 1000,
             "backtest_toggle": mas_c.toggle
         }
         mas_c.ma = 50
