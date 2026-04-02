@@ -16,7 +16,7 @@ This function is triggered when MT5 returns the status of an order, and can be u
 
 ---
 
-### Function Parameters
+### 🔧 Function Parameters
 
 
 | Parameter Name | Type | Description |
@@ -30,6 +30,7 @@ This function is triggered when MT5 returns the status of an order, and can be u
 | `retcode`  | int   | Original order status return code from MT5. |
 | `message`  | str   | Status message returned from MT5 (e.g., `"Request executed"`). |
 | `request`  | dict  | The original order request payload. |
+| `action`   | str   | *(Optional)* Operation type that triggered this status update. Present only for `modify_order` (`"modify"`) and `cancel_order` (`"cancel"`) calls; absent for `send_order`. |
 
 ---
 

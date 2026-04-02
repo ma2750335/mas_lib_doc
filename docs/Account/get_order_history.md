@@ -31,7 +31,7 @@ Supports multiple filter options such as **time period**, **symbol**, **order ti
 
 ---
 
-### function Return
+### 📤 Function Return
 | Name   | Type         | Description |
 |--------|--------------|-------------|
 | result | `list[dict]` | Returns a list of deals matching the query. Returns an empty list `[]` if no records are found. Each deal record is represented as a dictionary with the following fields: |

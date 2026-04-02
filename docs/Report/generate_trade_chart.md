@@ -28,9 +28,9 @@ Generates a fully visualized trading chart based on historical trade records, fe
 
 ### 📤 Function Return
 
-| Name   | Type | Description                                                 |
-|--------|------|-------------------------------------------------------------|
-| return         | Any  | Returns generation status; includes error details if unsuccessful. |
+| Name     | Type | Description |
+|----------|------|-------------|
+| `result` | dict | Returns generation status; includes error details if unsuccessful. |
 
 **Return Example:**
 ```python

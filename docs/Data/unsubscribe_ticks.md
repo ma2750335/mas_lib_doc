@@ -20,7 +20,11 @@ This function stops the internal background subscription thread and disables rea
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| params         | dict | symbol（str）：The symbol to unsubscribe (e.g., `"EURUSD"`). |
+| `params`       | dict | Dictionary containing the target symbol. |
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
+| `symbol`   | str  | ✅       | The symbol to unsubscribe (e.g., `"EURUSD"`). |
 
 ---
 

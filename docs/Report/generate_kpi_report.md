@@ -24,9 +24,9 @@ Generates a comprehensive KPI performance report based on historical trading rec
 
 ### 📤 Function Return 
 
-| Parameter Name | Type | Description |
-|----------------|------|-------------|
-| return         | dict | Indicates whether the report was generated successfully; if failed, includes error message details. |
+| Name     | Type | Description |
+|----------|------|-------------|
+| `result` | dict | Indicates whether the report was generated successfully; if failed, includes error message details. |
 
 **Return format:**
 

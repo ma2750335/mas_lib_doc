@@ -20,7 +20,7 @@ The data source automatically switches based on the `backtest_toggle` parameter:
 
 ---
 
-### Function Parameters
+### 🔧 Function Parameters
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|

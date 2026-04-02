@@ -27,7 +27,7 @@ Attempts to re-establish the connection to MetaTrader 5 (MT5) when it has been l
 
 | Name        | Type | Description                                |
 |-------------|------|--------------------------------------------|
-| (anonymous) | bool | Returns `True` if reconnection is successful, otherwise `False`. |
+| `result`    | bool | Returns `True` if reconnection is successful, otherwise `False`. |
 
 ---
 
@@ -46,10 +46,10 @@ def main():
         if not mas_client.check_connection():
             print("MT5 disconnected, attempting to reconnect...")
             success = mas_client.reconnect_mt5()
-        if success:
-            print("Reconnected successfully")
-        else:
-            print("Reconnection failed")
+            if success:
+                print("Reconnected successfully")
+            else:
+                print("Reconnection failed")
             
     except Exception as e:
         print(f"Initialization error:{str(e)}")

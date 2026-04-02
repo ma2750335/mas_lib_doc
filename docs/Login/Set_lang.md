@@ -31,7 +31,7 @@ Sets the default display language for the system, affecting all message outputs 
 
 ---
 
-### Example Code
+### 💡 Example Code
 
 ```python
 import mas
@@ -46,7 +46,8 @@ def main():
         mas_client.set_lang("zh-tw")
         login_params = {
             "account": "YOUR_ACCOUNT",
-            "password": "YOUR_PASSWORD"
+            "password": "YOUR_PASSWORD",
+            "server": "YOUR_SERVER"
         }
         if mas_client.login(login_params):
             print("Login successful!")

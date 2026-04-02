@@ -27,7 +27,7 @@ Initializes the **MetaTrader 5 (MT5)** trading terminal and logs into a specifie
 | `account`      | int    | ✅        | MT5 trading account number (valid for both live and demo accounts). |
 | `password`     | str    | ✅        | MT5 account password (must match the account number). |
 | `server`       | str    | ✅        | Name of the MT5 trading server (available from MT5 login settings). |
-| `timeout`      | int    | ❌        | Connection timeout in milliseconds (default: `60000` / 60 seconds). Recommended to increase in high-latency environments. |
+| `timeout`      | int    | ❌        | Connection timeout in milliseconds (default: `6000` / 6 seconds). Recommended to increase in high-latency environments. |
 
 
 ---
@@ -36,11 +36,11 @@ Initializes the **MetaTrader 5 (MT5)** trading terminal and logs into a specifie
 
 | Name       | Type | Description |
 |------------|------|-------------|
-| (anonymous)| bool | Returns `True` if login is successful, otherwise raises an exception with the MT5 API error code and message. |
+| `result`   | bool | Returns `True` if login is successful; returns `False` if the connection or authentication fails. |
 
 ---
 
-### Example Code
+### 💡 Example Code
 
 ```python
 import mas

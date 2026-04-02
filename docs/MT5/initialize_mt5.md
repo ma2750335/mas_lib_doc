@@ -28,7 +28,7 @@ Initializes the **MetaTrader 5 (MT5)** environment and establishes a connection 
 
 | Name        | Type | Description                              | 
 |-------------|------|------------------------------------------|
-| (anonymous) | bool | Returns `True` if initialization is successful, otherwise `False`. |
+| `result`    | bool | Returns `True` if initialization is successful, otherwise `False`. |
 
 ---
 

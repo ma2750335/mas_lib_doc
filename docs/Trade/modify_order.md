@@ -40,7 +40,7 @@ Upon successful modification, the updated order status will be pushed to the cli
 
 | Name          | Type | Description                                  |
 |---------------|------|----------------------------------------------|
-| (anonymous)   | bool | Returns `True` if the modification succeeds, otherwise `False`. |
+| `result`      | bool | Returns `True` if the modification succeeds, otherwise `False`. |
 
 ---
 

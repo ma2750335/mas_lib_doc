@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Receives real-time or backtesting Tick data via push updates, triggered by the `on_bar()` handler.
+Receives real-time or backtesting Tick data via push updates, triggered by the `on_tick()` handler.
 
 ---
 

@@ -33,7 +33,7 @@ This function uses the specified **`order_id`** (MT5 order ticket number) to sen
 
 | Name         | Type | Description                             |
 |--------------|------|-----------------------------------------|
-| (anonymous)  | bool | Returns `True` if cancellation succeeds, otherwise `False`. |
+| `result`     | bool | Returns `True` if cancellation succeeds, otherwise `False`. |
 
 ---
 
