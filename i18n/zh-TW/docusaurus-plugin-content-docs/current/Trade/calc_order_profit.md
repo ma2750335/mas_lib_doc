@@ -1,0 +1,76 @@
+---
+description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
+---
+
+### 🧩 函式名稱
+
+`calc_order_profit`
+
+---
+
+### 🎯 函式用途
+
+計算指定訂單的**預估損益金額**，不實際下單。  
+可用於在下單前預估潛在盈虧、設定合理的停利/停損目標，或進行風報比分析。
+
+---
+
+### 🔧 函式參數
+
+| 參數名稱 | 型別 | 備註說明 |
+|----------|------|----------|
+| `params` | dict | 損益計算參數字典。 |
+
+| dict 欄位名稱  | 型別  | 必填 | 說明 |
+|---------------|-------|------|------|
+| `action`      | str   | ✅   | 交易方向：`"buy"` 或 `"sell"`。 |
+| `symbol`      | str   | ✅   | 商品代碼（如 `"EURUSD"`）。 |
+| `volume`      | float | ✅   | 下單手數。 |
+| `price_open`  | float | ✅   | 開倉價格。 |
+| `price_close` | float | ✅   | 預計平倉價格。 |
+
+---
+
+### 📤 回傳資料內容
+
+| 名稱     | 型別  | 備註說明 |
+|----------|-------|----------|
+| `result` | float | 預估損益金額（帳戶計價貨幣）。失敗時回傳 `-1.0`。 |
+
+---
+
+### 💡 範例程式碼
+
+```python
+import mas
+
+class MAS_Client(mas):
+    def __init__(self):
+        super().__init__()
+
+def main():
+    mas_client = MAS_Client()
+    mas_client.login({
+        "account": "YOUR_ACCOUNT",
+        "password": "YOUR_PASSWORD",
+        "server": "YOUR_SERVER"
+    })
+
+    # 計算買入 0.1 手 EURUSD，開倉 1.09500 平倉 1.10000 的預估損益
+    profit = mas_client.calc_order_profit({
+        "action": "buy",
+        "symbol": "EURUSD",
+        "volume": 0.1,
+        "price_open": 1.09500,
+        "price_close": 1.10000
+    })
+
+    if profit != -1.0:
+        print(f"預估損益：{profit:.2f} USD")
+    else:
+        print("❌ 損益計算失敗。")
+
+if __name__ == "__main__":
+    main()
+```
+---

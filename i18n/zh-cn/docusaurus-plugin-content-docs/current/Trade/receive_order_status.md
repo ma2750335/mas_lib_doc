@@ -29,6 +29,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `retcode`        | int   | MT5 返回的原始订单状态代码。 |
 | `message`        | str   | MT5 返回的状态信息（如 `"Request executed"`）。 |
 | `request`        | dict  | 本次订单下单时的 request 原始数据。 |
+| `action`         | str   | *(选填)* 触发本次状态更新的操作类型。仅在 `modify_order`（值为 `"modify"`）或 `cancel_order`（值为 `"cancel"`）时出现；`send_order` 不含此字段。 |
 
 ---
 
