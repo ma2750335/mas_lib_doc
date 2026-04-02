@@ -58,7 +58,6 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `time_msc`      | int       | 成交時間（Unix timestamp 毫秒）。 |
 
 回傳格式如下：
-
 ```python
 [
   {

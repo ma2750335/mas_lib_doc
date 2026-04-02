@@ -57,7 +57,6 @@ Supports multiple filter options such as **time period**, **symbol**, **order ti
 | `time_msc`       | int      | Deal execution timestamp in milliseconds. |
 
 Return Format：
-
 ```python
 [
   {

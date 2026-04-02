@@ -1,0 +1,34 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Login": {
+    "message": "Login",
+    "description": "The label for category Login in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Account": {
+    "message": "Account",
+    "description": "The label for category Account in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Data": {
+    "message": "Data",
+    "description": "The label for category Data in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Trade": {
+    "message": "Trade",
+    "description": "The label for category Trade in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Report": {
+    "message": "Report",
+    "description": "The label for category Report in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Strategy": {
+    "message": "Strategy",
+    "description": "The label for category Strategy in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.MT5": {
+    "message": "MT5",
+    "description": "The label for category MT5 in sidebar tutorialSidebar"
+  }
+}
