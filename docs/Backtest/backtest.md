@@ -15,7 +15,8 @@ Before starting any automated trading, **backtesting** is a crucial process. By 
 
 ## 🔧 How does MAS SDK perform backtesting?
 
-MAS SDK offers a streamlined approach to run backtests. By simply extending the `MAS` class and overriding the `receive_bars` method, you can quickly integrate your trading logic with historical data—no need for complex framework setup.
+MAS SDK offers a streamlined approach to run backtests. <br/>
+By simply extending the `MAS` class and overriding the `receive_bars` method, you can quickly integrate your trading logic with historical data—no need for complex framework setup.
 
 Here’s a basic moving average strategy backtesting example:
 

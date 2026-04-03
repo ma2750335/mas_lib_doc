@@ -11,9 +11,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Cancels the subscription to **real-time bar (candlestick) data** for a specified trading symbol.  
-This function is intended for **live trading mode** only.  
-Once executed, it stops the internal background subscription thread and halts live bar updates for the specified symbol.  
+Cancels the **real-time bar (OHLCV) data subscription** for a specified symbol, applicable only in **live trading mode**.<br/>
+After execution, the system terminates the internal background subscription thread and stops real-time price updates and bar data streaming for the symbol.<br/>
+Call this function when real-time bar data is no longer needed to avoid unnecessary resource usage.
 
 ---
 

@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Stops all active data subscriptions for both **Tick** and **Bar** feeds.  
+Stops all active data subscriptions for both **Tick** and **Bar** feeds.<br/>  
 This is applicable in **live trading mode**.
 
 ---

@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函数用途
 
-返回指定时间区间内的**历史挂单总数**。  
-可在调用 `get_history_orders()` 之前用于估算数据条数，或构建摘要统计，无需获取完整挂单明细。
+获取指定时间区间内的**历史挂单总数**。  
+可用于在调用 `get_history_orders()` 之前预估数据量，或进行摘要统计，无需获取完整的挂单明细数据。
 
 ---
 

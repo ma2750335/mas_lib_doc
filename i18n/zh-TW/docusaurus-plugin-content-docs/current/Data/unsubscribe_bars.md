@@ -12,7 +12,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 ### 🎯 函式用途
 
 取消指定交易商品的**即時 Bar（K 線）資料訂閱**，僅適用於**實盤模式**。  
-執行此函式後，系統會中止內部背景訂閱執行緒，並關閉對該商品的即時報價與 K 線更新監控。  
+執行此函式後，系統將中止內部背景訂閱執行緒，並停止該商品的即時報價與 K 線更新。  
+不再需要即時 K 線資料時請呼叫此函式，以避免不必要的資源佔用。
 
 ---
 

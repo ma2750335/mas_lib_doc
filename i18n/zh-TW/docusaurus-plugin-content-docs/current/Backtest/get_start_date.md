@@ -12,9 +12,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 根據**結束日期**與所需的 **K 棒數量**，計算回測的**起始日期**。  
 目前僅支援 **`D1`（日線）** 週期。
-
 以每週 5 個交易日為計算基準，並向上取整為完整週數，確保即使起始日落在週末或假日前後，仍能涵蓋足夠的 K 棒數量。
-
 常見用法：將計算結果直接作為 `subscribe_bars()` 的 `from` 參數，確保指標熱身所需的歷史資料足夠。
 
 ---

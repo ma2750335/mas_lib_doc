@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Subscribes to real-time tick data or pushes historical tick data in simulation mode.  
+Subscribes to real-time tick data or pushes historical tick data in simulation mode.<br/>  
 The data source will switch automatically based on the value of `backtest_toggle`:
 
 - **True**: historical tick data will be pushed using the simulation module  

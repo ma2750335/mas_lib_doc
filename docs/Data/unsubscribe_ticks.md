@@ -11,8 +11,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Cancels the subscription to real-time tick data for a specified symbol — applicable to live trading mode only.  
-This function stops the internal background subscription thread and disables real-time quote monitoring for the given symbol.
+Cancels the **real-time tick data subscription** for a specified symbol, applicable only in **live trading mode**.<br/>
+After execution, the system terminates the internal background subscription thread and stops real-time price updates for the symbol.<br/>
+Call this function when real-time tick data is no longer needed to avoid unnecessary resource usage.
 
 ---
 

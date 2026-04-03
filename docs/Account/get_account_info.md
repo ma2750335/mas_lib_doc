@@ -24,11 +24,10 @@ Retrieves comprehensive account details for the currently logged-in MetaTrader 5
 
 ### 📤 Function Return
 
-| Name   | Type | Description |
-|--------|------|-------------|
-| return | dict | Returns a dictionary of MT5 account data on success.  
-If the query fails, it returns: `{"error": "Failed to retrieve account information"}`.  
-Details of the returned fields are as follows: |
+| Name   | Type | Description                                                                                                                                                              |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| return | dict | Returns a dictionary containing account information on success; otherwise returns `{"error": "Failed to retrieve account information"}`. Detailed fields are as follows: |
+
 
 | Field Name            | Type  | Description |
 |-----------------------|-------|-------------|

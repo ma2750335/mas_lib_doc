@@ -23,7 +23,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | params   | dict | 字典欄位說明如下： |
 
 | dict 欄位名稱 | 型別 | 必填  | 說明                                      |
-|--------------|-------------|------------------------------------------|
+|-----------|------|------|------|
 | `order_id`   | int  | ✅   | 欲取消之掛單的 MT5 訂單編號（ticket） |
 | `comment`    | str  | ❌   | 取消原因備註，預設為 `"Cancel by MAS"` |
 

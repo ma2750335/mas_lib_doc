@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-回傳指定時間區間內的**歷史掛單總數**。  
-可在呼叫 `get_history_orders()` 之前用於估算資料筆數，或建立摘要統計，無需取得完整掛單明細。
+取得指定時間區間內的**歷史掛單總數**。  
+可用於在呼叫 `get_history_orders()` 前預估資料筆數，或建立摘要統計，無需取得完整的掛單明細資料。
 
 ---
 

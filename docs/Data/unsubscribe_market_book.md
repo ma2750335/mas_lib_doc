@@ -1,4 +1,5 @@
 ---
+sidebar_position: 11
 description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
@@ -10,8 +11,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-**Releases the market depth (DOM) subscription** for a specified symbol, freeing MT5 resources.
-Always call this when market book data is no longer needed to avoid unnecessary memory and bandwidth usage.
+Cancels the **market depth (DOM) subscription** for a specified symbol.<br/>
+After execution, the system stops receiving order book data for the symbol and releases associated internal resources.<br/>
+Call this function when order book data is no longer needed to avoid unnecessary resource usage.
 
 ---
 

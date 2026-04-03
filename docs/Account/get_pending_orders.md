@@ -10,9 +10,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Retrieves all **active pending orders** (limit and stop orders not yet executed) from the MT5 account.
-Supports optional filtering by **symbol**, **symbol group**, or **ticket ID**.
-Returns an empty list if no matching pending orders are found.
+Retrieves all **unfilled pending orders** in the MT5 account (including limit and stop orders).<br/>
+Supports filtering by symbol, group, or order ticket.<br/>
+Returns an empty list if no matching orders are found.
 
 ---
 

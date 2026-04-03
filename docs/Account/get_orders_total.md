@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Returns the **total count of active pending orders** currently placed on the MT5 account.
-Use this as a lightweight check before calling `get_pending_orders()`, or to enforce order limits in your strategy logic.
+Retrieves the **total number of active pending orders** in the MT5 account.<br/>
+Can be used to quickly check the number of pending orders before calling `get_pending_orders()` or to control the maximum number of pending orders within strategy logic.
 
 ---
 

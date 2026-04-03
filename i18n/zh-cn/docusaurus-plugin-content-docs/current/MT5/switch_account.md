@@ -1,4 +1,5 @@
 ---
+sidebar_position: 8
 description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
@@ -10,9 +11,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函数用途
 
-在不重启应用程序的情况下，**切换至另一个 MT5 交易账户**。  
-内部执行 `shutdown_mt5()` 后，再以新账户凭证重新调用 `login()`。  
-适用于多账户管理或在模拟账户与实盘账户之间切换。
+在无需重启应用程序的情况下，**切换至另一个 MT5 交易账户**。  
+执行该函数后，系统将先调用 `shutdown_mt5()`，再使用新的账户凭证重新执行 `login()`。  
+可用于多账户管理，或在模拟账户与实盘账户之间进行切换。
 
 ---
 

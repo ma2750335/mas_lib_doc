@@ -1,4 +1,5 @@
 ---
+sidebar_position: 9
 description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
@@ -10,9 +11,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-在**不實際下單**的情況下，預先對訂單請求進行**合法性驗證**。  
-可在呼叫 `send_order()` 前確認訂單參數是否有效、帳戶保證金是否充足，以及券商是否允許此操作。  
-回傳詳細結果，包含保證金需求與任何錯誤代碼。
+在**不實際執行下單**的情況下，預先對訂單請求進行**合法性驗證**。  
+可用於在呼叫 `send_order()` 前確認訂單參數是否有效、帳戶是否具備足夠的可用保證金，以及券商是否允許此操作。  
+回傳詳細結果，包含保證金需求與相關錯誤代碼。
 
 ---
 

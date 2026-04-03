@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函数用途
 
-返回 MT5 账户当前**有效挂单的总数**。  
-可在调用 `get_pending_orders()` 之前进行轻量查核，或在策略逻辑中用于控制最大挂单数量上限。
+获取 MT5 账户当前**有效挂单总数**。  
+可用于在调用 `get_pending_orders()` 之前快速检查挂单数量，或在策略逻辑中控制最大挂单数量上限。
 
 ---
 

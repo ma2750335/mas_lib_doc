@@ -1,4 +1,5 @@
 ---
+sidebar_position: 8
 description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
@@ -12,7 +13,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 從 MT5 取得指定商品在特定**位置索引**起算的**固定數量歷史 K 線（OHLCV）**。  
 位置 `0` 代表最新的 K 棒；位置 `1` 代表往前一根，以此類推。  
-適用於無需指定絕對時間戳、直接載入最近 N 根 K 棒供指標計算使用的情境。
+適用於無需指定絕對時間戳、直接載入最近 N 根 K 棒以進行指標計算的情境。
 
 ---
 

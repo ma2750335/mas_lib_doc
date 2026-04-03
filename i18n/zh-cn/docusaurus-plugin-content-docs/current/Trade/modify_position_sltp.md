@@ -1,4 +1,5 @@
 ---
+sidebar_position: 8
 description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
@@ -10,8 +11,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函数用途
 
-修改**已持仓部位**的止损（SL）和/或止盈（TP）价格。  
-`sl` 与 `tp` 至少须提供一个。此操作使用 MT5 的 `TRADE_ACTION_SLTP`，不会平仓或重新开仓。
+修改**已持仓仓位**的止损（SL）和/或止盈（TP）价格。  
+`sl` 与 `tp` 至少需提供一个。  
+执行该函数后，系统将通过 MT5 的 `TRADE_ACTION_SLTP` 更新仓位设置，不会进行平仓或重新开仓。
 
 ---
 

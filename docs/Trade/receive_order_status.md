@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Handles the system's order status updates.  
+Handles the system's order status updates.<br/>  
 This function is triggered when MT5 returns the status of an order, and can be used for further processing or display.
 
 ---

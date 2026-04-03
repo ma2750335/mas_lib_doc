@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-回傳 MT5 帳戶目前**有效掛單的總數**。  
-可在呼叫 `get_pending_orders()` 之前進行輕量查核，或在策略邏輯中用於控制最大掛單數量上限。
+取得 MT5 帳戶目前**有效掛單的總數**。  
+可用於在呼叫 `get_pending_orders()` 前快速檢查掛單數量，或於策略邏輯中控制最大掛單數量上限。
 
 ---
 

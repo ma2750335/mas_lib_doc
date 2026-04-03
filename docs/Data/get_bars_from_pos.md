@@ -1,4 +1,5 @@
 ---
+sidebar_position: 8
 description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
@@ -10,9 +11,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Retrieves a **fixed number of historical OHLCV bars** from MT5 starting at a **position index** relative to the current bar.
-Position `0` means the most recent (current) bar. Position `1` means one bar back, and so on.
-This is useful for loading the latest N bars for indicator computation without specifying absolute timestamps.
+Retrieves a **fixed number of historical OHLCV bars** for a specified symbol from MT5, starting from a given **position index**.<br/>
+Position `0` represents the most recent bar, while position `1` represents the previous bar, and so on.<br/>
+Ideal for scenarios where absolute timestamps are not required and the latest N bars are needed for indicator calculations.
 
 ---
 

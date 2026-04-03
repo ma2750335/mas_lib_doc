@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Cancels a pending MT5 order that has not yet been executed.  
+Cancels a pending MT5 order that has not yet been executed.<br/>
 This function uses the specified **`order_id`** (MT5 order ticket number) to send a cancellation request directly to the MetaTrader 5 platform, ensuring the order is removed before execution.  
 
 ---

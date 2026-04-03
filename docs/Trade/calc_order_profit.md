@@ -1,4 +1,5 @@
 ---
+sidebar_position: 7
 description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
@@ -10,9 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Calculates the **estimated profit or loss** for a hypothetical order given an open and close price.
-Use this to evaluate risk/reward scenarios, set dynamic take-profit targets, or validate strategy parameters before execution.
-No order is placed; this is a pure calculation query.
+Calculates the **estimated profit and loss (PnL)** for a specified order without executing the trade.<br/>
+Useful for estimating potential outcomes before placing an order, setting appropriate take-profit and stop-loss levels, or performing risk-reward analysis.
 
 ---
 

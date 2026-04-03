@@ -10,7 +10,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Generates a structured performance report based on historical trading records, calculating multiple performance metrics such as win rate, profit factor, net profit/loss, total trades, maximum drawdown, and cumulative returns.  
+Generates a structured performance report based on historical trading records, calculating multiple performance metrics such as win rate, profit factor, net profit/loss, total trades, maximum drawdown, and cumulative returns.<br/>  
 The function directly retrieves historical data from the internal `clientpost` object and requires no additional parameters.
 
 ---

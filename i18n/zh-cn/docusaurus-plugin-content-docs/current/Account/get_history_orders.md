@@ -11,8 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 ### 🎯 函数用途
 
 查询 MT5 账户的**历史挂单记录**（History Orders）。  
-与 `get_order_history()`（返回成交记录）不同，此函数返回的是订单对象本身，包含已成交与已取消的挂单。  
-支持按时间区间、商品代码、ticket 或 position 进行过滤。
+与 `get_order_history()`（返回成交记录）不同，该函数返回的是订单对象本身，包括已成交和已取消的挂单。  
+支持按时间区间、交易品种、ticket 或 position 进行筛选。
 
 ---
 

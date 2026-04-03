@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 ### 🎯 函式用途
 
 查詢 MT5 帳戶的**歷史掛單紀錄**（History Orders）。  
-與 `get_order_history()`（回傳成交紀錄）不同，此函式回傳的是訂單物件本身，包含已成交與已取消的掛單。  
+與 `get_order_history()`（回傳成交紀錄）不同，此函式回傳訂單物件本身，包含已成交與已取消的掛單。  
 支援依時間區間、商品代碼、ticket 或 position 進行過濾。
 
 ---

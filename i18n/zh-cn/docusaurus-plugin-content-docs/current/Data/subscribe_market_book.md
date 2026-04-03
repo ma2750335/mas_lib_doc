@@ -1,4 +1,5 @@
 ---
+sidebar_position: 10
 description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
@@ -10,9 +11,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函数用途
 
-订阅指定商品的 **市场深度（DOM - Depth of Market）** 数据。  
-订阅成功后，可随时调用 `get_market_book()` 获取当前委托簿快照。  
-使用完毕后请调用 `unsubscribe_market_book()` 释放订阅资源。
+订阅指定品种的**市场深度（DOM - Depth of Market）**数据。  
+订阅成功后，可调用 `get_market_book()` 获取当前订单簿快照。  
+使用完毕后，请调用 `unsubscribe_market_book()` 以释放订阅资源。
 
 ---
 

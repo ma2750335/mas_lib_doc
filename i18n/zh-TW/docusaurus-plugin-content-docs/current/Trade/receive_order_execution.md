@@ -11,7 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-接收 **交易訂單成交資訊推播**，用於後續的資料處理、交易紀錄更新、績效統計或即時顯示。  
+接收**交易訂單成交資訊推播**，用於後續資料處理、交易紀錄更新、績效統計或即時顯示。  
+此函式通常會在實盤交易或回測過程中於訂單成交時自動觸發。
 
 ---
 

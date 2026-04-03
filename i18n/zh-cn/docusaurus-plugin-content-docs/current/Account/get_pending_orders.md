@@ -10,9 +10,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函数用途
 
-查询 MT5 账户当前所有**尚未成交的挂单**（限价单与止损单）。  
-支持按商品代码、商品分组或订单编号（ticket）进行条件过滤。  
-若无符合条件的挂单，返回空数组。
+查询 MT5 账户当前所有**尚未成交的挂单**（限价单和止损单）。  
+支持按交易品种、品种分组或订单编号（ticket）进行条件筛选。  
+若未找到符合条件的挂单，则返回空数组。
 
 ---
 

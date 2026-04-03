@@ -10,11 +10,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Calculates the **backtest start date** based on an end date and the number of K-bars required.
-Currently supports the **`D1` (daily) timeframe only**.
-
-The calculation assumes **5 trading days per calendar week**, and always rounds up to complete weeks to ensure the required number of bars is covered even when the start date falls on a weekend or holiday.
-
+Calculates the **backtest start date** based on an end date and the number of K-bars required.<br/>
+Currently supports the **`D1` (daily) timeframe only**.<br/>
+The calculation assumes **5 trading days per calendar week**, and always rounds up to complete weeks to ensure the required number of bars is covered even when the start date falls on a weekend or holiday.<br/>
 Typical use case: pass the result directly as the `from` parameter in `subscribe_bars()` to guarantee enough historical data for indicator warm-up.
 
 ---

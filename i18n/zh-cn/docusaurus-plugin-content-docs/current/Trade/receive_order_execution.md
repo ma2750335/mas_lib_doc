@@ -11,7 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函数用途
 
-接收 **交易订单成交信息推送**，用于后续的数据处理、交易记录更新、绩效统计或实时显示。  
+接收**交易订单成交信息推送**，用于后续数据处理、交易记录更新、绩效统计或实时展示。  
+该函数通常会在实盘交易或回测过程中于订单成交时自动触发。
 
 ---
 

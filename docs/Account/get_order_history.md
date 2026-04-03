@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Retrieves **historical deal records** (executed trades) from your MetaTrader 5 (MT5) account within a specified time range.  
-Supports multiple filter options such as **time period**, **symbol**, **order ticket ID**, or **position ID**.  
+Retrieves **historical deal records** (executed trades) from your MetaTrader 5 (MT5) account within a specified time range.<br/>
+Supports multiple filter options such as **time period**, **symbol**, **order ticket ID**, or **position ID**.
 
 ---
 

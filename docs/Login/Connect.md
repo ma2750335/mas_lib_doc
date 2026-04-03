@@ -34,9 +34,9 @@ Initializes the **MetaTrader 5 (MT5)** trading terminal and logs into a specifie
 
 ### 📤 Function Return
 
-| Name       | Type | Description |
-|------------|------|-------------|
-| `result`   | bool | Returns `True` if login is successful; returns `False` if the connection or authentication fails. |
+| Name        | Type | Description                                                    |
+| ----------- | ---- | -------------------------------------------------------------- |
+| (anonymous) | bool | Returns `True` on success; otherwise returns an error message. |
 
 ---
 

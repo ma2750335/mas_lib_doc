@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Retrieves **historical order records** from the MT5 account.
-Unlike `get_order_history()` (which returns deal/execution records), this function returns the **order objects** that were placed—including both filled and cancelled orders.
+Retrieves **historical pending order records** (History Orders) from the MT5 account.<br/>
+Unlike `get_order_history()` (which returns execution/deal records), this function returns the **original order objects**, including both filled and cancelled pending orders.<br/>
 Supports filtering by time range, symbol, ticket, or position ID.
 
 ---

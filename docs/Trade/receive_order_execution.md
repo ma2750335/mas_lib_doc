@@ -11,8 +11,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Receives **real-time trade execution push notifications** from the system when an order is filled.  
-This function is typically triggered automatically during live trading or backtesting to update internal trade records, trigger performance tracking, or display execution details in dashboards or logs.  
+Receives **real-time trade execution push notifications** when an order is filled.<br/>
+Used for subsequent data processing, trade record updates, performance tracking, or real-time display.<br/>
+This function is typically triggered automatically during live trading or backtesting upon order execution.
 
 ---
 

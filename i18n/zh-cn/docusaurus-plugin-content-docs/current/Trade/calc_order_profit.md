@@ -1,4 +1,5 @@
 ---
+sidebar_position: 7
 description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
@@ -10,8 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函数用途
 
-计算指定订单的**预估盈亏金额**，不实际下单。  
-可用于在下单前预估潜在盈亏、设定合理的止盈/止损目标，或进行盈亏比分析。
+计算指定订单的**预估盈亏金额**，不实际执行下单。  
+可用于在下单前预估潜在盈亏、设置合理的止盈/止损目标，或进行风险收益比分析。
 
 ---
 

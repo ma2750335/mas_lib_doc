@@ -11,8 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Subscribes to **real-time Bar (candlestick) data** for a specified trading symbol,  
-or dispatches historical Bars in backtest mode.  
+Subscribes to **real-time Bar (candlestick) data** for a specified trading symbol, or dispatches historical Bars in backtest mode.<br/>  
 The data source automatically switches based on the `backtest_toggle` parameter:
 
 - **True**: Activates the historical data module to push Bars within the specified date range  

@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Returns the **total count of historical orders** within a given time range.
-Use this before calling `get_history_orders()` to estimate the volume of records, or to build summary statistics without retrieving full order details.
+Retrieves the **total number of historical pending orders** within a specified time range.<br/>
+Can be used to estimate data volume before calling `get_history_orders()` or to generate summary statistics without retrieving full order details.
 
 ---
 

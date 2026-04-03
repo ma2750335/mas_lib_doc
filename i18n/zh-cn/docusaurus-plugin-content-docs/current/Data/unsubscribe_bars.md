@@ -12,7 +12,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 ### 🎯 函数用途
 
 取消指定交易品种的**实时 Bar（K 线）数据订阅**，仅适用于**实盘模式**。  
-执行此函数后，系统会终止内部后台订阅线程，并关闭对该品种的实时报价与 K 线更新监控。  
+执行该函数后，系统将停止内部后台订阅线程，并停止该品种的实时行情与 K 线更新。  
+不再需要实时 K 线数据时请调用该函数，以避免不必要的资源占用。
 
 ---
 
