@@ -23,7 +23,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `data`   | dict  | 一条 Tick 数据结构，字段说明如下： |
 | `is_end` | bool  | 是否为推送结束标记（回测模式中使用）。 |
 
-**`data` 字段结构**：  
+#### `data` 字段结构
+
 | 字段名称 | 类型     | 说明 |
 |----------|----------|------|
 | `time`   | datetime | 数据时间戳。 |
@@ -34,7 +35,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称 | 类型 | 备注说明 |
 |------|------|----------|

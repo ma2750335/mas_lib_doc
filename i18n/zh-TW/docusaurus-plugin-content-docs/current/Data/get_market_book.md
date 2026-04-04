@@ -21,15 +21,17 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| `params` | dict | 指定目標商品的字典。 |
+| `params` | dict | 查詢條件設定字典，欄位說明如下： |
 
-| dict 欄位名稱 | 型別 | 必填 | 說明 |
-|--------------|------|------|------|
+#### `params`（dict）欄位說明
+
+| 欄位名稱 | 型別 | 必填 | 說明 |
+|----------|------|------|------|
 | `symbol`     | str  | ✅   | 欲查詢市場深度的商品代碼（如 `"EURUSD"`），須先訂閱。 |
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱     | 型別        | 備註說明 |
 |----------|------------|----------|
@@ -42,7 +44,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `volume`     | int   | 該層級的整數數量（手數）。 |
 | `volume_dbl` | float | 該層級的精確數量（浮點數）。 |
 
-回傳格式如下：
+#### 回傳格式
+
 ```python
 [
     {"type": 1, "price": 1.09520, "volume": 50,  "volume_dbl": 50.0},

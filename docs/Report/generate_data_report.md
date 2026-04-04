@@ -31,7 +31,7 @@ The function directly retrieves historical data from the internal `clientpost` o
 | `data`    | dict  | Raw report data (available when `status = True`), with content visibility varying by user role. |
 | `error`   | str   | Error message (available when `status = False`). |
 
-**Return data(dict) format：**
+#### Return format
 
 ```python
 {

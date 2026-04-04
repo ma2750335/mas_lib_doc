@@ -22,7 +22,9 @@ This function is triggered when MT5 returns the status of an order, and can be u
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
 | `order_id`     | str  | The order ticket number. |
-| `status_data`  | dict | A dictionary containing the following fields: |
+| `status_data`  | dict | Dictionary containing status details with the following fields: |
+
+#### `status_data` (dict) Fields
 
 | Field Name | Type  | Description |
 |------------|-------|-------------|

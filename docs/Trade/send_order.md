@@ -25,10 +25,12 @@ Upon successful execution, the system sends **real-time order status** and **exe
 
 | Parameter Name   | Type | Description |
 |------------------|------|-------------|
-| params           | dict | A dictionary containing the following fields: |
+| params           | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name       | Type       | Required | Description |
-|------------------|------------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `backtest_toggle`| bool       | ✅        | Enable backtest mode (`True` for backtesting). |
 | `symbol`         | str        | ✅        | Trading symbol (e.g., `"EURUSD.sml"`). |
 | `order_type`     | str        | ✅        | Order type: `buy`, `sell`, `buy_limit`, `sell_stop`, etc. |

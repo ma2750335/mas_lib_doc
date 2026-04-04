@@ -22,10 +22,12 @@ Upon successful modification, the updated order status will be pushed to the cli
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| params         | dict | Dictionary containing the following fields: |
+| params         | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name  | Type     | Required | Description |
-|-------------|----------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `order_id`  | int      | ✅       | The original pending order ticket number to be modified. |
 | `price`     | float    | ✅       | New price for the pending order. |
 | `sl`        | float    | ❌       | Stop loss price (SL). |

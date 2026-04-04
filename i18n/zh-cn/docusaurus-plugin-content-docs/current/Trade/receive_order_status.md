@@ -23,8 +23,10 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `order_id`    | str   | 订单编号（ticket）。 |
 | `status_data` | dict  | 字典字段说明如下： |
 
-| status_data 字段 | 类型  | 说明 |
-|------------------|-------|------|
+#### `status_data` 字段
+
+| 字段名称 | 类型  | 说明 |
+|----------|-------|------|
 | `status`         | int   | 订单状态代码（通常与 MT5 `retcode` 相同）。 |
 | `retcode`        | int   | MT5 返回的原始订单状态代码。 |
 | `message`        | str   | MT5 返回的状态信息（如 `"Request executed"`）。 |
@@ -33,7 +35,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据
+### 📤 返回内容
 
 | 名称 | 类型 | 说明 |
 |------|------|------|

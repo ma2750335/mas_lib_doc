@@ -23,7 +23,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| params   | dict | 字典欄位說明如下： |
+| `params`   | dict | 查詢條件設定字典，欄位說明如下： |
+
+#### `params`（dict）欄位說明
 
 | 名稱             | 型別          | 必填        | 說明 |
 |------------------|---------------|------------|------|
@@ -35,7 +37,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `captital`　　　　| bool          | ❌        | 設定本金，預設為`10000`(美元)。 | 
 | `backtest_toggle`| bool          | ❌        | 是否啟用回測模式，預設 `False`。 | 
 
-**timeframe 說明：**
+#### timeframe 說明
+
 | ID | 說明 |
 |----------|----------|
 | M1 | 1 minute | 
@@ -62,7 +65,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱   | 型別 | 備註說明 |
 |--------|------|----------|

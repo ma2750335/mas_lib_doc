@@ -21,15 +21,17 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 参数名称 | 类型 | 备注说明 |
 |----------|------|----------|
-| `params` | dict | 选填。过滤条件字典，传入 `{}` 获取所有商品。 |
+| `params` | dict | 查询条件设置字典，字段说明如下： |
 
-| dict 字段名称 | 类型 | 必填 | 说明 |
-|--------------|------|------|------|
+#### `params`（dict）字段说明
+
+| 字段名称 | 类型 | 必填 | 说明 |
+|----------|------|------|------|
 | `group`      | str  | ❌   | 商品分组通配符样式（如 `"*USD*"`、`"Forex*"`）。 |
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称     | 类型        | 备注说明 |
 |----------|------------|----------|
@@ -50,7 +52,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `currency_profit`     | str   | 盈利计算货币（如 `"USD"`）。 |
 | `trade_mode`          | int   | 交易模式（如完整交易、仅平仓等）。 |
 
-返回格式如下：
+#### 返回格式
+
 ```python
 [
     {

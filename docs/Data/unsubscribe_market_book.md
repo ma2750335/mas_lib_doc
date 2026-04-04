@@ -21,7 +21,9 @@ Call this function when order book data is no longer needed to avoid unnecessary
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Dictionary specifying the target symbol. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
+
+#### `params` (dict) Fields
 
 | Field Name | Type | Required | Description |
 |------------|------|----------|-------------|

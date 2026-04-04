@@ -20,7 +20,9 @@ Each position is returned as a Python dictionary containing **trade direction, e
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | A dictionary specifying query filters. See the following fields: |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
+
+#### `params` (dict) Fields
 
 | Field Name | Type | Required | Description |
 |------------|------|----------|-------------|
@@ -58,7 +60,8 @@ Each position is returned as a Python dictionary containing **trade direction, e
 | `time_update`     | datetime | Last update time (Python `datetime` object). |
 | `time_update_msc` | int      | Last update time in milliseconds since epoch. |
 
-Return Format：
+#### Return Format
+
 ```python
 [
   {

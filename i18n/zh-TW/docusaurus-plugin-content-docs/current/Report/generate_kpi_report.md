@@ -22,13 +22,13 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱   | 型別 | 備註說明                                      |
 |--------|------|-----------------------------------------------|
 | return | dict | 回傳報表產出是否成功，若失敗則包含錯誤訊息內容。 |
 
-**回傳格式：**
+#### 回傳格式
 
 ```python
 {

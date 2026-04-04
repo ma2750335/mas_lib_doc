@@ -20,7 +20,9 @@ Returns an empty list if no matching orders are found.
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Optional. Dictionary specifying filter criteria. Pass `{}` to get all pending orders. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
+
+#### `params` (dict) Fields
 
 | Field Name | Type | Required | Description |
 |------------|------|----------|-------------|
@@ -55,7 +57,8 @@ Returns an empty list if no matching orders are found.
 | `time_expiration` | datetime | Order expiration time (`None` if not set). |
 | `time_done`       | datetime | Time the order was completed (filled or cancelled; `None` if still pending). |
 
-Return Format:
+#### Return Format
+
 ```python
 [
     {

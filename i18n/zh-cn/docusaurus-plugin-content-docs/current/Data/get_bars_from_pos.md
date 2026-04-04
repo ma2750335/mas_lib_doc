@@ -21,10 +21,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 参数名称 | 类型 | 备注说明 |
 |----------|------|----------|
-| `params` | dict | 查询参数字典。 |
+| `params` | dict | 查询条件设置字典，字段说明如下： |
 
-| dict 字段名称 | 类型 | 必填 | 说明 |
-|--------------|------|------|------|
+#### `params`（dict）字段说明
+
+| 字段名称 | 类型 | 必填 | 说明 |
+|----------|------|------|------|
 | `symbol`     | str  | ✅   | 商品代码（如 `"EURUSD"`）。 |
 | `timeframe`  | str  | ✅   | K 线周期：`"M1"`、`"M5"`、`"H1"`、`"H4"`、`"D1"`、`"W1"`、`"MN1"` 等。 |
 | `count`      | int  | ✅   | 要获取的 K 线数量。 |
@@ -32,7 +34,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称     | 类型         | 备注说明 |
 |----------|-------------|----------|
@@ -49,7 +51,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `spread`     | int      | 该 K 棒期间的平均点差。 |
 | `real_volume`| int      | 实际交易量（若有提供）。 |
 
-返回格式如下：
+#### 返回格式
+
 ```python
           time     open     high      low    close  tick_volume  spread  real_volume
 0  2025-06-01  1.08501  1.09120  1.08350  1.08950         8432       8            0

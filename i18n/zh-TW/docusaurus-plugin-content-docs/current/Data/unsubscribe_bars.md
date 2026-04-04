@@ -21,9 +21,11 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| params   | dict | 字典欄位說明如下： |
+| `params`   | dict | 查詢條件設定字典，欄位說明如下： |
 
-| dict 欄位名稱 | 型別 | 備註說明 |
+#### `params`（dict）欄位說明
+
+| 欄位名稱 | 型別 | 備註說明 |
 |---------------|------|----------|
 | `symbol`     | str  | 商品代碼（例如 `"EURUSD"`）。 |
 | `timeframe`  | str  | Bar 時間週期（例如 `"M1"`、`"H1"`、`"D1"`）。 |

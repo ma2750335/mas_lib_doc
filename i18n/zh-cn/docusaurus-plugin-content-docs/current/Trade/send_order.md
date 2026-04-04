@@ -25,10 +25,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 参数名称  | 类型 | 说明 |
 |-----------|------|------|
-| params    | dict | 字典字段说明如下： |
+| `params` | dict | 查询条件设置字典，字段说明如下： |
 
-| 字段名             | 类型       | 必填 | 说明 |
-|--------------------|------------|------|------|
+#### `params`（dict）字段说明
+
+| 字段名称 | 类型       | 必填 | 说明 |
+|----------|------------|------|------|
 | `backtest_toggle`  | bool       | ✅   | 是否为回测模式（`True` 表示回测）。 |
 | `symbol`           | str        | ✅   | 交易品种代码（如 `"EURUSD.sml"`）。 |
 | `order_type`       | str        | ✅   | 订单类型：`buy`、`sell`、`buy_limit`、`sell_stop` 等。 |
@@ -50,7 +52,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### request 字段说明
 
-| 字段名       | 类型     | 说明 |
+| 字段名称      | 类型     | 说明 |
 |--------------|----------|------|
 | action       | int      | 交易操作类型。 |
 | magic        | int      | EA ID（策略标识）。 |
@@ -72,7 +74,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据
+### 📤 返回内容
 
 | 名称       | 类型 | 说明 |
 |------------|------|------|

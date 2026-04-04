@@ -34,7 +34,8 @@ This function takes no parameters.
 | `build`        | int  | Build number. |
 | `release_date` | str  | Release date string (e.g., `"01 Jan 2025"`). |
 
-Return Format:
+#### Return Format
+
 ```python
 {
     "version": 500,

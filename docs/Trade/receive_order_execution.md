@@ -24,6 +24,8 @@ This function is typically triggered automatically during live trading or backte
 | `order_id`      | str    | Unique identifier (ticket number) of the executed order. |
 | `execution_data`| dict   | Dictionary containing execution details with the following fields: |
 
+#### `execution_data` (dict) Fields
+
 | Field Name | Type     | Description |
 |------------|----------|-------------|
 | `price`    | float    | Executed price of the trade. |

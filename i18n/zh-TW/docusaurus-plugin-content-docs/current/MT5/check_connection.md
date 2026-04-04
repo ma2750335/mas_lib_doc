@@ -23,7 +23,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱   | 型別 | 備註說明                                |
 |--------|------|-------------------------------------------|

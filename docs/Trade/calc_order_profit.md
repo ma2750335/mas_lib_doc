@@ -20,10 +20,12 @@ Useful for estimating potential outcomes before placing an order, setting approp
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Parameters for profit estimation. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name    | Type  | Required | Description |
-|---------------|-------|----------|-------------|
+#### params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `action`      | str   | ✅       | Trade direction: `"buy"` or `"sell"`. |
 | `symbol`      | str   | ✅       | Trading symbol (e.g., `"EURUSD"`). |
 | `volume`      | float | ✅       | Trade volume in lots. |

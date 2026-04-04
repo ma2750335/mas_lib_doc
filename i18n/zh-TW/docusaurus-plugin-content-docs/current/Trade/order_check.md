@@ -21,10 +21,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| `params` | dict | 欲驗證的訂單參數（與 `send_order` 結構相同）。 |
+| `params` | dict | 查詢條件設定字典，欄位說明如下： |
 
-| dict 欄位名稱 | 型別  | 必填 | 說明 |
-|--------------|-------|------|------|
+#### `params`（dict）欄位說明
+
+| 欄位名稱 | 型別 | 必填 | 說明 |
+|----------|------|------|------|
 | `symbol`     | str   | ✅   | 商品代碼（如 `"EURUSD"`）。 |
 | `order_type` | str   | ✅   | 訂單類型：`"buy"`、`"sell"`、`"buy_limit"` 等。 |
 | `volume`     | float | ✅   | 下單手數。 |
@@ -34,7 +36,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱     | 型別 | 備註說明 |
 |----------|------|----------|
@@ -51,7 +53,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `margin_level`| float | 保證金水平百分比。 |
 | `comment`     | str   | 結果說明（如 `"Done"` 或錯誤訊息）。 |
 
-回傳格式如下：
+#### 回傳格式
+
 ```python
 {
     "retcode": 0,

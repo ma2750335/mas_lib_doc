@@ -23,7 +23,9 @@ The data source automatically switches based on the `backtest_toggle` parameter:
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Parameter settings dictionary, with the following fields: |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
+
+#### `params` (dict) Fields
 
 | Name             | Type          | Required     | Description |
 |------------------|---------------|--------------|-------------|
@@ -35,7 +37,8 @@ The data source automatically switches based on the `backtest_toggle` parameter:
 | `captital`　　　　| bool          | ❌           | Set the initial capital, default is `10,000 `USD. | 
 | `backtest_toggle`| bool          | ❌           | Whether to enable backtest mode (default: `False`). |
 
-**Timeframe Reference:**
+#### Timeframe Reference
+
 | ID   | Description   |
 |------|---------------|
 | M1   | 1 minute      |

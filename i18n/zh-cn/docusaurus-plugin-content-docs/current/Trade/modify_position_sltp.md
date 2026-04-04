@@ -21,10 +21,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 参数名称 | 类型 | 备注说明 |
 |----------|------|----------|
-| `params` | dict | 包含持仓 ID 与新 SL/TP 的字典。 |
+| `params` | dict | 查询条件设置字典，字段说明如下： |
 
-| dict 字段名称 | 类型  | 必填 | 说明 |
-|--------------|-------|------|------|
+#### `params`（dict）字段说明
+
+| 字段名称 | 类型 | 必填 | 说明 |
+|----------|------|------|------|
 | `position_id`| int   | ✅   | 要修改持仓的 ticket ID。 |
 | `sl`         | float | ❌*  | 新止损价格。`sl` 或 `tp` 至少须填一个。 |
 | `tp`         | float | ❌*  | 新止盈价格。`sl` 或 `tp` 至少须填一个。 |
@@ -33,7 +35,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称     | 类型 | 备注说明 |
 |----------|------|----------|

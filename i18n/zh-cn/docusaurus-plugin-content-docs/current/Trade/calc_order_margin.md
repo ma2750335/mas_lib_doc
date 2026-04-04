@@ -20,10 +20,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 参数名称 | 类型 | 备注说明 |
 |----------|------|----------|
-| `params` | dict | 保证金计算参数字典。 |
+| `params` | dict | 查询条件设置字典，字段说明如下： |
 
-| dict 字段名称 | 类型  | 必填 | 说明 |
-|--------------|-------|------|------|
+#### `params`（dict）字段说明
+
+| 字段名称 | 类型 | 必填 | 说明 |
+|----------|------|------|------|
 | `action`     | str   | ✅   | 交易方向：`"buy"` 或 `"sell"`。 |
 | `symbol`     | str   | ✅   | 商品代码（如 `"EURUSD"`）。 |
 | `volume`     | float | ✅   | 下单手数。 |
@@ -31,7 +33,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称     | 类型  | 备注说明 |
 |----------|-------|----------|

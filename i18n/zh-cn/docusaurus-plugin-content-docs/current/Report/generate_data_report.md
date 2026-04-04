@@ -23,7 +23,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 字段名称 | 类型   | 说明                               |
 |----------|-------|-----------------------------------|
@@ -31,46 +31,72 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `data`   | dict  | 报表原始数据内容（仅在 `status = True` 时存在），根据用户权限显示不同范围的数据。 |
 | `error`  | str   | 错误信息（仅在 `status = False` 时存在）。 |
 
-**`data` 格式：**
+#### 返回格式
 
 ```python
-return {
-            "data_source": dataframe,
-            "一般数据": {
-                "总盈亏": -1389.86,
-                "交易次数": 13
-            },
-            "胜率与亏损率":{
-                "胜率":30.77,
-                "亏损率":69.23
-            },
-            "最大回撤趋势":{
-                "最大回撤 (%)":{
-                    "2020":-0.0,
-                    "2021":10903.930817608712,
-                    "2022":8785.534591193882,
-                    "2023":9776.572327042826,
-                    "2024":10826.57232704269
-                }
-            },
-            "累计收益折线图":{
-                "累计收益 (%)":{
-                    "2020":-14.210600000000007,
-                    "2021":-13.99699999999999,
-                    "2022":-12.491599999999998,
-                    "2023":-12.563000000000008,
-                    "2024":-13.8986
-                }
-            },
-            "绩效指标":{
-                "交易次数":13,
-                "胜率":30.77,
-                "最大回撤":15.22,
-                "盈亏比":0.29,
-                "总收益率":-13.9
+{
+    "status": True,
+    "data": {
+        "general_data": {
+            "total_profit_loss": -1389.86,
+            "number_of_trades": 13
+        },
+        "performance_metrics": {
+            "number_of_trades": 13,
+            "profit_loss_ratio": 0.29,
+            "win_rate": 30.77,
+            "max_drawdown": 15.22,
+            "total_return_rate": -13.9,
+            "cagr": -2.85,
+            "sharpe_ratio": -0.43,
+            "sortino_ratio": -0.61,
+            "max_consecutive_losses": 5,
+            "max_single_loss": 312.40,
+            "profit_factor": 0.45
+        },
+        "win_loss_ratio": {
+            "win_rate": 30.77,
+            "loss_rate": 69.23
+        },
+        "cumulative_return_line_chart": {
+            "cumulative_return_percent": {
+                "2020": -14.21,
+                "2021": -13.99,
+                "2022": -12.49,
+                "2023": -12.56,
+                "2024": -13.90
             }
-        }
-        
+        },
+        "max_drawdown_trend": {
+            "max_drawdown_percent": {
+                "2020": -0.0,
+                "2021": -10.90,
+                "2022": -8.79,
+                "2023": -9.78,
+                "2024": -10.83
+            }
+        },
+        "annual_year_pnl_usd": {
+            "annual_year_pnl_usd": {
+                "2020": -142.11,
+                "2021": 21.06,
+                "2022": 150.51,
+                "2023": -7.14,
+                "2024": -1411.18
+            }
+        },
+        "annual_pnl_usd": {
+            "annual_pnl_usd": {
+                "2020": 9857.89,
+                "2021": 9878.95,
+                "2022": 10029.46,
+                "2023": 10022.32,
+                "2024": 8611.14
+            }
+        },
+        "data_source": "<JSON string of per-trade records>"
+    }
+}
 ```
 ---
 

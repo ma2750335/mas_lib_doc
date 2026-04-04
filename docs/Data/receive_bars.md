@@ -23,7 +23,8 @@ Receives real-time or backtesting Bar (candlestick) data via push updates, trigg
 | `data`         | dict  | A single Bar data structure. See field details below. |
 | `is_end`       | bool  | Indicates the end of a push stream (used in backtesting mode). |
 
-**`data` Field Structure**:  
+#### `data` Field Structure
+
 | Key         | Type     | Description |
 |-------------|----------|-------------|
 | `time`      | datetime | Bar start time. |

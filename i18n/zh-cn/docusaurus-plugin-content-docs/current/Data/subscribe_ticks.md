@@ -23,7 +23,9 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 参数名称 | 类型 | 备注说明 |
 |----------|------|----------|
-| `params` | dict | 字典字段说明如下： |
+| `params` | dict | 查询条件设置字典，字段说明如下： |
+
+#### `params`（dict）字段说明
 
 | 参数名称        | 类型          | 必填        | 说明 |
 |-----------------|---------------|------------|------|
@@ -38,7 +40,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称   | 类型 | 备注说明 |
 |--------|------|----------|

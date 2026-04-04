@@ -21,10 +21,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 参数名称 | 类型 | 备注说明 |
 |----------|------|----------|
-| `params` | dict | 要验证的订单参数（与 `send_order` 结构相同）。 |
+| `params` | dict | 查询条件设置字典，字段说明如下： |
 
-| dict 字段名称 | 类型  | 必填 | 说明 |
-|--------------|-------|------|------|
+#### `params`（dict）字段说明
+
+| 字段名称 | 类型 | 必填 | 说明 |
+|----------|------|------|------|
 | `symbol`     | str   | ✅   | 商品代码（如 `"EURUSD"`）。 |
 | `order_type` | str   | ✅   | 订单类型：`"buy"`、`"sell"`、`"buy_limit"` 等。 |
 | `volume`     | float | ✅   | 下单手数。 |
@@ -34,7 +36,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称     | 类型 | 备注说明 |
 |----------|------|----------|
@@ -51,7 +53,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `margin_level`| float | 保证金水平百分比。 |
 | `comment`     | str   | 结果说明（如 `"Done"` 或错误信息）。 |
 
-返回格式如下：
+#### 返回格式
+
 ```python
 {
     "retcode": 0,

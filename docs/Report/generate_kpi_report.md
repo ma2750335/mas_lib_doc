@@ -28,7 +28,7 @@ Generates a comprehensive KPI performance report based on historical trading rec
 |----------|------|-------------|
 | `result` | dict | Indicates whether the report was generated successfully; if failed, includes error message details. |
 
-**Return format:**
+#### Return format
 
 ```python
 {

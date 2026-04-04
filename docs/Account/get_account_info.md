@@ -28,7 +28,6 @@ Retrieves comprehensive account details for the currently logged-in MetaTrader 5
 | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | return | dict | Returns a dictionary containing account information on success; otherwise returns `{"error": "Failed to retrieve account information"}`. Detailed fields are as follows: |
 
-
 | Field Name            | Type  | Description |
 |-----------------------|-------|-------------|
 | `login`               | int   | Account login ID. |
@@ -60,7 +59,8 @@ Retrieves comprehensive account details for the currently logged-in MetaTrader 5
 | `currency`            | str   | Account base currency. |
 | `company`             | str   | Broker or company name. |
 
-Return Format:
+#### Return format
+
 ```python
 {
     "login": 25115284,

@@ -23,7 +23,8 @@ Receives real-time or backtesting Tick data via push updates, triggered by the `
 | `data`             | dict    | A dictionary containing the tick data fields, described below. |
 | `is_end`           | bool    | Indicates the end of the push stream (used in backtesting mode). |
 
-**`data` structure**:  
+#### `data` structure
+
 | Key       | Type     | Description |
 |-----------|----------|-------------|
 | `time`    | datetime | The timestamp of the tick. |

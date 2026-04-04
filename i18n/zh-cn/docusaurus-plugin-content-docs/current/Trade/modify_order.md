@@ -21,10 +21,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 参数名称 | 类型 | 说明 |
 |----------|------|------|
-| params   | dict | 参数字典，字段说明如下： |
+| `params` | dict | 查询条件设置字典，字段说明如下： |
 
-| 字典字段     | 类型       | 必填 | 说明                                      |
-|--------------|------------|------|-------------------------------------------|
+#### `params`（dict）字段说明
+
+| 字段名称 | 类型       | 必填 | 说明                                      |
+|----------|------------|------|-------------------------------------------|
 | `order_id`   | int        | ✅   | 要修改的挂单订单编号（MT5 ticket）。 |
 | `price`      | float      | ✅   | 修改后的新挂单价格。 |
 | `sl`         | float      | ❌   | 止损价格（Stop Loss）。 |
@@ -35,7 +37,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据
+### 📤 返回内容
 
 | 名称   | 类型 | 说明                             |
 |--------|------|----------------------------------|

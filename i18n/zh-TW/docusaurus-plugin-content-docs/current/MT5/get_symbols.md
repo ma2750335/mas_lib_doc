@@ -21,15 +21,17 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| `params` | dict | 選填。過濾條件字典，傳入 `{}` 取得所有商品。 |
+| `params` | dict | 查詢條件設定字典，欄位說明如下： |
 
-| dict 欄位名稱 | 型別 | 必填 | 說明 |
-|--------------|------|------|------|
+#### `params`（dict）欄位說明
+
+| 欄位名稱 | 型別 | 必填 | 說明 |
+|----------|------|------|------|
 | `group`      | str  | ❌   | 商品群組萬用字元樣式（如 `"*USD*"`、`"Forex*"`）。 |
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱     | 型別        | 備註說明 |
 |----------|------------|----------|
@@ -50,7 +52,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `currency_profit`     | str   | 獲利計算貨幣（如 `"USD"`）。 |
 | `trade_mode`          | int   | 交易模式（如完整交易、僅平倉等）。 |
 
-回傳格式如下：
+#### 回傳格式
+
 ```python
 [
     {

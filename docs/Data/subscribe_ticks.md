@@ -23,7 +23,9 @@ The data source will switch automatically based on the value of `backtest_toggle
 
 | Parameter Name | Type  | Description |
 |----------------|-------|-------------|
-| `params`       | dict  | A dictionary containing the following fields: |
+| `params`       | dict  | Configuration dictionary. Field details are as follows: |
+
+#### `params` (dict) Fields
 
 | Name             | Type           | Required         | Description                                                                 |
 |------------------|----------------|------------------|-----------------------------------------------------------------------------|

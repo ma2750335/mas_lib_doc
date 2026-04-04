@@ -21,19 +21,21 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | 參數名稱    | 型別  | 備註說明 |
 |-------------|-------|----------|
 | `order_id`  | str   | 訂單編號（ticket）。 |
-| `status_data` | dict |字典欄位說明如下：   |
+| `status_data` | dict |欄位說明如下：：   |
 
-| status_data 欄位 | 型別  | 備註說明 |
-|------------------|--------|----------|
-| `status`         | int   | 訂單狀態代碼（通常與 MT5 `retcode` 相同）。 |
-| `retcode`        | int   | MT5 回傳的原始訂單狀態代碼。 |
-| `message`        | str   | MT5 回傳的狀態訊息（例如 `"Request executed"`）。 |
-| `request`        | dict  | 本筆訂單下單時的 request 原始資料。 |
-| `action`         | str   | *(選填)* 觸發本次狀態更新的操作類型。僅於 `modify_order`（值為 `"modify"`）或 `cancel_order`（值為 `"cancel"`）時出現；`send_order` 不含此欄位。 |
+#### `status_data`（dict）欄位說明
+
+| 欄位名稱 | 型別  | 備註說明 |
+|----------|--------|----------|
+| `status` | int   | 訂單狀態代碼（通常與 MT5 `retcode` 相同）。 |
+| `retcode`| int   | MT5 回傳的原始訂單狀態代碼。 |
+| `message`| str   | MT5 回傳的狀態訊息（例如 `"Request executed"`）。 |
+| `request`| dict  | 本筆訂單下單時的 request 原始資料。 |
+| `action` | str   | *(選填)* 觸發本次狀態更新的操作類型。僅於 `modify_order`（值為 `"modify"`）或 `cancel_order`（值為 `"cancel"`）時出現；`send_order` 不含此欄位。 |
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱 | 型別 | 備註說明 |
 |------|------|----------|

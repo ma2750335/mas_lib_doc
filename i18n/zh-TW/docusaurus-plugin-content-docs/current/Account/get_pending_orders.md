@@ -20,17 +20,19 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| `params` | dict | 選填。過濾條件字典，傳入 `{}` 取得所有掛單。 |
+| `params` | dict | 查詢條件設定字典，欄位說明如下： |
 
-| dict 欄位名稱 | 型別 | 必填 | 說明 |
-|--------------|------|------|------|
+#### `params`（dict）欄位說明
+
+| 欄位名稱 | 型別 | 必填 | 說明 |
+|----------|------|------|------|
 | `symbol`     | str  | ❌   | 指定商品代碼（例如 `"EURUSD"`）。 |
 | `group`      | str  | ❌   | 依商品群組樣式過濾（例如 `"*USD*"`）。 |
 | `ticket`     | int  | ❌   | 依指定掛單 ticket 編號過濾。 |
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱     | 型別         | 備註說明 |
 |----------|-------------|----------|
@@ -55,7 +57,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `time_expiration` | datetime | 掛單到期時間（未設定則為 `None`）。 |
 | `time_done`       | datetime | 訂單完成時間（成交或取消；仍掛單中則為 `None`）。 |
 
-回傳格式如下：
+#### 回傳格式
+
 ```python
 [
     {

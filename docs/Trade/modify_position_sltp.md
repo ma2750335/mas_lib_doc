@@ -21,10 +21,12 @@ After execution, the system updates the position using MT5's `TRADE_ACTION_SLTP`
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Dictionary with position ID and new SL/TP values. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name    | Type  | Required | Description |
-|---------------|-------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `position_id` | int   | ✅       | The ticket ID of the open position to modify. |
 | `sl`          | float | ❌*      | New stop loss price. At least one of `sl` or `tp` must be provided. |
 | `tp`          | float | ❌*      | New take profit price. At least one of `sl` or `tp` must be provided. |

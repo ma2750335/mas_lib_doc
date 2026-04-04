@@ -20,10 +20,12 @@ Supports filtering by time range, symbol, ticket, or position ID.
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Optional. Filter criteria for the query. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name  | Type          | Required | Description |
-|-------------|---------------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `from`      | datetime/str  | ❌       | Start of time range (default: `2000-01-01`). |
 | `to`        | datetime/str  | ❌       | End of time range (default: current time). |
 | `symbol`    | str           | ❌       | Filter by specific trading symbol. |
@@ -58,7 +60,8 @@ Supports filtering by time range, symbol, ticket, or position ID.
 | `time_expiration` | datetime | Order expiration time (`None` if not set). |
 | `time_done`       | datetime | Time the order was completed (filled or cancelled). |
 
-Return Format:
+#### Return Format
+
 ```python
 [
     {

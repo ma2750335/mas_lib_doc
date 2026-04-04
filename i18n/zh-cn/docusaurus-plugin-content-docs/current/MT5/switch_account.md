@@ -21,10 +21,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 参数名称 | 类型 | 备注说明 |
 |----------|------|----------|
-| `params` | dict | 包含新账户登录凭证的字典。 |
+| `params` | dict | 查询条件设置字典，字段说明如下： |
 
-| dict 字段名称 | 类型 | 必填 | 说明 |
-|--------------|------|------|------|
+#### `params`（dict）字段说明
+
+| 字段名称 | 类型 | 必填 | 说明 |
+|----------|------|------|------|
 | `account`    | int  | ✅   | 要切换的 MT5 账号。 |
 | `password`   | str  | ✅   | 新账户的密码。 |
 | `server`     | str  | ✅   | 新账户所属的券商服务器名称。 |
@@ -32,7 +34,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称     | 类型 | 备注说明 |
 |----------|------|----------|

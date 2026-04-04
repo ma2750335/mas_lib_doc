@@ -21,7 +21,9 @@ Returns bid/ask price levels and corresponding volumes, which can be used for or
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Dictionary specifying the target symbol. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
+
+#### `params` (dict) Fields
 
 | Field Name | Type | Required | Description |
 |------------|------|----------|-------------|
@@ -42,7 +44,8 @@ Returns bid/ask price levels and corresponding volumes, which can be used for or
 | `volume`     | int   | Volume available at this level (integer lots). |
 | `volume_dbl` | float | Precise volume at this level (floating point). |
 
-Return Format:
+#### Return Format
+
 ```python
 [
     {"type": 1, "price": 1.09520, "volume": 50,  "volume_dbl": 50.0},

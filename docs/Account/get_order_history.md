@@ -19,10 +19,12 @@ Supports multiple filter options such as **time period**, **symbol**, **order ti
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | A dictionary specifying query filters. See the following fields: |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name  | Type          | Required | Description |
-|-------------|---------------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `symbol`    | str           | No       | Trading symbol to filter results. Can be combined with `group` filtering. |
 | `from`      | datetime/str  | No       | Start time. Defaults to `2000-01-01`. Accepts Python `datetime` or ISO string. |
 | `to`        | datetime/str  | No       | End time. Defaults to current system time (`datetime.now()`). |
@@ -56,7 +58,8 @@ Supports multiple filter options such as **time period**, **symbol**, **order ti
 | `time`           | datetime | Deal execution time (Python `datetime` object). |
 | `time_msc`       | int      | Deal execution timestamp in milliseconds. |
 
-Return Format：
+#### Return Format
+
 ```python
 [
   {

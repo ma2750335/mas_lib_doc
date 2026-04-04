@@ -21,7 +21,9 @@ Call this function when real-time tick data is no longer needed to avoid unneces
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Dictionary containing the target symbol. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
+
+#### `params` (dict) Fields
 
 | Field Name | Type | Required | Description |
 |------------|------|----------|-------------|

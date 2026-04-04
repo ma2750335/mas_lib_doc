@@ -27,13 +27,14 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称   | 类型 | 备注说明                                               |
 |--------|------|--------------------------------------------------------|
 | return | 任意 | 产出结果，成功则返回 `status=True`，失败则返回错误信息 |
 
-**返回示例：**
+#### 返回格式
+
 ```python
 {
     "status": True

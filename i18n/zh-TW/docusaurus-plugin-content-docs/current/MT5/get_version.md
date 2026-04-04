@@ -22,7 +22,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱     | 型別 | 備註說明 |
 |----------|------|----------|
@@ -34,7 +34,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `build`        | int  | Build 號。 |
 | `release_date` | str  | 發布日期字串（如 `"24 Jan 2025"`）。 |
 
-回傳格式如下：
+#### 回傳格式
+
 ```python
 {
     "version": 500,

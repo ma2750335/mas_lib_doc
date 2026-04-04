@@ -21,10 +21,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| `params` | dict | 包含新帳戶登入憑證的字典。 |
+| `params` | dict | 查詢條件設定字典，欄位說明如下： |
 
-| dict 欄位名稱 | 型別 | 必填 | 說明 |
-|--------------|------|------|------|
+#### `params`（dict）欄位說明
+
+| 欄位名稱 | 型別 | 必填 | 說明 |
+|----------|------|------|------|
 | `account`    | int  | ✅   | 欲切換的 MT5 帳號。 |
 | `password`   | str  | ✅   | 新帳戶的密碼。 |
 | `server`     | str  | ✅   | 新帳戶所屬的券商伺服器名稱。 |
@@ -32,7 +34,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱     | 型別 | 備註說明 |
 |----------|------|----------|

@@ -21,7 +21,9 @@ Each item includes symbol name, precision, spread, volume limits, and currency i
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Optional. Dictionary with filter options. Pass `{}` to get all symbols. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
+
+#### `params` (dict) Fields
 
 | Field Name | Type | Required | Description |
 |------------|------|----------|-------------|
@@ -50,7 +52,8 @@ Each item includes symbol name, precision, spread, volume limits, and currency i
 | `currency_profit`     | str   | Profit currency of the symbol (e.g., `"USD"`). |
 | `trade_mode`          | int   | Trade mode (e.g., full access, close only). |
 
-Return Format:
+#### Return Format
+
 ```python
 [
     {

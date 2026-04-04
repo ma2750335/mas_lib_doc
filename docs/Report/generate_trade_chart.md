@@ -32,7 +32,8 @@ Generates a fully visualized trading chart based on historical trade records, fe
 |----------|------|-------------|
 | `result` | dict | Returns generation status; includes error details if unsuccessful. |
 
-**Return Example:**
+#### Return format
+
 ```python
 {
     "status": True

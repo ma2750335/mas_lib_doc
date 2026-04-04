@@ -21,10 +21,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 參數名稱 | 型別 | 備註說明 |
 |----------|------|----------|
-| `params` | dict | 包含部位 ID 與新 SL/TP 的字典。 |
+| `params` | dict | 查詢條件設定字典，欄位說明如下： |
 
-| dict 欄位名稱 | 型別  | 必填 | 說明 |
-|--------------|-------|------|------|
+#### `params`（dict）欄位說明
+
+| 欄位名稱 | 型別 | 必填 | 說明 |
+|----------|------|------|------|
 | `position_id`| int   | ✅   | 欲修改部位的 ticket ID。 |
 | `sl`         | float | ❌*  | 新停損價格。`sl` 或 `tp` 至少須填一個。 |
 | `tp`         | float | ❌*  | 新停利價格。`sl` 或 `tp` 至少須填一個。 |
@@ -33,7 +35,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱     | 型別 | 備註說明 |
 |----------|------|----------|

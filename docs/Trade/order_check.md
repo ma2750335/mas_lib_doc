@@ -21,10 +21,12 @@ Returns detailed results, including margin requirements and any error codes.
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Order parameters to validate (same structure as `send_order`). |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name    | Type  | Required | Description |
-|---------------|-------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `symbol`      | str   | ✅       | Trading symbol (e.g., `"EURUSD"`). |
 | `order_type`  | str   | ✅       | Order type: `"buy"`, `"sell"`, `"buy_limit"`, `"sell_stop"`, etc. |
 | `volume`      | float | ✅       | Trade volume in lots. |
@@ -51,7 +53,8 @@ Returns detailed results, including margin requirements and any error codes.
 | `margin_level`| float | Margin level percentage. |
 | `comment`     | str   | Description of the result (e.g., `"Done"` or error message). |
 
-Return Format:
+#### Return format
+
 ```python
 {
     "retcode": 0,

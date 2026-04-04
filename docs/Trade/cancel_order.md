@@ -20,10 +20,12 @@ This function uses the specified **`order_id`** (MT5 order ticket number) to sen
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| params         | dict | Dictionary containing the following fields: |
+| params         | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name  | Type | Required | Description |
-|-------------|------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `order_id`  | int  | ✅       | The MT5 order ticket number to be cancelled. |
 | `comment`   | str  | ❌       | Cancellation reason note; defaults to `"Cancel by MAS"`. |
 

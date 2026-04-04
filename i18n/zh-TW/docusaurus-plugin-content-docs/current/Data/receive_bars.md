@@ -23,7 +23,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `data`   | dict  | 單筆 Bar 結構資料，欄位說明如下： |
 | `is_end` | bool  | 是否為推播結束標記（回測模式中使用）。 |
 
-**`data` 欄位結構**：  
+#### `data` 欄位結構
+
 | 欄位名稱    | 型別     | 說明 |
 |-------------|----------|------|
 | `time`      | datetime | Bar 起始時間。 |
@@ -36,7 +37,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱 | 型別 | 備註說明 |
 |------|------|----------|

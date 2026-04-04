@@ -22,7 +22,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱   | 型別 | 備註說明                                                                                 |
 |--------|------|-----------------------------------------------------------------------------------------|
@@ -59,7 +59,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `currency`            | str   | 帳戶基準幣別（如 USD、EUR）。                              |
 | `company`             | str   | 經紀商／券商公司名稱。                                    |
 
-回傳格式如下：
+#### 回傳格式
+
 ```python
 {
     "login": 25115284,

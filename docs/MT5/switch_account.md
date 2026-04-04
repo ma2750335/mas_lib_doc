@@ -21,10 +21,12 @@ Useful for multi-account management or switching between demo and live trading a
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Dictionary containing the new account credentials. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name   | Type | Required | Description |
-|--------------|------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `account`    | int  | ✅       | The MT5 account number to switch to. |
 | `password`   | str  | ✅       | Password for the new account. |
 | `server`     | str  | ✅       | Broker server name for the new account. |

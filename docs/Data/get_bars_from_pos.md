@@ -21,10 +21,12 @@ Ideal for scenarios where absolute timestamps are not required and the latest N 
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Query parameters. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name   | Type | Required | Description |
-|--------------|------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `symbol`     | str  | ✅       | Trading symbol (e.g., `"EURUSD"`). |
 | `timeframe`  | str  | ✅       | Bar timeframe: `"M1"`, `"M5"`, `"M15"`, `"M30"`, `"H1"`, `"H4"`, `"D1"`, `"W1"`, `"MN1"`. |
 | `count`      | int  | ✅       | Number of bars to retrieve. |
@@ -49,7 +51,8 @@ Ideal for scenarios where absolute timestamps are not required and the latest N 
 | `spread`      | int      | Average spread during this bar. |
 | `real_volume` | int      | Real traded volume (if available). |
 
-Return Format:
+#### Return Format
+
 ```python
           time     open     high      low    close  tick_volume  spread  real_volume
 0  2025-06-01  1.08501  1.09120  1.08350  1.08950         8432       8            0

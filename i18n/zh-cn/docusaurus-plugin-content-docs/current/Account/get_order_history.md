@@ -19,10 +19,12 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 | 参数名称 | 类型 | 备注说明 |
 |----------|------|----------|
-| params   | dict | 查询条件设置字典，字段说明如下： |
+| `params` | dict | 查询条件设置字典，字段说明如下： |
 
-| dict 字段名称 | 类型          | 必填 | 说明                                                       |
-|-------------|---------------|------|------------------------------------------------------------|
+#### `params`（dict）字段说明
+
+| 字段名称 | 类型 | 必填 | 说明 |
+|----------|------|------|------|
 | `symbol`    | str           | ❌   | 指定查询的商品代码，可搭配 `group` 字段进行筛选。             |
 | `from`      | datetime/str  | ❌   | 起始时间（默认 `2000-01-01`）。                              |
 | `to`        | datetime/str  | ❌   | 结束时间（默认当前时间 `datetime.now()`）。                   |
@@ -31,7 +33,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称   | 类型           | 备注说明                               |
 |--------|---------------|----------------------------------------|
@@ -57,7 +59,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `time`          | datetime  | 成交时间（已转换为 datetime 对象）。 |
 | `time_msc`      | int       | 成交时间（Unix timestamp 毫秒）。 |
 
-返回格式如下：
+#### 返回格式
+
 ```python
 [
   {

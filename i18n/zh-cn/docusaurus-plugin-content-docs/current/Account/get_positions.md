@@ -22,15 +22,17 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 |----------|------|----------|
 | `params` | dict | 查询条件设置字典，字段说明如下： |
 
-| dict 字段名称 | 类型 | 必填 | 说明 |
-|---------------|------|------|------|
+#### `params`（dict）字段说明
+
+| 字段名称 | 类型 | 必填 | 说明 |
+|----------|------|------|------|
 | `symbol`      | str  | ❌   | 过滤指定商品代码的持仓（优先级最高）。 |
 | `group`       | str  | ❌   | 过滤指定商品组的持仓（支持通配符，如 `"USD*"`）。 |
 | `ticket`      | int  | ❌   | 过滤指定持仓编号（ticket）。若同时指定 `symbol`，此字段将被忽略。 |
 
 ---
 
-### 📤 返回数据内容
+### 📤 返回内容
 
 | 名称   | 类型        | 备注说明 |
 |--------|-------------|----------|
@@ -58,7 +60,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `time_update`     | datetime  | 最后更新时间（转换为 `datetime` 对象）。 |
 | `time_update_msc` | int       | 最后更新时间（毫秒时间戳）。 |
 
-返回格式如下：
+#### 返回格式
+
 ```python
 [
   {

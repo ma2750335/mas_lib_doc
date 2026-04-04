@@ -21,19 +21,21 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | 參數名稱     | 型別  | 備註說明 |
 |--------------|--------|----------|
 | ` order_id`      | str    | 訂單編號。 |
-| ` execution_data`  | dict | 字典欄位說明如下：  |
+| ` execution_data`  | dict | 欄位說明如下：：  |
 
-| execution_data 欄位 | 型別      | 備註說明 |
-|---------------------|----------|----------|
-| `price`             | float    | 成交價格。 |
-| `volume`            | float    | 成交數量（交易手數）。 |
-| `symbol`            | str      | 交易商品代碼（如 `EURUSD`）。 |
-| `time`              | datetime | 成交時間（一般為伺服器推播時間）。 |
-| `type`              | str      | 訂單類型（如市價、市價平倉、限價等）。 |
+#### `execution_data`（dict）欄位說明
+
+| 欄位名稱 | 型別      | 備註說明 |
+|----------|----------|----------|
+| `price`  | float    | 成交價格。 |
+| `volume` | float    | 成交數量（交易手數）。 |
+| `symbol` | str      | 交易商品代碼（如 `EURUSD`）。 |
+| `time`   | datetime | 成交時間（一般為伺服器推播時間）。 |
+| `type`   | str      | 訂單類型（如市價、市價平倉、限價等）。 |
 
 ---
 
-### 📤 回傳資料內容
+### 📤 回傳內容
 
 | 名稱  | 型別 | 備註說明              |
 |------|------|-----------------------|

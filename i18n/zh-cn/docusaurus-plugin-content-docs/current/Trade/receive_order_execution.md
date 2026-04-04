@@ -23,8 +23,10 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 | `order_id`         | str   | 订单编号。 |
 | `execution_data`   | dict  | 参数字典，字段说明如下： |
 
-| execution_data 字段 | 类型     | 说明 |
-|---------------------|----------|------|
+#### `execution_data` 字段
+
+| 字段名称 | 类型     | 说明 |
+|----------|----------|------|
 | `price`             | float    | 成交价格。 |
 | `volume`            | float    | 成交数量（交易手数）。 |
 | `symbol`            | str      | 交易品种代码（如 `EURUSD`）。 |
@@ -33,7 +35,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ---
 
-### 📤 返回数据
+### 📤 返回内容
 
 | 名称 | 类型 | 说明 |
 |------|------|------|

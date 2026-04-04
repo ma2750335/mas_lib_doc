@@ -19,10 +19,12 @@ Can be used to estimate data volume before calling `get_history_orders()` or to 
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Optional. Time range filter. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name | Type         | Required | Description |
-|------------|--------------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `from`     | datetime/str | ❌       | Start of time range (default: `2000-01-01`). |
 | `to`       | datetime/str | ❌       | End of time range (default: current time). |
 

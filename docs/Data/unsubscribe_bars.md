@@ -21,7 +21,9 @@ Call this function when real-time bar data is no longer needed to avoid unnecess
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Subscription configuration dictionary containing the following fields: |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
+
+#### `params` (dict) Fields
 
 | Field       | Type | Description                                 |
 |-------------|------|---------------------------------------------|

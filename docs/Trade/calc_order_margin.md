@@ -20,10 +20,12 @@ Useful for verifying whether the account has sufficient free margin before placi
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `params`       | dict | Parameters for margin calculation. |
+| `params`       | dict | Configuration dictionary. Field details are as follows: |
 
-| Field Name  | Type  | Required | Description |
-|-------------|-------|----------|-------------|
+#### `params` (dict) Fields
+
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
 | `action`    | str   | ✅       | Trade action: `"buy"` or `"sell"`. |
 | `symbol`    | str   | ✅       | Trading symbol (e.g., `"EURUSD"`). |
 | `volume`    | float | ✅       | Trade volume in lots. |

@@ -20,7 +20,9 @@ Initializes the **MetaTrader 5 (MT5)** trading terminal and logs into a specifie
 
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| params         | dict | A dictionary containing the following fields: |
+| params         | dict | Configuration dictionary. Field details are as follows: |
+
+#### `params` (dict) Fields
 
 | Field          | Type   | Required | Description                                               |
 |----------------|--------|----------|-----------------------------------------------------------|
