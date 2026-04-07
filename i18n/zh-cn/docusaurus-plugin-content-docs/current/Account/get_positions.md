@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函数用途
 
-查询当前 MT5 交易账号中的**未平仓持仓（Position）**信息。  
-可根据**商品代码**、**商品组**或**特定持仓编号（ticket）**进行筛选。  
+查询当前 MT5 交易账号中的**未平仓持仓（Position）** 信息。  
+可根据**商品代码**、**商品组**或**特定持仓编号（ticket）** 进行筛选。  
 每笔持仓会以 `dict` 对象返回，内容包含**价格、手数、止损/止盈、浮动盈亏、开仓时间**等完整信息。
 
 ---
