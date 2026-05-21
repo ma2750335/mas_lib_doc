@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Fetches all **active open positions** from the authenticated MetaTrader 5 (MT5) account.<br/>  
-Supports filtering by **trading symbol**, **symbol group**, or **position ticket** for precise data queries.<br/>  
+Fetches all **active open positions** from the authenticated MetaTrader 5 (MT5) account.<br/>
+Supports filtering by **trading symbol**, **symbol group**, or **position ticket** for precise data queries.<br/>
 Each position is returned as a Python dictionary containing **trade direction, entry price, stop loss/take profit levels, floating P/L, swap fees, and update timestamps**.
 
 ---

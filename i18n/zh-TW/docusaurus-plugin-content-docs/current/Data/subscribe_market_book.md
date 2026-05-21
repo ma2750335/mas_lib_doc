@@ -11,7 +11,7 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-訂閱指定商品的**市場深度（DOM - Depth of Market）**資料。  
+訂閱指定商品的**市場深度（DOM - Depth of Market）** 資料。  
 訂閱成功後，可呼叫 `get_market_book()` 取得當前委託簿快照。  
 使用完畢後，請呼叫 `unsubscribe_market_book()` 以釋放訂閱資源。
 

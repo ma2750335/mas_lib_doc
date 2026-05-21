@@ -11,8 +11,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 Function Purpose
 
-Updates a pending limit order that has not yet been executed.<br/>  
-This function sends a modification request to the MetaTrader 5 (MT5) platform using the specified **`order_id`**.<br/>  
+Updates a pending limit order that has not yet been executed.<br/>
+This function sends a modification request to the MetaTrader 5 (MT5) platform using the specified **`order_id`**.<br/>
 It supports updating **price**, **stop loss (SL)**, **take profit (TP)**, **stop limit**, **expiration time**, and **comment** fields in a single request.<br/>
 Upon successful modification, the updated order status will be pushed to the client via a notification callback.
 

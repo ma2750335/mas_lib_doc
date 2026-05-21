@@ -10,8 +10,8 @@ description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platfo
 
 ### 🎯 函式用途
 
-查詢目前 MT5 交易帳號中的**未平倉部位（Position）**資訊。  
-可依據**商品代碼**、**商品群組**或**特定持倉編號（ticket）**進行篩選。  
+查詢目前 MT5 交易帳號中的**未平倉部位（Position）** 資訊。  
+可依據**商品代碼**、**商品群組**或**特定持倉編號（ticket）** 進行篩選。  
 每筆部位會以 `dict` 物件回傳，內容包含**價格、手數、停損/止盈、浮動盈虧、建倉時間**等完整資訊。
 
 ---
