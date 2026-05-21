@@ -47,6 +47,25 @@ const config = {
     },
   },
 
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      ({
+        hashed: true,
+        language: ['en', 'zh'],
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        docsRouteBasePath: '/',
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        searchBarShortcut: true,
+        searchBarShortcutHint: true,
+      }),
+    ],
+  ],
+
   presets: [
     [
       'classic',
@@ -146,13 +165,6 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} MindAiSmart Technology, Inc.`,
       },
-      algolia: {
-        appId: '6I172HX8MH',
-        apiKey: '85a4cc95b0ecc5dbabec583130685ae0',
-        indexName: 'mindaismart',
-        contextualSearch: true,
-      },
-
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
