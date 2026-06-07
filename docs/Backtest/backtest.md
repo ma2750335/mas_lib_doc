@@ -13,9 +13,9 @@ Before starting any automated trading, **backtesting** is a crucial process. By 
 
 ---
 
-## 🔧 How does MAS SDK perform backtesting?
+## 🔧 How does MasQuant SDK perform backtesting?
 
-MAS SDK offers a streamlined approach to run backtests. <br/>
+MasQuant SDK offers a streamlined approach to run backtests. <br/>
 By simply extending the `MAS` class and overriding the `receive_bars` method, you can quickly integrate your trading logic with historical data—no need for complex framework setup.
 
 Here’s a basic moving average strategy backtesting example:
@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
 ## 📈 KPI Reports After Backtesting
 
-Upon completion of backtesting, MAS SDK automatically generates multi-dimensional reports to help you evaluate strategy performance:
+Upon completion of backtesting, MasQuant SDK automatically generates multi-dimensional reports to help you evaluate strategy performance:
 
 - **Data Report**: Detailed trade logs including entry/exit time, direction, and P&L results  
 - **KPI Report**: Comprehensive performance metrics such as Sharpe ratio, win rate, net profit, and maximum drawdown  
@@ -118,7 +118,7 @@ These outputs enable quick strategy assessment and parameter optimization.
 
 ## ⚙️ Switching to Live Trading Mode
 
-MAS SDK features a **single codebase with dual-mode operation**, enabling seamless transition between backtesting and live trading. You only need to adjust one parameter—no code duplication required.
+MasQuant SDK features a **single codebase with dual-mode operation**, enabling seamless transition between backtesting and live trading. You only need to adjust one parameter—no code duplication required.
 
 ---
 
@@ -190,6 +190,6 @@ Before going live, review the following to ensure readiness and mitigate risk:
 [Strategy Design] → [Historical Backtesting] → [Performance Review] → ✅ [One-Click Toggle] → [Live Trading]
 
 ```
-With MAS SDK, a single strategy file is sufficient—streamlining both testing and live deployment while lowering development and maintenance costs.
+With MasQuant SDK, a single strategy file is sufficient—streamlining both testing and live deployment while lowering development and maintenance costs.
 
 ---

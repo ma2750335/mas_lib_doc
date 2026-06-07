@@ -6,25 +6,25 @@ sidebar_position: 1
 description: MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.
 ---
 
-# <img src="/img/mas_logo.png" alt="brain icon" width="48" style={{ verticalAlign: 'middle' }} /> MAS Python SDK Overview
+# <img src="/img/mas_logo.png" alt="brain icon" width="48" style={{ verticalAlign: 'middle' }} /> MasQuant Python SDK Overview
 
-MAS Python SDK is a lightweight and modular Python toolkit built for quantitative and algorithmic trading.  
+MasQuant Python SDK is a lightweight and modular Python toolkit built for quantitative and algorithmic trading.  
 It allows you to create, backtest, and deploy automated Forex strategies—without needing to master broker APIs or low-level data structures.
 
 ---
 
-## 🚀 What Can You Do with MAS SDK?
+## 🚀 What Can You Do with MasQuant SDK?
 
 - 📥 Access real-time market quotes and historical candlestick data (Forex, indices, and more)  
 - 📈 Automate your trading strategies and compare live trades against backtest performance  
 - 🧠 Implement custom logic with support for indicators, stop-loss/take-profit conditions  
-- 🔗 Seamlessly integrate with the MAS Web Platform to manage accounts and view performance reports
+- 🔗 Seamlessly integrate with the MasQuant Web Platform to manage accounts and view performance reports
 
 ---
 
 ## 📊 Strategy Backtesting & Performance Reporting
 
-MAS SDK automatically generates comprehensive performance reports after each backtest or live trade execution.  
+MasQuant SDK automatically generates comprehensive performance reports after each backtest or live trade execution.  
 These reports help you evaluate strategy profitability, risk exposure, and trade-level insights:
 
 | Report Type                  | Description                                                         | Format |
@@ -35,21 +35,21 @@ These reports help you evaluate strategy profitability, risk exposure, and trade
 | 🔎 Advanced Risk Metrics     | Sharpe Ratio, Sortino Ratio, win/loss ratio (Silver plan or above)  | HTML   |
 | 🧮 Dynamic Trade Breakdown   | Entry/exit timing, PnL analysis, and rationale (Gold plan only)     | HTML   |
 
-☑️ Reports can be viewed and exported directly within MAS SDK, depending on your plan tier.
+☑️ Reports can be viewed and exported directly within MasQuant SDK, depending on your plan tier.
 
 ---
 
 ## 🧩 Before You Begin
 
-1. Register a MAS account on the official platform[【Sign Up ↗】](https://mas.mindaismart.com/authentication/sign-up) (FREE)  
-2. Download the MAS desktop app [【Click here to download ↗】](https://mindaismart.com/product_lib), then log in to check your current plan  
-3. Install MAS SDK and start building your trading strategy
+1. Register a MasQuant account on the official platform[【Sign Up ↗】](https://mas.mindaismart.com/authentication/sign-up) (FREE)  
+2. Download the MasQuant desktop app [【Click here to download ↗】](https://mindaismart.com/product_lib), then log in to check your current plan  
+3. Install MasQuant SDK and start building your trading strategy
 
 ---
 
 ## ⚙️ Quick Start Guide
 
-Install MAS SDK:
+Install MasQuant SDK:
 
 ```bash
 pip install mas
@@ -105,14 +105,14 @@ if __name__ == "__main__":
 
 ---
 
-## 🤖 No Coding? MAS AI Strategy Assistant Has You Covered
+## 🤖 No Coding? MasQuant AI Strategy Assistant Has You Covered
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eTDXYtKvPVA?si=2oKLbL7Ig8QDJc-j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br /><br />
 
 
-Just describe your trading logic in natural language—MAS AI Assistant will：[【Learn More ↗】](https://mindaismart.com/product_ai)
+Just describe your trading logic in natural language—MasQuant AI Strategy Assistant will：[【Learn More ↗】](https://mindaismart.com/product_ai)
 
 ✅ Automatically generate a complete trading strategy  
 ✅ Run historical backtests and visualize performance  
@@ -136,7 +136,7 @@ Just describe your trading logic in natural language—MAS AI Assistant will：[
 ## 📥 End-to-End Usage Flow
 
 ```diff
-🖋 Step 1: Input your strategy using natural language in the MAS AI Assistant  
+🖋 Step 1: Input your strategy using natural language in the MasQuant AI Strategy Assistant  
 Buy Logic: “Buy when RSI < 30 and volume exceeds 5-day average”  
 Sell Logic: “Sell when RSI > 70”
 
@@ -149,7 +149,7 @@ Sell Logic: “Sell when RSI > 70”
 Filename: rsi_vol_strategy_2025Q2.exe
 
 🔐 Step 4: Run the `.exe`, enter your broker credentials, and deploy your strategy live to MT5
-👉 Try MAS AI Strategy Assistant today and start automating your trades with ease!
+👉 Try MasQuant AI Strategy Assistant today and start automating your trades with ease!
 ```
 
 ---
@@ -158,7 +158,7 @@ Filename: rsi_vol_strategy_2025Q2.exe
 
 | User Type         | Video Title                                            | Link         |
 | ----------------- | ------------------------------------------------------ | ------------ |
-| Beginner Traders  | $No-Code Tutorial$ How to Auto-Build Strategy with MAS | 📺 Watch Now |
-| Python Developers | $MAS SDK Intro$ Write your First Auto-Trading Strategy | 📺 Watch Now |
-| Advanced Users    | $MT5 Live Deployment$ Connect MAS to Your Real Account | 📺 Watch Now | -->
+| Beginner Traders  | $No-Code Tutorial$ How to Auto-Build Strategy with MasQuant | 📺 Watch Now |
+| Python Developers | $MasQuant SDK Intro$ Write your First Auto-Trading Strategy | 📺 Watch Now |
+| Advanced Users    | $MT5 Live Deployment$ Connect MasQuant to Your Real Account | 📺 Watch Now | -->
 

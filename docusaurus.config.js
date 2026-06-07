@@ -10,8 +10,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'MAS Docs',
-  tagline: 'MAS are cool',
+  title: 'MasQuant SDK Docs',
+  tagline: 'MasQuant SDK is cool',
   favicon: 'img/mas_logo.ico',
 
   // Set the production url of your site here
@@ -103,7 +103,7 @@ const config = {
         },
       ],
       navbar: {
-        title: 'MAS Docs',
+        title: 'MasQuant SDK Docs',
         logo: {
           alt: 'Logo',
           src: 'img/mas_logo.svg',
