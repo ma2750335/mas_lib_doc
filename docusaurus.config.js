@@ -117,7 +117,7 @@ const config = {
 
           },
           {
-            href: 'https://mindaismart.com/',
+            href: 'https://masquant.com/',
             label: 'Official Website',
             position: 'left',
           },
@@ -149,7 +149,7 @@ const config = {
             items: [
               {
                 label: 'Official Website',
-                href: 'https://mindaismart.com/',
+                href: 'https://masquant.com/',
               },
             ],
           },

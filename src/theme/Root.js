@@ -10,9 +10,9 @@ export default function Root({ children }) {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "順星智能科技有限公司|MAS Intelligent Technology Ltd.",
-            "url": "https://mindaismart.com/",
-            "logo": "https://mindaismart.com/img/logo.png",
+            "name": "順星智能科技股份有限公司|MAS Intelligent Technology Ltd.",
+            "url": "https://masquant.com/",
+            "logo": "https://masquant.com/img/logo.png",
             "description":
               "MAS Intelligent Technology's AI-powered Forex Margin Trading Platform with full MetaTrader MT5 broker integration allows investors to generate automated trading strategies simply by entering text. Supports instant backtesting,real-time data synchronization,and seamless multi-broker switching. No coding experience required to easily launch AI automated trading,optimize strategies,and reduce market risk. Designed for both individual traders and financial institutions with standardized MetaTrader MT5-compatible APIs,automated backtesting,and quantitative strategy optimization to help enterprises deploy stable and efficient trading solutions quickly.",
             "address": {
